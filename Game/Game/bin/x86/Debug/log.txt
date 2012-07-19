@@ -1,0 +1,1123 @@
+Socket bound to 0.0.0.0:14242: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to A1B8B2B9BA404137
+Initiated average roundtrip time to 0.85 ms Remote time is: 2.06951475143433
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to 1E28BA5B434C981F
+Initiated average roundtrip time to 0.83 ms Remote time is: 1.80472153425217
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to BB2059CAD2D704DA
+Initiated average roundtrip time to 1.05 ms Remote time is: 1.92253768444061
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to B69D83EF0A23C9DD
+Initiated average roundtrip time to 0.99 ms Remote time is: 1.72533178329468
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to 741892E023F21F03
+Initiated average roundtrip time to 0.95 ms Remote time is: 1.70201116800308
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to E0E0E93284E53578
+Initiated average roundtrip time to 2.25 ms Remote time is: 1.93010240793228
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to 6F3D8A48687A8367
+Initiated average roundtrip time to 0.95 ms Remote time is: 2.08286452293396
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to 8B077906485521E9
+Initiated average roundtrip time to 2.10 ms Remote time is: 1.73952680826187
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to 7FAB97EF99526DB3
+Initiated average roundtrip time to 0.78 ms Remote time is: 1.62989521026611
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to F3D896BA7E31087B
+Initiated average roundtrip time to 0.90 ms Remote time is: 1.70488220453262
+Status Message: Closing connection.
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Remotely requested connect
+Status Message: Connected to 208DC03B033C9E7F
+Initiated average roundtrip time to 0.87 ms Remote time is: 1.88083112239838
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.88 ms Remote time is: 1.65958762168884
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 1.86443853378296
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.08 ms Remote time is: 1.92413413524628
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.85380065441132
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.03 ms Remote time is: 1.76202058792114
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 2.06715738773346
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.93 ms Remote time is: 1.86326712369919
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.93 ms Remote time is: 1.5654736161232
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.01 ms Remote time is: 2.11290562152863
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.82 ms Remote time is: 2.19542157649994
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 2.0909777879715
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.76574754714966
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 3.16924786567688
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.94 ms Remote time is: 2.33449447154999
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.07 ms Remote time is: 2.05617451667786
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.95 ms Remote time is: 1.86331361532211
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.77637505531311
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.77 ms Remote time is: 1.76922935247421
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.76 ms Remote time is: 1.73608666658401
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 2.50881743431091
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 2.00832641124725
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.83 ms Remote time is: 1.58722001314163
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.71599018573761
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.96 ms Remote time is: 2.15356874465942
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.11 ms Remote time is: 2.0117244720459
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.72690719366074
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.98 ms Remote time is: 1.70739710330963
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.84 ms Remote time is: 1.73249620199203
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 3.86176550388336
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.93 ms Remote time is: 1.9469336271286
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.97 ms Remote time is: 1.87272733449936
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 2.13295114040375
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.71 ms Remote time is: 1.91030192375183
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 3.80858314037323
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 2.43906533718109
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.00 ms Remote time is: 6.97797274589539
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 3.89407157897949
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.02 ms Remote time is: 2.09569883346558
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 2.45947957038879
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.39 ms Remote time is: 2.6920884847641
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 2.56377220153809
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.06 ms Remote time is: 2.38355219364166
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 2.23043465614319
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 2.83570730686188
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.97 ms Remote time is: 2.75136494636536
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 3.35796713829041
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 2.41322374343872
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.04 ms Remote time is: 3.56120753288269
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.82 ms Remote time is: 2.25753509998322
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 4.63757085800171
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.02 ms Remote time is: 2.28729748725891
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.04 ms Remote time is: 2.24191772937775
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.84 ms Remote time is: 2.4590847492218
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 2.58442544937134
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.88 ms Remote time is: 2.0888284444809
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 2.48056924343109
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.19 ms Remote time is: 2.46636378765106
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 2.35938370227814
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 2.30018615722656
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 2.6483793258667
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.00 ms Remote time is: 2.47936999797821
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 3.86271393299103
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.74 ms Remote time is: 6.11769342422485
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.10 ms Remote time is: 4.16902017593384
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.56 ms Remote time is: 4.33405160903931
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.27 ms Remote time is: 4.38125085830688
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.62 ms Remote time is: 6.01776814460754
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.96 ms Remote time is: 4.75991582870483
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.87 ms Remote time is: 6.24853181838989
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.00 ms Remote time is: 6.37603425979614
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 4.41198492050171
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.00 ms Remote time is: 4.94978094100952
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.03 ms Remote time is: 3.82170903682709
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.88 ms Remote time is: 4.74071431159973
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.01 ms Remote time is: 22.8298721313477
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 6.47377634048462
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.11 ms Remote time is: 6.47385931015015
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.78 ms Remote time is: 6.72640633583069
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.38 ms Remote time is: 6.66500616073608
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.45 ms Remote time is: 8.64931726455688
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.16 ms Remote time is: 3.95840156078339
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.15 ms Remote time is: 7.71321940422058
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.11 ms Remote time is: 5.3824508190155
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.83 ms Remote time is: 6.40274524688721
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.83 ms Remote time is: 7.60585021972656
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 48.50 ms Remote time is: 28.009838104248
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.63 ms Remote time is: 6.88688778877258
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.22 ms Remote time is: 25.6619167327881
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.25 ms Remote time is: 3.96826481819153
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.61 ms Remote time is: 3.62544250488281
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.00 ms Remote time is: 5.26308274269104
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 4.39056944847107
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.70 ms Remote time is: 3.68444979190826
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.83 ms Remote time is: 4.74908089637756
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.80 ms Remote time is: 3.07043218612671
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.41 ms Remote time is: 2.84264600276947
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.04 ms Remote time is: 4.03028154373169
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.21 ms Remote time is: 4.73407483100891
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.36 ms Remote time is: 5.08197903633118
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.53 ms Remote time is: 3.4285740852356
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.06 ms Remote time is: 3.51026403903961
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 2.98485136032104
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 3.87482225894928
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.54 ms Remote time is: 3.67512929439545
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.38 ms Remote time is: 3.25248312950134
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 4.02894568443298
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.75 ms Remote time is: 3.38210487365723
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.17 ms Remote time is: 3.90480256080627
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.70 ms Remote time is: 3.56945979595184
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.22 ms Remote time is: 6.81711864471436
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.95 ms Remote time is: 12.6754441261292
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.44 ms Remote time is: 3.30136489868164
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.33 ms Remote time is: 4.53806018829346
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.45 ms Remote time is: 4.80731439590454
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.16 ms Remote time is: 3.82205367088318
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.82 ms Remote time is: 4.99428868293762
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.31 ms Remote time is: 4.49198126792908
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.07 ms Remote time is: 4.58132266998291
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.01 ms Remote time is: 3.7692152261734
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.20 ms Remote time is: 3.85527646541595
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.65 ms Remote time is: 8.99950647354126
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.07 ms Remote time is: 3.96261119842529
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.02 ms Remote time is: 4.15560030937195
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.00 ms Remote time is: 3.67680275440216
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 3.21192574501038
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.04 ms Remote time is: 3.48321783542633
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.84 ms Remote time is: 3.48624503612518
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.15 ms Remote time is: 3.55891382694244
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.31 ms Remote time is: 3.28172338008881
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.02 ms Remote time is: 4.45057702064514
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.14 ms Remote time is: 4.02923035621643
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.07 ms Remote time is: 3.37793159484863
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.99 ms Remote time is: 4.34968948364258
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.76 ms Remote time is: 3.48714351654053
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.80 ms Remote time is: 3.28470599651337
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.99 ms Remote time is: 3.61217713356018
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.94 ms Remote time is: 4.63255763053894
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.10 ms Remote time is: 3.26159298419952
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.12 ms Remote time is: 3.445152759552
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.75 ms Remote time is: 3.77339291572571
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 3.51845097541809
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.04 ms Remote time is: 3.85939908027649
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.33 ms Remote time is: 3.64665341377258
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.70 ms Remote time is: 4.26599740982056
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.85 ms Remote time is: 3.79495680332184
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.80 ms Remote time is: 6.00688433647156
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.13339793682098
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.17 ms Remote time is: 2.29874265193939
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.27 ms Remote time is: 7.8131148815155
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.02 ms Remote time is: 4.48058652877808
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.33 ms Remote time is: 4.0998227596283
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 3.78723049163818
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.31 ms Remote time is: 3.79317808151245
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.72 ms Remote time is: 1.1081428527832
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.81 ms Remote time is: 1.18554651737213
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.94 ms Remote time is: 1.15757113695145
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 4.25339698791504
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 37.12 ms Remote time is: 81.1164655685425
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.98 ms Remote time is: 4.07669019699097
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 37.00 ms Remote time is: 5.25228548049927
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.52 ms Remote time is: 3.51227045059204
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 3.53057432174683
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 37.08 ms Remote time is: 14.3607039451599
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.03 ms Remote time is: 3.46210134029388
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 37.35 ms Remote time is: 5.23533582687378
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.03 ms Remote time is: 4.18887972831726
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 43.69 ms Remote time is: 13.4614334106445
+Status Message: Closi
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.82 ms Remote time is: 5.01569795608521
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 71.76 ms Remote time is: 8.14048862457275
+Status Message: Closi
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.00 ms Remote time is: 3.2335706949234
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 37.03 ms Remote time is: 18.134349822998
+Status Message: Closi
+Status Message: Closi
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.10 ms Remote time is: 4.70222735404968
+Status Message: Closi

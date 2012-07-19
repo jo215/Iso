@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Sounds\Betty\getReady.wav</Source>
+      <Name>Sounds\Betty\getReady</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\getReady.xnb</Output>
+      <Time>2012-07-09T23:40:28.7165932+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Betty\loading.wav</Source>
+      <Name>Sounds\Betty\loading</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\loading.xnb</Output>
+      <Time>2012-07-09T23:40:28.7165932+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Betty\paused.wav</Source>
+      <Name>Sounds\Betty\paused</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\paused.xnb</Output>
+      <Time>2012-07-09T23:40:28.7165932+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Betty\saving.wav</Source>
+      <Name>Sounds\Betty\saving</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\saving.xnb</Output>
+      <Time>2012-07-09T23:40:28.7165932+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Explosion\collision.wav</Source>
+      <Name>Sounds\Explosion\collision</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Explosion\collision.xnb</Output>
+      <Time>2012-07-09T23:40:45.5802229+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\UI\menuCancel.wav</Source>
+      <Name>Sounds\UI\menuCancel</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\menuCancel.xnb</Output>
+      <Time>2012-07-09T23:40:57.5774587+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\UI\menuChange.wav</Source>
+      <Name>Sounds\UI\menuChange</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\menuChange.xnb</Output>
+      <Time>2012-07-09T23:40:57.5774587+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\UI\menuHover.wav</Source>
+      <Name>Sounds\UI\menuHover</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\menuHover.xnb</Output>
+      <Time>2012-07-09T23:40:57.5774587+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\UI\menuSelect.wav</Source>
+      <Name>Sounds\UI\menuSelect</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\menuSelect.xnb</Output>
+      <Time>2012-07-09T23:40:57.5774587+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menu\blank.png</Source>
+      <Name>Textures\Menu\blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Textures\Menu\blank.xnb</Output>
+      <Time>2012-07-09T23:43:36.2435887+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menu\gradient.png</Source>
+      <Name>Textures\Menu\gradient</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Textures\Menu\gradient.xnb</Output>
+      <Time>2012-07-09T23:43:36.2435887+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\Menu\milkyway.png</Source>
+      <Name>Textures\Menu\milkyway</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Textures\Menu\milkyway.xnb</Output>
+      <Time>2012-07-09T23:43:36.2435887+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Shaders\webEffect.fx</Source>
+      <Name>Shaders\webEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Shaders\webEffect.xnb</Output>
+      <Time>2012-07-12T15:20:07.5102668+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\gameFont.spritefont</Source>
+      <Name>Fonts\gameFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Fonts\gameFont.xnb</Output>
+      <Time>2012-07-09T23:45:45.2404285+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\menufont.spritefont</Source>
+      <Name>Fonts\menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
+      <Time>2012-07-09T23:45:45.2404285+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{FCC4A227-424D-4679-AC01-95108991DA6E}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\GameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Users\samcruise\Documents\Visual Studio 2010\Nuclex Framework\Nuclex.Fonts.Content.TrueTypeImporter.dll</Key>
+        <Value>2012-04-24T12:06:43.0498+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-07-09T21:26:33.9380505+01:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

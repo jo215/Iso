@@ -1,0 +1,15 @@
+c:\users\samcruise\documents\visual studio 2010\Projects\ISOTools\ISOTools\bin\Debug\ISOTools.dll
+c:\users\samcruise\documents\visual studio 2010\Projects\ISOTools\ISOTools\bin\Debug\ISOTools.pdb
+c:\users\samcruise\documents\visual studio 2010\Projects\ISOTools\ISOTools\obj\Debug\ISOTools.dll
+c:\users\samcruise\documents\visual studio 2010\Projects\ISOTools\ISOTools\obj\Debug\ISOTools.pdb
+C:\Users\samcruise\documents\visual studio 2010\Projects\ISOTools\ISOTools\obj\Debug\ISOTools.csprojResolveAssemblyReference.cache
+D:\Projects\ISOTools\ISOTools\bin\Debug\ISOTools.dll
+D:\Projects\ISOTools\ISOTools\bin\Debug\ISOTools.pdb
+D:\Projects\ISOTools\ISOTools\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\ISOTools\ISOTools\obj\Debug\ISOTools.dll
+D:\Projects\ISOTools\ISOTools\obj\Debug\ISOTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ISOTools\ISOTools\bin\Debug\ISOTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ISOTools\ISOTools\bin\Debug\ISOTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ISOTools\ISOTools\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ISOTools\ISOTools\obj\Debug\ISOTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ISOTools\ISOTools\obj\Debug\ISOTools.pdb

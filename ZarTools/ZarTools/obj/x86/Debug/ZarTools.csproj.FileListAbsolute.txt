@@ -1,0 +1,19 @@
+c:\users\samcruise\documents\visual studio 2010\Projects\ZarTools\ZarTools\obj\x86\Debug\ZarTools.csprojResolveAssemblyReference.cache
+c:\users\samcruise\documents\visual studio 2010\Projects\ZarTools\ZarTools\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\samcruise\documents\visual studio 2010\Projects\ZarTools\ZarTools\bin\x86\Debug\ZarTools.dll
+c:\users\samcruise\documents\visual studio 2010\Projects\ZarTools\ZarTools\bin\x86\Debug\ZarTools.pdb
+c:\users\samcruise\documents\visual studio 2010\Projects\ZarTools\ZarTools\obj\x86\Debug\ZarTools.dll
+c:\users\samcruise\documents\visual studio 2010\Projects\ZarTools\ZarTools\obj\x86\Debug\ZarTools.pdb
+c:\users\samcruise\documents\visual studio 2010\Projects\ZarTools\ZarTools\bin\x86\Debug\ICSharpCode.SharpZipLib.dll
+D:\Projects\ZarTools\ZarTools\bin\x86\Debug\ZarTools.dll
+D:\Projects\ZarTools\ZarTools\bin\x86\Debug\ZarTools.pdb
+D:\Projects\ZarTools\ZarTools\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Projects\ZarTools\ZarTools\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Projects\ZarTools\ZarTools\obj\x86\Debug\ZarTools.dll
+D:\Projects\ZarTools\ZarTools\obj\x86\Debug\ZarTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\bin\x86\Debug\ZarTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\bin\x86\Debug\ZarTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\obj\x86\Debug\ZarTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\obj\x86\Debug\ZarTools.pdb

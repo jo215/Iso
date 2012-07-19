@@ -1,0 +1,61 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Network/f:NetworkAgent.cs" caret="0" fromTop="0" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/d:Base/f:InputState.cs" caret="4521" fromTop="0" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Network/f:Server.cs" caret="2148" fromTop="16" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Debug.cs" caret="200" fromTop="9" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/d:Base/f:GameScreen.cs" caret="587" fromTop="0" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Events/f:EventManager.cs" caret="1054" fromTop="13" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:LoadingScreen.cs" caret="0" fromTop="0" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:AwesomiumUIManager.cs" caret="547" fromTop="23" />
+    <File id="FCC4A227-424D-4679-AC01-95108991DA6E/d:Maps/f:TestMap1.jim" caret="0" fromTop="0" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:MainMenuScreen.cs" caret="2797" fromTop="12" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="8332" fromTop="0" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:GameplayScreen.cs" caret="4073" fromTop="46" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/f:ClientGame.cs" caret="1338" fromTop="11" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="3796" fromTop="22" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Network/f:LobbyServerState.cs" caret="3783" fromTop="108" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:LobbyScreen.cs" caret="8238" fromTop="19" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:AnimationCollection.cs" caret="568" fromTop="2" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:BaseZarSprite.cs" caret="3458" fromTop="27" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:ZSprite.cs" caret="0" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:Unit.cs" caret="402" fromTop="8" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:State/f:GameState.cs" caret="424" fromTop="8" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:State/f:PlayerState.cs" caret="764" fromTop="18" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:ZTile.cs" caret="11024" fromTop="19" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="7305" fromTop="20" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:MapCell.cs" caret="0" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:ViewModel.cs" caret="0" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml.cs" caret="5314" fromTop="20" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:MapDefinition.cs" caret="1154" fromTop="21" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="4648" fromTop="8" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:LobbyScreen.cs" caret="5844" fromTop="16" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="2497" fromTop="29" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="2347" fromTop="23" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="1291" fromTop="16" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="1954" fromTop="16" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="3580" fromTop="18" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="3279" fromTop="22" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="4009" fromTop="26" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/f:ClientGame.cs" caret="1366" fromTop="12" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:LobbyScreen.cs" caret="10819" fromTop="13" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:LobbyScreen.cs" caret="6865" fromTop="17" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Network/f:LobbyServerState.cs" caret="4271" fromTop="29" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Network/f:LobbyServerState.cs" caret="3999" fromTop="24" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:State/f:GameState.cs" caret="435" fromTop="15" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:State/f:GameState.cs" caret="642" fromTop="22" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:BaseZarSprite.cs" caret="15844" fromTop="16" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:State/f:GameState.cs" caret="424" fromTop="8" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:Unit.cs" caret="2212" fromTop="70" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:MapDefinition.cs" caret="1182" fromTop="22" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="11366" fromTop="26" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="2978" fromTop="18" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml.cs" caret="15684" fromTop="27" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="3360" fromTop="17" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml.cs" caret="16195" fromTop="20" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="8453" fromTop="60" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="4868" fromTop="10" />
+  </RecentEdits>
+</RecentFiles>

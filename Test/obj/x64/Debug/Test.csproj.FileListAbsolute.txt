@@ -1,0 +1,15 @@
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\bin\x64\Debug\Test.exe
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\bin\x64\Debug\Test.pdb
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\bin\x64\Debug\ZarTools.dll
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\bin\x64\Debug\ZarTools.pdb
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\MainWindow.baml
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\MainWindow.g.cs
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\App.g.cs
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\Test_MarkupCompile.cache
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\Test.g.resources
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\Test.Properties.Resources.resources
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\Test.exe
+C:\Users\samcruise\documents\visual studio 2010\Projects\Test\Test\obj\x64\Debug\Test.pdb

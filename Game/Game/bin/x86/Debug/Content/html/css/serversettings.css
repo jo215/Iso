@@ -1,0 +1,22 @@
+﻿/* For standard element and class formatting see styles.css */
+input {
+	width: 208px;
+}
+
+h5 {
+	margin-top: 8px;
+	float:left;
+}
+
+#serverPanel {
+	height: 36px;
+	margin-top: 5px;
+}
+
+#okButton {
+	background-color: #569CD6;
+}
+
+#cancelButton {
+	background-color: #D67442;
+}

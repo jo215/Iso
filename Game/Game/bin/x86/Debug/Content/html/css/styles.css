@@ -1,0 +1,59 @@
+﻿/* Standard Element Styles */
+* {margin:0px; padding:0px; overflow:hidden}
+
+h4{
+	text-align: center;
+	font-family: "Times New Roman", Times, serif; font-size: 16px; font-weight: normal;
+	color: white;
+}
+
+h5{
+	color: white;
+	margin : 5px;
+	font-family:Arial, Helvetica, sans-serif; font-size: 16px; font-weight: normal;
+}
+
+h6 {
+	color: white;
+	margin: 3px;
+	font-family:Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal;
+	line-height: normal;
+}
+
+h6:hover {
+	color: #569CD6;
+	cursor: pointer;
+}
+
+img {
+	float:left;
+	margin: 5px;
+}
+
+input {
+	margin: 5px; padding: 5px; width: 742px;
+	float: left;
+	border: none;
+	background-color: black;
+	color: white;
+	display: block;
+}
+
+/* Classes */
+.panel {
+	width: 800px; margin: auto;
+	background-color: #5C5C5C;
+	border:thin black solid; border-radius: 4px;
+}
+
+.button {
+	margin: 5px; width: 100px; height: 23px;
+	border: thin black solid; border-radius: 10px;
+	float:left;
+}
+
+.button:hover {
+	border:thin white solid; border-radius: 10px;
+	background-color: #5C5C5C;
+	cursor: pointer;
+}

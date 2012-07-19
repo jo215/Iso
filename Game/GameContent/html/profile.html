@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<!-- HEAD -->
+	<head>
+		<script type="text/javascript" src="js/script.js"></script>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<title>Player Profile</title>
+		<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen"/>
+		<link href="css/profile.css" rel="stylesheet" type="text/css" media="screen"/>
+	</head>
+	<!-- BODY -->
+	<body>
+		<div id="wrapper">
+			<div class="panel" id="profilePanel">
+				<form id="myForm"
+				onsubmit="UIEventManager.click('update', document.getElementById('playerName').value);">
+					<h5>Player Name</h5>
+					<input type="text" id="playerName"/>
+					<div class="button" id="okButton" 
+					onclick="document.getElementById('myForm').onsubmit();">
+						<h4>Connect</h4>
+					</div>
+					<div class="button" id="cancelButton" 
+					onclick="UIEventManager.click('cancel');">
+						<h4>Cancel</h4>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>

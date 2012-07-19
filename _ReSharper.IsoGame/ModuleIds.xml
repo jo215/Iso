@@ -1,0 +1,6 @@
+<Modules>
+  <Module PersistentId="BE8814FF-22AB-49C5-A67F-AC078413089F" ModuleId="Game" />
+  <Module PersistentId="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A" ModuleId="Editor" />
+  <Module PersistentId="BB1439C6-5C86-4CDD-BD2A-3A93950F0723" ModuleId="ZarTools" />
+  <Module PersistentId="4FB6AE73-49CC-4AAA-9713-22160D90EFAD" ModuleId="ISOTools" />
+</Modules>

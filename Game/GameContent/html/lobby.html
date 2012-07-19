@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<!-- HEAD -->
+	<head>
+		<script type="text/javascript" src="js/script.js"></script>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<title>ChatBox</title>
+		<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen"/>
+		<link href="css/lobby.css" rel="stylesheet" type="text/css" media="screen"/>
+	</head>
+	<!-- BODY -->
+	<body>
+		<div id="wrapper">
+			<!-- PLAYER LIST -->
+			<div class="panel" id="playerPanel">
+			<h5>Connected Players</h5>
+				<div class="panel" id="players" >
+				
+				</div>
+			</div>
+			<!-- MAPS -->
+			<div class="panel" id="mapPanel">
+			<h5>Maps</h5>
+				<div class="panel" id="maps">
+					<ul id="maplist">
+					</ul>
+				</div>
+			</div>
+			<!-- CONTROLS -->
+			<div class="panel" id="toolbar">
+				<form id="myForm" 
+				onsubmit="UIEventManager.click('send', document.getElementById('input').value);">
+				
+					<img id="chatimage" alt="Chat icon" src="images/chaticon.png"/>
+					
+					<input type="text" id="input"/>
+									
+					<div class="button" id="sendButton" 
+					onclick="document.getElementById('myForm').onsubmit(); document.getElementById('input').value='';document.getElementById('input').focus();">
+						<h4>Send message</h4>
+					</div>
+				
+					<div class="button" id="startButton"
+					onclick="UIEventManager.click('start');">
+
+						<h4>Start game</h4>
+					</div>
+					
+					<div class="button" id="cancelButton" 
+					onclick="UIEventManager.click('exit');">
+						<h4>Quit</h4>
+					</div>
+				</form>
+			</div>
+			<!-- MESSAGE LIST -->
+			<div class="panel" id="messagePanel">
+				<div class="panel" id="messages">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
