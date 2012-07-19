@@ -1,0 +1,18 @@
+﻿<Window x:Class="Editor.View.CharacterEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:w="clr-namespace:Editor.View"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="Character Editor" Height="300" Width="600">
+    <Grid>
+        <!-- Treeview of factions & units-->
+        <TreeView ItemsSource="w:ViewModel.Units}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=Units}">
+                    <TextBlock Text="Hello" />
+                </HierarchicalDataTemplate>
+                
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</Window>

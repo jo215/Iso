@@ -53,3 +53,5 @@ C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Test\bin\x86\Debug
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Test\bin\x86\Debug\ISOTools.pdb
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Test\bin\x86\Debug\ZarTools.pdb
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Test\bin\x86\Debug\Images\Toolbar\characters32.png
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Test\obj\x64\Debug\View\CharacterEditor.baml
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Test\obj\x64\Debug\View\CharacterEditor.g.cs

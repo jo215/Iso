@@ -78,7 +78,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\DoubleLinkedListNode.cs" />
+    <Compile Include="Model\Roster.cs" />
     <Compile Include="Model\Unit.cs" />
+    <Compile Include="View\CharacterEditor.xaml.cs">
+      <DependentUpon>CharacterEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MapCanvas.cs" />
     <Compile Include="Model\MapCell.cs" />
     <Compile Include="Model\MapDefinition.cs" />
@@ -86,6 +90,10 @@
     <Compile Include="View\NewMapSettings.xaml.cs">
       <DependentUpon>NewMapSettings.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\CharacterEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

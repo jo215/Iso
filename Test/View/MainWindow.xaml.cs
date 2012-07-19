@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,8 @@ namespace Editor.View
     public partial class MainWindow : Window
     {
         string baseContentDirectory = "D:\\workspace\\BaseGame\\";
+        private CharacterEditor _characterEditor;
+
         ViewModel viewModel { get; set; }
 
         Isometry iso;
@@ -36,7 +39,7 @@ namespace Editor.View
         {
             //  Window initialisation
             SourceInitialized += (s, a) => WindowState = WindowState.Maximized;
-
+            
             //  Isometry helper
             iso = new Isometry(IsometricStyle.Staggered, baseContentDirectory + "tiles\\mousemap.png");
 
@@ -79,6 +82,22 @@ namespace Editor.View
                 tilePickerTabControl.Items.Add(tab);
             }
             random = new Random();
+
+            _characterEditor = new CharacterEditor(viewModel);
+            _characterEditor.Show();
+            _characterEditor.Topmost = true;
+        }
+
+        /// <summary>
+        /// Called when the window is closed.
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            //  Get rid of character editor window
+            _characterEditor.Visibility = Visibility.Collapsed;
+            _characterEditor.Close();
         }
 
         /// <summary>
@@ -400,7 +419,7 @@ namespace Editor.View
         //  Edit characters
         private void EditCharacters(object sender, ExecutedRoutedEventArgs e)
         {
-            
+            _characterEditor.Visibility = _characterEditor.IsVisible ? Visibility.Hidden : Visibility.Visible;
         }
 
         #endregion

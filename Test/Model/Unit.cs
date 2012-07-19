@@ -30,18 +30,18 @@ namespace Editor.Model
     /// </summary>
     public class Unit
     {
-        public byte OwnerID;
-        public byte ID;
-        public BodyType Body;
-        public WeaponType Weapon;
-        public Stance Stance;
-        public byte InitialHitPoints;
-        public byte CurrentHitPoints;
-        public byte Expertise;
-        public ushort X;
-        public ushort Y;
-        public string Name;
-        public List<StatusEffect> Effects;
+        public byte OwnerID { get; set; }
+        public byte ID { get; set; }
+        public BodyType Body { get; set; }
+        public WeaponType Weapon { get; set; }
+        public Stance Stance { get; set; }
+        public byte InitialHitPoints { get; set; }
+        public byte CurrentHitPoints { get; set; }
+        public byte Expertise { get; set; }
+        public ushort X { get; set; }
+        public ushort Y { get; set; }
+        public string Name { get; set; }
+        public List<StatusEffect> Effects { get; set; }
 
         /// <summary>
         /// Constructor.

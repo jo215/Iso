@@ -7,10 +7,10 @@ using System.IO;
 using System.Windows.Threading;
 using System.Windows.Data;
 using Editor.Model;
-using System.Windows.Controls;
 using System.Drawing;
 using ISOTools;
 using System.Linq;
+
 namespace Editor.View
 {
     public class ViewModel
@@ -21,33 +21,42 @@ namespace Editor.View
         public MapDefinition Map { get; set; }
         public MapCanvas MapCanvas { get; set; }
 
-        DoubleLinkedListNode<MapDefinition> currentUndoNode;
+        public ObservableCollection<KeyValuePair<string, ObservableCollection<Unit>>> Units { get; set; }
+ 
+        DoubleLinkedListNode<MapDefinition> _currentUndoNode;
 
-        Dispatcher UIDispatcher;
-        string baseContentDirectory;
-        string tempTileSet;
-        Isometry iso;
-        bool useAltEditLayer;
+        readonly Dispatcher _uiDispatcher;
+
+        string _tempTileSet;
+
+        bool _useAltEditLayer;
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public ViewModel(Dispatcher UIDispatcher, string baseContentDir, Isometry iso)
+        public ViewModel(Dispatcher uiDispatcher, string baseContentDir, Isometry iso)
         {
             //  Reference to the UIDispatcher for thread-safe collection manipulation
-            this.UIDispatcher = UIDispatcher;
-            this.baseContentDirectory = baseContentDir;
-            this.iso = iso;
-            useAltEditLayer = false;
+            _uiDispatcher = uiDispatcher;
+   
+            //  Map setup
+            Map = new MapDefinition(new ZTile(baseContentDir + "tiles\\Generic Tiles\\Generic Floors\\DirtSand\\Waste_Floor_Gravel_SandDirtCentre_F_1_NE.til"), iso, baseContentDir);
+            MapCanvas = new MapCanvas(Map, uiDispatcher, baseContentDir + "tiles\\", iso);
+            _useAltEditLayer = false;
+
+            //  Setup units - player 0 reserved for server / future ai
+            Units = new ObservableCollection<KeyValuePair<string, ObservableCollection<Unit>>>
+                        {new KeyValuePair<string, ObservableCollection<Unit>>("AI", new ObservableCollection<Unit>())};
+            //  Max 8 players but just add 2
+            for (var i = 1; i < 3; i++ )
+            {
+                Units.Add(new KeyValuePair<string, ObservableCollection<Unit>>("Player " + i, new ObservableCollection<Unit>()));
+            }
+
+            //  Create the available TileSets and collection views
             TileSets = new Dictionary<string, ObservableCollection<ZTile>>();
             TileSetViews = new Dictionary<string, ListCollectionView>();
-           
-            Map = new MapDefinition(new ZTile(baseContentDir + "tiles\\Generic Tiles\\Generic Floors\\DirtSand\\Waste_Floor_Gravel_SandDirtCentre_F_1_NE.til"), iso, baseContentDir);
-            //Map = MapDefinition.OpenMap("C:\\Users\\samcruise\\Documents\\jim2.jim", iso);
-            
-            MapCanvas = new MapCanvas(Map, UIDispatcher, baseContentDir + "tiles\\", iso);
-            //  Create the available TileSets and collection views
-            foreach (DirectoryInfo di in new DirectoryInfo(baseContentDir + "tiles\\").GetDirectories())
+            foreach (var di in new DirectoryInfo(baseContentDir + "tiles\\").GetDirectories())
             {
                 TileSets.Add(di.Name, new ObservableCollection<ZTile>());
                 TileSetViews.Add(di.Name, new ListCollectionView(TileSets[di.Name]));
@@ -67,8 +76,8 @@ namespace Editor.View
             if (!Map.IsOnGrid(gridPosition))
                 return;
             //  Set correct layer
-            int layer = 1;
-            if (!useAltEditLayer)
+            var layer = 1;
+            if (!_useAltEditLayer)
             {
                 layer = 0;
                 if (tileToPlace.TileType != TileType.Floor)
@@ -82,18 +91,16 @@ namespace Editor.View
                 }
             }
             //  Check we're not swapping for the same thing
-            if (Map.Cells[gridPosition.X, gridPosition.Y][layer] != tileToPlace)
-            {
-                //  Update the undo buffer with the old info
-                DoubleLinkedListNode<MapDefinition> newNode =
-                    new DoubleLinkedListNode<MapDefinition>(Map.Clone(), currentUndoNode);
-                if (currentUndoNode != null)
-                    currentUndoNode.Next = newNode;
-                currentUndoNode = newNode;
-                Map.undoInfo.Clear();
-                Map.undoInfo.UnionWith(Map.LegallyPlaceTile(gridPosition, layer, tileToPlace));
-                MapCanvas.adaptiveTileRefresh(Map.undoInfo.OrderBy(x => x.Y));
-            }
+            if (Map.Cells[gridPosition.X, gridPosition.Y][layer] == tileToPlace) return;
+
+            //  Update the undo buffer with the old info
+            var newNode = new DoubleLinkedListNode<MapDefinition>(Map.Clone(), _currentUndoNode);
+            if (_currentUndoNode != null)
+                _currentUndoNode.Next = newNode;
+            _currentUndoNode = newNode;
+            Map.undoInfo.Clear();
+            Map.undoInfo.UnionWith(Map.LegallyPlaceTile(gridPosition, layer, tileToPlace));
+            MapCanvas.adaptiveTileRefresh(Map.undoInfo.OrderBy(x => x.Y));
         }
 
         /// <summary>
@@ -101,17 +108,17 @@ namespace Editor.View
         /// </summary>
         public void Undo()
         {
-            if (currentUndoNode == null)
+            if (_currentUndoNode == null)
                 return;
-            MapDefinition temp = Map;
-            Map = currentUndoNode.Value;
+            var temp = Map;
+            Map = _currentUndoNode.Value;
 
-            currentUndoNode = new DoubleLinkedListNode<MapDefinition>(temp, currentUndoNode.Previous, currentUndoNode.Next);
-            if (currentUndoNode.Previous != null)
-                currentUndoNode.Previous.Next = currentUndoNode;
+            _currentUndoNode = new DoubleLinkedListNode<MapDefinition>(temp, _currentUndoNode.Previous, _currentUndoNode.Next);
+            if (_currentUndoNode.Previous != null)
+                _currentUndoNode.Previous.Next = _currentUndoNode;
 
-            if (currentUndoNode.Previous != null)
-                currentUndoNode = currentUndoNode.Previous;
+            if (_currentUndoNode.Previous != null)
+                _currentUndoNode = _currentUndoNode.Previous;
             MapCanvas.Map = Map;
             MapCanvas.adaptiveTileRefresh(Map.undoInfo.Union(temp.undoInfo).OrderBy(x => x.Y).ThenBy(c => c.X));
         }
@@ -121,15 +128,15 @@ namespace Editor.View
         /// </summary>
         public void Redo()
         {
-            if (currentUndoNode == null || currentUndoNode.Next == null)
+            if (_currentUndoNode == null || _currentUndoNode.Next == null)
                 return;
-            currentUndoNode = currentUndoNode.Next;
-            MapDefinition temp = Map;
-            Map = currentUndoNode.Value;
+            _currentUndoNode = _currentUndoNode.Next;
+            var temp = Map;
+            Map = _currentUndoNode.Value;
 
-            currentUndoNode = new DoubleLinkedListNode<MapDefinition>(temp, currentUndoNode.Previous, currentUndoNode.Next);
-            if (currentUndoNode.Previous != null)
-                currentUndoNode.Previous.Next = currentUndoNode;
+            _currentUndoNode = new DoubleLinkedListNode<MapDefinition>(temp, _currentUndoNode.Previous, _currentUndoNode.Next);
+            if (_currentUndoNode.Previous != null)
+                _currentUndoNode.Previous.Next = _currentUndoNode;
             MapCanvas.Map = Map;
             MapCanvas.adaptiveTileRefresh(Map.undoInfo.Union(temp.undoInfo).OrderBy(x => x.Y).ThenBy(c => c.X));
         }
@@ -140,32 +147,17 @@ namespace Editor.View
         /// <param name="state"></param>
         private void GetWholeTileSet(Object state)
         {
-            DirectoryInfo di = new DirectoryInfo(state.ToString());
-            List<ZTile> tempList =  new List<ZTile>();
+            var di = new DirectoryInfo(state.ToString());
             if (TileSets.ContainsKey(di.Name))
-                tempTileSet = di.Name;
+                _tempTileSet = di.Name;
 
-            foreach (FileInfo fi in di.GetFiles())
-                if (fi.Extension.Equals(".til"))
-                    tempList.Add(new ZTile(fi.FullName));
+            var tempList = (from fi in di.GetFiles() where fi.Extension.Equals(".til") select new ZTile(fi.FullName)).ToList();
 
             if (tempList.Count > 0)
                 AddTilesToCollection(tempList);
 
-            foreach (DirectoryInfo di2 in di.GetDirectories())
+            foreach (var di2 in di.GetDirectories())
                 GetWholeTileSet(di2.FullName);
-        }
-
-        /// <summary>
-        /// Allows adding to the ObservableCollection from any thread.
-        /// </summary>
-        /// <param name="newItems"></param>
-        private void AddTileToCollection(ZTile newItem)
-        {
-            if (UIDispatcher.CheckAccess())
-                TileSets[tempTileSet].Add(newItem);
-            else
-                UIDispatcher.BeginInvoke(new Action<ZTile>(AddTileToCollection), newItem);
         }
 
         /// <summary>
@@ -174,10 +166,10 @@ namespace Editor.View
         /// <param name="newItems"></param>
         private void AddTilesToCollection(List<ZTile> newItems)
         {
-            if (UIDispatcher.CheckAccess())
-                newItems.ForEach(x => TileSets[tempTileSet].Add(x));
+            if (_uiDispatcher.CheckAccess())
+                newItems.ForEach(x => TileSets[_tempTileSet].Add(x));
             else
-                UIDispatcher.BeginInvoke(new Action<List<ZTile>>(AddTilesToCollection), newItems);
+                _uiDispatcher.BeginInvoke(new Action<List<ZTile>>(AddTilesToCollection), newItems);
         }
 
         /// <summary>
@@ -187,15 +179,15 @@ namespace Editor.View
         /// <param name="height"></param>
         internal void NewMap(int width, int height)
         {
-            currentUndoNode = null;
+            _currentUndoNode = null;
             Map.ClearAllCells(width, height);
             ThreadPool.QueueUserWorkItem(MapCanvas.RenderMap, null);
         }
 
         internal void OpenMap(string fileName, Isometry iso)
         {
-            currentUndoNode = null;
-            MapDefinition tempMap = MapDefinition.OpenMap(fileName, iso, false);
+            _currentUndoNode = null;
+            var tempMap = MapDefinition.OpenMap(fileName, iso, false);
             Map = tempMap;
             MapCanvas.Map = tempMap;
 
@@ -216,7 +208,7 @@ namespace Editor.View
         /// </summary>
         internal void SwitchEditLayer()
         {
-            useAltEditLayer = !useAltEditLayer;
+            _useAltEditLayer = !_useAltEditLayer;
         }
     }
 }
