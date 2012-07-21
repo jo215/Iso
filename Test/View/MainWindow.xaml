@@ -5,7 +5,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Title="IsoEdit"
-        MouseMove="Window_MouseMove">
+        MouseMove="WindowMouseMove">
     
     <Window.Resources>
         <!-- The ListView style -->
@@ -69,8 +69,8 @@
         </Grid.ColumnDefinitions>
         <!-- The main map grid-->
         <ScrollViewer HorizontalAlignment="Left" Margin="5,50,5,5" Name="mapScrollViewer" VerticalAlignment="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
-                        PreviewMouseRightButtonDown="onPreviewMouseRightButtonDown" PreviewMouseMove="onPreviewMouseMove" PreviewMouseUp="onPreviewMouseUp"
-                        PreviewMouseLeftButtonDown="onMouseLeftButtonDown" Grid.Column="0" KeyUp="mapScrollViewer_KeyUp">
+                        PreviewMouseRightButtonDown="OnPreviewMouseRightButtonDown" PreviewMouseMove="OnPreviewMouseMove" PreviewMouseUp="OnPreviewMouseUp"
+                        PreviewMouseLeftButtonDown="OnMouseLeftButtonDown" Grid.Column="0" KeyUp="MapScrollViewerKeyUp">
             <Image Stretch="None" Name="mapCanvasImage" ></Image>
         </ScrollViewer>
         <!-- Canvas for overlays -->
@@ -80,11 +80,11 @@
                 Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.Height}"></Image>
         </Canvas>
         <!-- Tab Control-->
-        <TabControl Grid.Column="1" Height="716" HorizontalAlignment="Right" Margin="0,269,5,0" Name="tilePickerTabControl" VerticalAlignment="Top" Width="361" SelectionChanged="tilePickerTabControl_SelectionChanged">
+        <TabControl Grid.Column="1" Height="716" HorizontalAlignment="Right" Margin="0,269,5,0" Name="tilePickerTabControl" VerticalAlignment="Top" Width="361" SelectionChanged="TilePickerTabControlSelectionChanged">
 
         </TabControl>
         <!-- Filtering textbox-->
-        <TextBox Grid.Column="1" Height="24" HorizontalAlignment="Right" Margin="0,239,144,0" Name="tileFilterTextBox" VerticalAlignment="Top" Width="218" KeyDown="tileFilterTextBox_KeyDown">
+        <TextBox Grid.Column="1" Height="24" HorizontalAlignment="Right" Margin="0,239,144,0" Name="tileFilterTextBox" VerticalAlignment="Top" Width="218" KeyDown="TileFilterTextBoxKeyDown">
             <!-- Visual brush to display filter help text-->
             <TextBox.Resources>
                 <VisualBrush x:Key="HelpBrush" TileMode="None" Opacity="0.4" Stretch="None" AlignmentX="Left" >
@@ -108,7 +108,7 @@
             </TextBox.Style>
         </TextBox>
         <!-- Clear filter button-->
-        <Button Grid.Column="1" Content="Clear" Height="23" Margin="0,238,16,0" Name="clearFilterButton" VerticalAlignment="Top" HorizontalAlignment="Right" Width="52" Click="clearFilterButton_Click" />
+        <Button Grid.Column="1" Content="Clear" Height="23" Margin="0,238,16,0" Name="clearFilterButton" VerticalAlignment="Top" HorizontalAlignment="Right" Width="52" Click="ClearFilterButtonClick" />
         <!-- Currently selected tile info-->
         <Border Grid.Column="1" BorderBrush="Gray"  BorderThickness="1" Height="122" Margin="0,50,5,0" Name="border1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="361" Background="{x:Null}" >
             <WrapPanel Grid.Column="1" Height="120" Margin="0,0,0,0" Name="wrapPanel1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="361">
@@ -175,6 +175,6 @@
                 <Image Source="/Images/Toolbar/characters32.png" Style="{StaticResource ToolbarImageStyle}" />
             </Button>
         </WrapPanel>
-        <Button Content="Filter" Height="23" HorizontalAlignment="Right" Margin="0,238,81,0" Name="doFilterButton" VerticalAlignment="Top" Width="52" Grid.Column="1" Click="doFilterButton_Click" />
+        <Button Content="Filter" Height="23" HorizontalAlignment="Right" Margin="0,238,81,0" Name="doFilterButton" VerticalAlignment="Top" Width="52" Grid.Column="1" Click="DoFilterButtonClick" />
     </Grid>
 </Window>

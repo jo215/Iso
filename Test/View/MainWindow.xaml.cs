@@ -6,8 +6,6 @@ using System.Windows.Data;
 using System.Windows.Input;
 using ZarTools;
 using ISOTools;
-using System.Collections.Generic;
-using System.Windows.Media.Imaging;
 using System.Collections;
 using Microsoft.Win32;
 using System.Threading;
@@ -19,18 +17,18 @@ namespace Editor.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        string baseContentDirectory = "D:\\workspace\\BaseGame\\";
-        private CharacterEditor _characterEditor;
+        private const string BaseContentDirectory = "D:\\workspace\\BaseGame\\";
+        private readonly CharacterEditor _characterEditor;
 
-        ViewModel viewModel { get; set; }
+        ViewModel ViewModel { get; set; }
 
-        Isometry iso;
+        readonly Isometry _iso;
 
-        Predicate<object> filterFX;
+        Predicate<object> _filterFX;
 
-        Random random;
+        readonly Random _random;
 
-        Point mouseDragStartPoint, scrollStartOffset;
+        Point _mouseDragStartPoint, _scrollStartOffset;
 
         /// <summary>
         /// Constructor.
@@ -41,28 +39,27 @@ namespace Editor.View
             SourceInitialized += (s, a) => WindowState = WindowState.Maximized;
             
             //  Isometry helper
-            iso = new Isometry(IsometricStyle.Staggered, baseContentDirectory + "tiles\\mousemap.png");
+            _iso = new Isometry(IsometricStyle.Staggered, BaseContentDirectory + "tiles\\mousemap.png");
 
             //  Start the ViewModel
-            viewModel = new ViewModel(this.Dispatcher, baseContentDirectory, iso);
+            ViewModel = new ViewModel(Dispatcher, BaseContentDirectory, _iso);
             
             //  Text filter function for tile picker
-            this.filterFX = (p) => p.ToString().Contains(tileFilterTextBox.Text);
+            _filterFX = (p) => p.ToString().Contains(tileFilterTextBox.Text);
 
             InitializeComponent();
 
             //  Pass an ImageControl reference to the MapCanvas (violating MVVM)
-            viewModel.MapCanvas.ImageControl = mapCanvasImage;
+            ViewModel.MapCanvas.ImageControl = mapCanvasImage;
 
             cellOverlayImage.IsHitTestVisible = false;
 
             //  Tabs for each tileset
-            foreach (string s in viewModel.TileSets.Keys)
+            foreach (var s in ViewModel.TileSets.Keys)
             {
-                TabItem tab = new TabItem();
-                tab.Header = s;
+                var tab = new TabItem {Header = s};
                 //  Listview of filtered tiles in this tileset
-                ListView lv = new ListView();
+                var lv = new ListView();
                 //  Style & template from XAML
                 tab.Style = (Style)FindResource("TilePickerTabItemStyle");
                 lv.Style = (Style)FindResource("TilePickerListViewStyle");
@@ -73,17 +70,17 @@ namespace Editor.View
                         new FrameworkElementFactory(
                             typeof(WrapPanel)));
                 //  Set the ListView content & filter function
-                lv.ItemsSource = viewModel.TileSetViews[s];
-                viewModel.TileSetViews[s].Filter = this.filterFX;
+                lv.ItemsSource = ViewModel.TileSetViews[s];
+                ViewModel.TileSetViews[s].Filter = _filterFX;
                 //  Action
-                lv.SelectionChanged += tilePicker_SelectionChanged;
+                lv.SelectionChanged += TilePickerSelectionChanged;
                 tab.Content = lv;
                 //  Add the tab to the TabControl
                 tilePickerTabControl.Items.Add(tab);
             }
-            random = new Random();
+            _random = new Random();
 
-            _characterEditor = new CharacterEditor(viewModel);
+            _characterEditor = new CharacterEditor(ViewModel);
             _characterEditor.Show();
             _characterEditor.Topmost = true;
         }
@@ -105,10 +102,10 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tilePicker_SelectionChanged(object sender, RoutedEventArgs e)
+        private void TilePickerSelectionChanged(object sender, RoutedEventArgs e)
         {
             //  Get the picked tile
-            ZTile zt = ((ZTile)((ListView)sender).SelectedItem);
+            var zt = ((ZTile)((ListView)sender).SelectedItem);
             if (zt == null)
             {
                 cellOverlayImage.Source = null;
@@ -125,7 +122,7 @@ namespace Editor.View
             tileFlagsListBox.Items.Clear();
             tileFlagsListBox.Items.Add(Enum.GetName(typeof(TileMaterial), zt.Material));
             tileFlagsListBox.Items.Add(Enum.GetName(typeof(TileType), zt.TileType));
-            foreach (TileFlag flag in zt.Flags)
+            foreach (var flag in zt.Flags)
                 tileFlagsListBox.Items.Add(Enum.GetName(typeof(TileFlag), flag));
             tileFlagsListBox.Items.Refresh();
         }
@@ -135,10 +132,10 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tileFilterTextBox_KeyDown(object sender, KeyEventArgs e)
+        private void TileFilterTextBoxKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
-                changeFilter();
+                ChangeFilter();
         }
 
         /// <summary>
@@ -146,24 +143,21 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void clearFilterButton_Click(object sender, RoutedEventArgs e)
+        private void ClearFilterButtonClick(object sender, RoutedEventArgs e)
         {
             tileFilterTextBox.Text = "";
-            changeFilter();
+            ChangeFilter();
         }
 
         /// <summary>
         /// Re-runs the tile picker filter on the current tab.
         /// </summary>
-        private void changeFilter()
+        private void ChangeFilter()
         {
-            TabItem tab = tilePickerTabControl.SelectedItem as TabItem;
-            ListCollectionView lcv = viewModel.TileSetViews[tab.Header.ToString()];
+            var tab = tilePickerTabControl.SelectedItem as TabItem;
+            var lcv = ViewModel.TileSetViews[tab.Header.ToString()];
             //  Re-run the filter on the current tab
-            if (lcv.Count == 0)
-                lcv.Filter = null;
-            else
-                lcv.Filter = filterFX;
+            lcv.Filter = lcv.Count == 0 ? null : _filterFX;
         }
 
         /// <summary>
@@ -171,14 +165,19 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tilePickerTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void TilePickerTabControlSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            changeFilter();
+            ChangeFilter();
         }
 
-        private void doFilterButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Called to change the filter settings.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DoFilterButtonClick(object sender, RoutedEventArgs e)
         {
-            changeFilter();
+            ChangeFilter();
         }
 
         /// <summary>
@@ -186,23 +185,21 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void onPreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        private void OnPreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             //  Only startdragging if over the scrollviewer content
-            if (((Image)mapScrollViewer.Content).IsMouseOver == true)
-            {
-                mouseDragStartPoint = e.GetPosition(mapScrollViewer);
-                scrollStartOffset.X = mapScrollViewer.HorizontalOffset;
-                scrollStartOffset.Y = mapScrollViewer.VerticalOffset;
+            if (!((Image) mapScrollViewer.Content).IsMouseOver) return;
+            _mouseDragStartPoint = e.GetPosition(mapScrollViewer);
+            _scrollStartOffset.X = mapScrollViewer.HorizontalOffset;
+            _scrollStartOffset.Y = mapScrollViewer.VerticalOffset;
 
-                // Update the cursor if scrolling is possible 
-                mapScrollViewer.Cursor = (mapScrollViewer.ExtentWidth > mapScrollViewer.ViewportWidth) ||
-                    (mapScrollViewer.ExtentHeight > mapScrollViewer.ViewportHeight) ?
-                    Cursors.ScrollAll : Cursors.Arrow;
+            // Update the cursor if scrolling is possible 
+            mapScrollViewer.Cursor = (mapScrollViewer.ExtentWidth > mapScrollViewer.ViewportWidth) ||
+                                     (mapScrollViewer.ExtentHeight > mapScrollViewer.ViewportHeight) ?
+                                     Cursors.ScrollAll : Cursors.Arrow;
 
-                mapScrollViewer.CaptureMouse();
-                base.OnPreviewMouseDown(e);
-            }
+            mapScrollViewer.CaptureMouse();
+            base.OnPreviewMouseDown(e);
         }
 
         /// <summary>
@@ -210,25 +207,25 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void onPreviewMouseMove(object sender, MouseEventArgs e)
+        private void OnPreviewMouseMove(object sender, MouseEventArgs e)
         {
             if (mapScrollViewer.IsMouseCaptured)
             {
                 // Get the new mouse position. 
-                Point mousePos = e.GetPosition(mapScrollViewer);
+                var mousePos = e.GetPosition(mapScrollViewer);
 
                 // Determine the new amount to scroll. 
-                Point delta = new Point(
-                    (mousePos.X > this.mouseDragStartPoint.X) ?
-                    -(mousePos.X - this.mouseDragStartPoint.X) :
-                    (this.mouseDragStartPoint.X - mousePos.X),
-                    (mousePos.Y > this.mouseDragStartPoint.Y) ?
-                    -(mousePos.Y - this.mouseDragStartPoint.Y) :
-                    (this.mouseDragStartPoint.Y - mousePos.Y));
+                var delta = new Point(
+                    (mousePos.X > _mouseDragStartPoint.X) ?
+                    -(mousePos.X - _mouseDragStartPoint.X) :
+                    (_mouseDragStartPoint.X - mousePos.X),
+                    (mousePos.Y > _mouseDragStartPoint.Y) ?
+                    -(mousePos.Y - _mouseDragStartPoint.Y) :
+                    (_mouseDragStartPoint.Y - mousePos.Y));
 
                 // Scroll to the new position. 
-                mapScrollViewer.ScrollToHorizontalOffset(this.scrollStartOffset.X + delta.X);
-                mapScrollViewer.ScrollToVerticalOffset(this.scrollStartOffset.Y + delta.Y);
+                mapScrollViewer.ScrollToHorizontalOffset(_scrollStartOffset.X + delta.X);
+                mapScrollViewer.ScrollToVerticalOffset(_scrollStartOffset.Y + delta.Y);
             }
             base.OnPreviewMouseMove(e);
         }
@@ -238,9 +235,9 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void onPreviewMouseUp(object sender, MouseButtonEventArgs e)
+        private void OnPreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            ThreadPool.QueueUserWorkItem(viewModel.MapCanvas.RenderMap, null);
+            ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
             if (mapScrollViewer.IsMouseCaptured)
             {
                 mapScrollViewer.Cursor = Cursors.Arrow;
@@ -254,19 +251,17 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void onMouseLeftButtonDown(object sender, MouseEventArgs e)
+        private void OnMouseLeftButtonDown(object sender, MouseEventArgs e)
         {
             //  Paint a new tile if over map canvas
-            if (((Image)mapScrollViewer.Content).IsMouseOver == true)
-            {
-                //  If multiple tiles selected, choose one at random; return if no tiles selected
-                IList selectedTiles = ((ListView)((TabItem)tilePickerTabControl.SelectedItem).Content).SelectedItems;
-                if (selectedTiles.Count == 0)
-                    return;
-                ZTile tileToPlace = (ZTile)selectedTiles[random.Next(0, selectedTiles.Count)];
-                //  Get the grid location, return if off-grid
-                viewModel.PaintCell(iso.MouseMapper(e.GetPosition(mapCanvasImage)), tileToPlace);
-            }
+            if (!((Image) mapScrollViewer.Content).IsMouseOver) return;
+            //  If multiple tiles selected, choose one at random; return if no tiles selected
+            var selectedTiles = ((ListView)((TabItem)tilePickerTabControl.SelectedItem).Content).SelectedItems;
+            if (selectedTiles.Count == 0)
+                return;
+            var tileToPlace = (ZTile)selectedTiles[_random.Next(0, selectedTiles.Count)];
+            //  Get the grid location, return if off-grid
+            ViewModel.PaintCell(_iso.MouseMapper(e.GetPosition(mapCanvasImage)), tileToPlace);
         }
 
         /// <summary>
@@ -274,26 +269,26 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Window_MouseMove(object sender, MouseEventArgs e)
+        private void WindowMouseMove(object sender, MouseEventArgs e)
         {
             //  Chek if over map
-            if (((Image)mapScrollViewer.Content).IsMouseOver == true)
+            if (((Image)mapScrollViewer.Content).IsMouseOver)
             {
                 //  Get the grid location of mouse
-                System.Drawing.Point mouseAt = iso.MouseMapper(e.GetPosition(mapCanvasImage));
-                if (viewModel.Map.IsOnGrid(mouseAt))
+                System.Drawing.Point mouseAt = _iso.MouseMapper(e.GetPosition(mapCanvasImage));
+                if (ViewModel.Map.IsOnGrid(mouseAt))
                 {
                     //  Get the position to draw the overlay at
-                    mouseAt = iso.TilePlotter(mouseAt);
+                    mouseAt = _iso.TilePlotter(mouseAt);
                     cellOverlayImage.Visibility = Visibility.Visible;
                     //  Get the tile to overlay
-                    ZTile zt = (ZTile)((ListView)((TabItem)tilePickerTabControl.SelectedItem).Content).SelectedItem;
+                    var zt = (ZTile)((ListView)((TabItem)tilePickerTabControl.SelectedItem).Content).SelectedItem;
                     //  Correct for height/width of tile
                     int x = 0, y = 0;
                     if (zt != null)
                     {
-                        if (zt.Height > viewModel.Map.TileHeight)
-                            y -= (zt.Height - viewModel.Map.TileHeight);
+                        if (zt.Height > ViewModel.Map.TileHeight)
+                            y -= (zt.Height - ViewModel.Map.TileHeight);
                         x += (6 - zt.BoundingBox[2]) * 6;
 
                         if (zt.Name.Contains("_b_") || zt.Name.Contains("b&d"))
@@ -313,7 +308,7 @@ namespace Editor.View
                     Canvas.SetTop(cellOverlayImage, mouseAt.Y - mapScrollViewer.VerticalOffset + y);
                     //  We also call draw tiles if mouse pressed
                     if (e.LeftButton == MouseButtonState.Pressed)
-                        onMouseLeftButtonDown(this, e);
+                        OnMouseLeftButtonDown(this, e);
                     return;
                 }
             }
@@ -326,9 +321,9 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mapScrollViewer_KeyUp(object sender, KeyEventArgs e)
+        private void MapScrollViewerKeyUp(object sender, KeyEventArgs e)
         {
-            ThreadPool.QueueUserWorkItem(viewModel.MapCanvas.RenderMap, null);
+            ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
             base.OnKeyUp(e);
         }
 
@@ -337,7 +332,7 @@ namespace Editor.View
         //  New Map
         private void NewMap(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBoxResult result = 
+            var result = 
                 MessageBox.Show("Do you want to save your changes?", "New Map",
                     MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             switch (result)
@@ -350,46 +345,40 @@ namespace Editor.View
                     SaveMapAs(null, null);
                     break;
             }
-            NewMapSettingsDialog dlg = new NewMapSettingsDialog();
-            dlg.Owner = this;
-            
+            var dlg = new NewMapSettingsDialog {Owner = this};
+
             if (dlg.ShowDialog() == true)
-                viewModel.NewMap(int.Parse(dlg.widthBox.Text), int.Parse(dlg.heightBox.Text)); 
+                ViewModel.NewMap(int.Parse(dlg.widthBox.Text), int.Parse(dlg.heightBox.Text)); 
         }
 
         //  Save map as
         private void SaveMapAs(object sender, ExecutedRoutedEventArgs e)
         {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.DefaultExt = ".jim";
-            dlg.Filter = "Isometric map documents (.jim)|*.jim";
-            bool? result = dlg.ShowDialog();
+            var dlg = new SaveFileDialog {DefaultExt = ".jim", Filter = "Isometric map documents (.jim)|*.jim"};
+            var result = dlg.ShowDialog();
             if (result == true)
-                viewModel.Map.SaveMap(dlg.FileName);
+                ViewModel.Map.SaveMap(dlg.FileName);
         }
 
         //  Open map
         private void OpenMap(object sender, ExecutedRoutedEventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-
-            dlg.DefaultExt = ".jim";
-            dlg.Filter = "Isometric map documents (.jim)|*.jim";
-            bool? result = dlg.ShowDialog();
+            var dlg = new OpenFileDialog {DefaultExt = ".jim", Filter = "Isometric map documents (.jim)|*.jim"};
+            var result = dlg.ShowDialog();
             if (result == true)
-                viewModel.OpenMap(dlg.FileName, iso);
+                ViewModel.OpenMap(dlg.FileName, _iso);
         }
 
         //  Undo
         private void Undo(object sender, ExecutedRoutedEventArgs e)
         {
-            viewModel.Undo();
+            ViewModel.Undo();
         }
 
         //  Redo
         private void Redo(object sender, ExecutedRoutedEventArgs e)
         {
-            viewModel.Redo();
+            ViewModel.Redo();
         }
 
         //  Select nothing
@@ -401,19 +390,19 @@ namespace Editor.View
         //  Show grid
         private void ShowGrid(object sender, ExecutedRoutedEventArgs e)
         {
-            viewModel.ShowGrid();
+            ViewModel.ShowGrid();
             
         }
         //  Refresh map
         private void Refresh(object sender, ExecutedRoutedEventArgs e)
         {
-            ThreadPool.QueueUserWorkItem(viewModel.MapCanvas.RenderMap, null);
+            ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
         }
 
         //  Change edit layer
         private void ChangeLayer(object sender, ExecutedRoutedEventArgs e)
         {
-            viewModel.SwitchEditLayer();
+            ViewModel.SwitchEditLayer();
         }
 
         //  Edit characters

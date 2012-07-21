@@ -39,7 +39,7 @@
                                 <!-- Specify the nested template for the individual Unit items that are within the Factions.-->
                                 <HierarchicalDataTemplate.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
+                                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="TextBlockMouseLeftButtonDown"/>
                                     </DataTemplate>
                                 </HierarchicalDataTemplate.ItemTemplate>
                             </HierarchicalDataTemplate>

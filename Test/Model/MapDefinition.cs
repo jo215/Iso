@@ -20,8 +20,8 @@ namespace Editor.Model
         public int Height { get { return Cells.GetLength(1); } }
         public int TileWidth { get; set; }
         public int TileHeight { get; set; }
-        static string BaseContentDir;
-        internal HashSet<Point> undoInfo { get; set; }
+        static string _baseContentDir;
+        internal HashSet<Point> UndoInfo { get; set; }
 
         //  Remember to update Clone() before adding any more instance variables!
 
@@ -30,14 +30,14 @@ namespace Editor.Model
         /// </summary>
         public MapDefinition(ZTile defaultFloorTile, Isometry iso, string baseContentDir)
         {
-            BaseContentDir = baseContentDir;
+            _baseContentDir = baseContentDir;
             Iso = iso;
             DefaultFloorTile = defaultFloorTile;
 
             TileHeight = 37;
             TileWidth = 73;
             
-            undoInfo = new HashSet<Point>();
+            UndoInfo = new HashSet<Point>();
             Cells = new MapCell[0, 0];
             ClearAllCells(26, 45);
         }
@@ -50,8 +50,8 @@ namespace Editor.Model
             lock (Cells)
             {
                 Cells = new MapCell[width, height];
-                for (int x = 0; x < Cells.GetLength(0); x++)
-                    for (int y = 0; y < Cells.GetLength(1); y++)
+                for (var x = 0; x < Cells.GetLength(0); x++)
+                    for (var y = 0; y < Cells.GetLength(1); y++)
                         Cells[x, y] = new MapCell(DefaultFloorTile);
             }
         }
@@ -63,9 +63,7 @@ namespace Editor.Model
         /// <returns></returns>
         public bool IsOnGrid(Point p)
         {
-            if (p.X < 0 || p.X >= Cells.GetLength(0) || p.Y < 0 || p.Y >= Cells.GetLength(1))
-                return false;
-            return true;
+            return p.X >= 0 && p.X < Cells.GetLength(0) && p.Y >= 0 && p.Y < Cells.GetLength(1);
         }
 
         /// <summary>
@@ -79,7 +77,7 @@ namespace Editor.Model
             {
                 //  Map info
                 file.WriteLine("<Map>");
-                file.WriteLine(Enum.GetName(typeof(IsometricStyle), Iso.style));
+                file.WriteLine(Enum.GetName(typeof(IsometricStyle), Iso.Style));
                 file.WriteLine(Width);
                 file.WriteLine(Height);
                 file.WriteLine(TileWidth);
@@ -87,26 +85,25 @@ namespace Editor.Model
                 file.WriteLine("</Map>");
                 //  Set of all used tiles
                 file.WriteLine("<TileDictionary>");
-                HashSet<string> tileDictionary = new HashSet<string>();
+                var tileDictionary = new HashSet<string>();
 
-                foreach (MapCell cell in Cells)
+                foreach (var cell in Cells)
                 {
-                    foreach (ZTile tile in cell.AllTiles())
+                    foreach (var tile in cell.AllTiles().Where(tile => tile != null))
                     {
-                        if (tile != null)
-                            tileDictionary.Add(tile.RelativePath);
+                        tileDictionary.Add(tile.RelativePath);
                     }
                 }
-                List<string> finalList = tileDictionary.ToList();
-                for (int i = 0; i < finalList.Count; i++)
+                var finalList = tileDictionary.ToList();
+                foreach (var t in finalList)
                 {
-                    file.WriteLine(finalList[i]);
+                    file.WriteLine(t);
                 }
                 file.WriteLine("</TileDictionary>");
                 //  Map cell info
                 file.WriteLine("<Cells>");
-                for (int x = 0; x < Cells.GetLength(0); x++)
-                    for (int y = 0; y < Cells.GetLength(1); y++)
+                for (var x = 0; x < Cells.GetLength(0); x++)
+                    for (var y = 0; y < Cells.GetLength(1); y++)
                         Cells[x, y].ToStream(file, this, finalList);
                 file.WriteLine("</Cells>");
             }
@@ -116,12 +113,14 @@ namespace Editor.Model
         /// Opens and returns a map from file.
         /// </summary>
         /// <param name="filePath"></param>
+        /// <param name="Iso"> </param>
+        /// <param name="asString"> </param>
         /// <returns></returns>
         public static MapDefinition OpenMap(string filePath, Isometry Iso, bool asString)
         {
             if (filePath == null)
-                return new MapDefinition(null, Iso, BaseContentDir) ;
-            MapDefinition newMap = new MapDefinition(null, Iso, BaseContentDir);
+                return new MapDefinition(null, Iso, _baseContentDir) ;
+            var newMap = new MapDefinition(null, Iso, _baseContentDir);
 
             TextReader file;
             if (asString)
@@ -130,14 +129,14 @@ namespace Editor.Model
                 file = new StreamReader(filePath);
             
                 file.ReadLine(); // <Map>
-                newMap.Iso.style = (IsometricStyle)Enum.Parse(typeof(IsometricStyle), file.ReadLine());
+                newMap.Iso.Style = (IsometricStyle)Enum.Parse(typeof(IsometricStyle), file.ReadLine());
                 newMap.ClearAllCells(int.Parse(file.ReadLine()), int.Parse(file.ReadLine()));
                 newMap.TileWidth = int.Parse(file.ReadLine());
                 newMap.TileHeight = int.Parse(file.ReadLine());
                 file.ReadLine(); // </Map>
                 file.ReadLine(); // <TileDictionary>
-                List<ZTile> requiredTiles = new List<ZTile>();
-                string line = file.ReadLine();
+                var requiredTiles = new List<ZTile>();
+                var line = file.ReadLine();
                 while (!line.Equals("</TileDictionary>"))
                 {
                     requiredTiles.Add(new ZTile("D:\\workspace\\BaseGame\\" + line));
@@ -146,19 +145,19 @@ namespace Editor.Model
                 }
                 Console.WriteLine(requiredTiles[0].Bitmaps.Count());
                 file.ReadLine(); // <Cells>
-                for (int x = 0; x < newMap.Cells.GetLength(0); x++)
-                    for (int y = 0; y < newMap.Cells.GetLength(1); y++)
+                for (var x = 0; x < newMap.Cells.GetLength(0); x++)
+                    for (var y = 0; y < newMap.Cells.GetLength(1); y++)
                     {
                         newMap.Cells[x, y] = MapCell.FromStream(file, requiredTiles);
                     }
                 file.ReadLine(); // </Cells>
                 //  Remake Parent links
-                for (int x = 0; x < newMap.Cells.GetLength(0); x++)
-                    for (int y = 0; y < newMap.Cells.GetLength(1); y++)
+                for (var x = 0; x < newMap.Cells.GetLength(0); x++)
+                    for (var y = 0; y < newMap.Cells.GetLength(1); y++)
                     {
-                        if (newMap.Cells[x, y].tempPoint.X != -1)
+                        if (newMap.Cells[x, y].TempPoint.X != -1)
                         {
-                            newMap.Cells[x, y].ParentCell = newMap.Cells[newMap.Cells[x, y].tempPoint.X, newMap.Cells[x, y].tempPoint.Y];
+                            newMap.Cells[x, y].ParentCell = newMap.Cells[newMap.Cells[x, y].TempPoint.X, newMap.Cells[x, y].TempPoint.Y];
                         }
                     }
 
@@ -174,14 +173,12 @@ namespace Editor.Model
         /// <returns></returns>
         internal HashSet<Point> getFootprint(Point gridPosition, ZTile tile)
         {
-            HashSet<Point> children = new HashSet<Point>();
-            children.Add(gridPosition);
+            var children = new HashSet<Point> {gridPosition};
             if (tile == null)
                 return children;
-            MapCell parent = Cells[gridPosition.X, gridPosition.Y];
 
-            int ne = tile.BoundingBox[0] / 6;
-            int nw = tile.BoundingBox[2] / 6;
+            var ne = tile.BoundingBox[0] / 6;
+            var nw = tile.BoundingBox[2] / 6;
             //  Adjust for tile-fraction overlaps
             if (tile.BoundingBox[0] % 6 > 0)
             {
@@ -191,10 +188,10 @@ namespace Editor.Model
             {
                 nw++;
             }
-            Point startPosition = gridPosition;
-            for (int i = 0; i < ne; i++)
+            var startPosition = gridPosition;
+            for (var i = 0; i < ne; i++)
             {
-                for (int j = 0; j < nw; j++)
+                for (var j = 0; j < nw; j++)
                 {
                     if (IsOnGrid(gridPosition))
                         children.Add(gridPosition);
@@ -285,13 +282,13 @@ namespace Editor.Model
         /// <returns></returns>
         internal MapDefinition Clone()
         {
-            var cloned = new MapDefinition(DefaultFloorTile, Iso, BaseContentDir) {Cells = new MapCell[Width,Height]};
+            var cloned = new MapDefinition(DefaultFloorTile, Iso, _baseContentDir) {Cells = new MapCell[Width,Height]};
             for (var x = 0; x < Cells.GetLength(0); x++)
                 for (var y = 0; y < Cells.GetLength(1); y++)
                     cloned.Cells[x, y] = Cells[x, y].Clone();
-            foreach (var p in undoInfo)
+            foreach (var p in UndoInfo)
             {
-                cloned.undoInfo.Add(p);
+                cloned.UndoInfo.Add(p);
             }
             return cloned;
         }

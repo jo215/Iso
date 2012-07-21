@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Editor.Model;
-using Xceed.Wpf.Toolkit;
+
 namespace Editor.View
 {
     /// <summary>
@@ -18,8 +18,9 @@ namespace Editor.View
 
         static public ObservableCollection<FactionList> Factions { get; set; }
 
-        public Unit selectedUnit { get; set; }
+        public Unit SelectedUnit { get; set; }
         public string Test { get; set; }
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -33,7 +34,7 @@ namespace Editor.View
             //  Faction unit lists
             Factions = new ObservableCollection<FactionList> { new FactionList("Player 1"), new FactionList("Player 2") };
             Factions[0].Units.Add(new Unit(0, BodyType.Omega, WeaponType.SMG, Stance.Stand, 4, 4, 4, 3, 3, "Donny the Bull"));
-            selectedUnit = Factions[0].Units[0];
+            SelectedUnit = Factions[0].Units[0];
             InitializeComponent();
             body.ItemsSource = Enum.GetValues(typeof (BodyType));
             weapon.ItemsSource = Enum.GetValues(typeof (WeaponType));
@@ -68,10 +69,10 @@ namespace Editor.View
 
         #endregion
 
-        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void TextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            selectedUnit = (Unit) ((TextBlock) e.Source).DataContext;
-            selUnit.DataContext = selectedUnit;
+            SelectedUnit = (Unit) ((TextBlock) e.Source).DataContext;
+            selUnit.DataContext = SelectedUnit;
         }
 
     }

@@ -51,7 +51,7 @@ namespace IsoGame.Misc
             if (_anchorSpace.Bottom < _anchorSpace.Top)
                 _anchorSpace.Height = 0;
             //  Adjust for staggered maps to eliminate jaggies when scrolling to map edge
-            if (_iso.style == IsometricStyle.Staggered)
+            if (_iso.Style == IsometricStyle.Staggered)
             {
                 _anchorSpace.Y += _map.TileHeight;
                 _anchorSpace.Height -= _map.TileHeight;

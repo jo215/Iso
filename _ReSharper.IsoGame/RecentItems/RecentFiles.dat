@@ -1,66 +1,66 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:AwesomiumUIManager.cs" caret="547" fromTop="23" />
-    <File id="FCC4A227-424D-4679-AC01-95108991DA6E/d:Maps/f:TestMap1.jim" caret="0" fromTop="0" />
-    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:MainMenuScreen.cs" caret="2797" fromTop="12" />
-    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="8332" fromTop="0" />
-    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:GameplayScreen.cs" caret="4073" fromTop="46" />
-    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/f:ClientGame.cs" caret="1338" fromTop="11" />
-    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="3796" fromTop="22" />
-    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Network/f:LobbyServerState.cs" caret="3783" fromTop="108" />
     <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Screens/f:LobbyScreen.cs" caret="8238" fromTop="19" />
-    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:BaseZarSprite.cs" caret="3458" fromTop="27" />
-    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:ZSprite.cs" caret="0" fromTop="0" />
     <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:State/f:GameState.cs" caret="424" fromTop="8" />
     <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:State/f:PlayerState.cs" caret="764" fromTop="18" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:MapDefinition.cs" caret="1154" fromTop="21" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:MapCell.cs" caret="2540" fromTop="0" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:Roster.cs" caret="401" fromTop="19" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/f:App.xaml" caret="0" fromTop="0" />
     <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/f:App.xaml.cs" caret="142" fromTop="6" />
-    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:Zar.cs" caret="0" fromTop="0" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="0" fromTop="0" />
-    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:ZTile.cs" caret="4327" fromTop="10" />
-    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:AnimationCollection.cs" caret="1069" fromTop="34" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml.cs" caret="16233" fromTop="31" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml" caret="0" fromTop="0" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:ViewModel.cs" caret="1983" fromTop="39" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:Unit.cs" caret="831" fromTop="0" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:AnimationCollection.cs" caret="1656" fromTop="27" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:AnimationSequence.cs" caret="829" fromTop="23" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:BitmapTools.cs" caret="5433" fromTop="19" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:Zar.cs" caret="1525" fromTop="42" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:BaseZarSprite.cs" caret="0" fromTop="0" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:ZarConverter.cs" caret="0" fromTop="0" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:ZTile.cs" caret="690" fromTop="26" />
+    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:ZSprite.cs" caret="0" fromTop="0" />
+    <File id="8F5F8BD4-732A-41F8-953C-43910CA7812B/f:Test.cs" caret="2471" fromTop="21" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:DoubleLinkedListNode.cs" caret="86" fromTop="3" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:MapCell.cs" caret="4829" fromTop="147" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="0" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml.cs" caret="14731" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="0" fromTop="0" />
     <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:FactionList.cs" caret="0" fromTop="0" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="7868" fromTop="26" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="3105" fromTop="21" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="2676" fromTop="28" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="2458" fromTop="14" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:Unit.cs" caret="1082" fromTop="8" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:Roster.cs" caret="0" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="7419" fromTop="11" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml" caret="0" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="1628" fromTop="59" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:ViewModel.cs" caret="0" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/f:App.xaml" caret="0" fromTop="0" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="12647" fromTop="23" />
+    <File id="BE8814FF-22AB-49C5-A67F-AC078413089F/d:Misc/f:Scroller.cs" caret="0" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:Model/f:MapDefinition.cs" caret="0" fromTop="0" />
   </RecentFiles>
   <RecentEdits>
-    <File id="BB1439C6-5C86-4CDD-BD2A-3A93950F0723/f:ZTile.cs" caret="11660" fromTop="12" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="392" fromTop="11" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="233" fromTop="5" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="1561" fromTop="20" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="2700" fromTop="30" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="749" fromTop="15" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="2127" fromTop="24" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="2868" fromTop="30" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="886" fromTop="7" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="2361" fromTop="24" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="2416" fromTop="25" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="1990" fromTop="14" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="2596" fromTop="22" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MainWindow.xaml" caret="4632" fromTop="19" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="624" fromTop="21" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="357" fromTop="5" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="1491" fromTop="23" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="1303" fromTop="20" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="821" fromTop="10" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="4795" fromTop="13" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="4795" fromTop="18" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="4795" fromTop="23" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="4795" fromTop="23" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="4833" fromTop="25" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="3342" fromTop="20" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="3698" fromTop="25" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="4035" fromTop="30" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="4635" fromTop="31" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml" caret="3105" fromTop="21" />
-    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:CharacterEditor.xaml.cs" caret="2676" fromTop="28" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="3867" fromTop="16" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="4255" fromTop="9" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="4921" fromTop="15" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="5558" fromTop="18" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="6090" fromTop="17" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="6418" fromTop="16" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="7123" fromTop="18" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:MapCanvas.cs" caret="7419" fromTop="14" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="13" fromTop="0" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="255" fromTop="10" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="708" fromTop="20" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="804" fromTop="25" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="1130" fromTop="18" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="1030" fromTop="10" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="1357" fromTop="16" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="1971" fromTop="25" />
+    <File id="0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A/d:View/f:NewMapSettings.xaml.cs" caret="1628" fromTop="17" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="473" fromTop="20" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="821" fromTop="13" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="1080" fromTop="16" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="1814" fromTop="20" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="2720" fromTop="18" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="3159" fromTop="19" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="3801" fromTop="17" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="3927" fromTop="13" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="4380" fromTop="16" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="6667" fromTop="23" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="7136" fromTop="24" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="11604" fromTop="21" />
+    <File id="4FB6AE73-49CC-4AAA-9713-22160D90EFAD/f:Isometry.cs" caret="12647" fromTop="23" />
   </RecentEdits>
 </RecentFiles>

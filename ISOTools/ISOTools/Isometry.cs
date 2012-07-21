@@ -18,7 +18,7 @@ namespace ISOTools
         North = 0, NorthEast = 1, East = 2, SouthEast = 3, South = 4, SouthWest = 5, West = 6, NorthWest = 7
     }
 
-    enum MM
+    enum MouseMappings
     {
         NW, NE, SW, SE, Center
     }
@@ -30,44 +30,44 @@ namespace ISOTools
     {
         public Point ScreenAnchor { get; set; }
 
-        public IsometricStyle style { get; set; }
-        static int tileWidth;
-        static int tileHeight;
-        static MM[,] lookupTable;
+        public IsometricStyle Style { get; set; }
+        readonly int _tileWidth;
+        readonly int _tileHeight;
+        static MouseMappings[,] _lookupTable;
 
         /// <summary>
         /// Constructor.
         /// </summary>
         public Isometry(IsometricStyle isoStyle, string mouseBitmap)
         {
-            style = isoStyle;
-            Bitmap mouseMap = new Bitmap(mouseBitmap);
-            tileHeight = mouseMap.Height;
-            tileWidth = mouseMap.Width;
+            Style = isoStyle;
+            var mouseMap = new Bitmap(mouseBitmap);
+            _tileHeight = mouseMap.Height;
+            _tileWidth = mouseMap.Width;
             ScreenAnchor = new Point(0, 0);
 
             //  Create the lookup table from the mouseMap bitmap
-            lookupTable = new MM[mouseMap.Width, mouseMap.Height];
+            _lookupTable = new MouseMappings[mouseMap.Width, mouseMap.Height];
 
-            Color NW = mouseMap.GetPixel(0, 0);
-            Color NE = mouseMap.GetPixel(mouseMap.Width - 1, 0);
-            Color SW = mouseMap.GetPixel(0, mouseMap.Height - 1);
-            Color SE = mouseMap.GetPixel(mouseMap.Width - 1, mouseMap.Height - 1);
-            
-            for (int x = 0; x < mouseMap.Width; x++)
-                for (int y = 0; y < mouseMap.Height; y++)
+            var nw = mouseMap.GetPixel(0, 0);
+            var ne = mouseMap.GetPixel(mouseMap.Width - 1, 0);
+            var sw = mouseMap.GetPixel(0, mouseMap.Height - 1);
+            var se = mouseMap.GetPixel(mouseMap.Width - 1, mouseMap.Height - 1);
+
+            for (var x = 0; x < mouseMap.Width; x++)
+                for (var y = 0; y < mouseMap.Height; y++)
                 {
-                    Color toTest = mouseMap.GetPixel(x, y);
-                    if (toTest == NW)
-                        lookupTable[x, y] = MM.NW;
-                    else if (toTest == NE)
-                        lookupTable[x, y] = MM.NE;
-                    else if (toTest == SE)
-                        lookupTable[x, y] = MM.SE;
-                    else if (toTest == SW)
-                        lookupTable[x, y] = MM.SW;
+                    var toTest = mouseMap.GetPixel(x, y);
+                    if (toTest == nw)
+                        _lookupTable[x, y] = MouseMappings.NW;
+                    else if (toTest == ne)
+                        _lookupTable[x, y] = MouseMappings.NE;
+                    else if (toTest == se)
+                        _lookupTable[x, y] = MouseMappings.SE;
+                    else if (toTest == sw)
+                        _lookupTable[x, y] = MouseMappings.SW;
                     else
-                        lookupTable[x, y] = MM.Center;
+                        _lookupTable[x, y] = MouseMappings.Center;
                 }
             mouseMap.Dispose();
         }
@@ -79,7 +79,7 @@ namespace ISOTools
         /// <returns></returns>
         public CompassDirection TurnRight(CompassDirection currentFacing)
         {
-            int current = (int)currentFacing + 1;
+            var current = (int)currentFacing + 1;
             if (current == 8)
                 current = 0;
             return (CompassDirection)current;
@@ -92,7 +92,7 @@ namespace ISOTools
         /// <returns></returns>
         public CompassDirection TurnLeft(CompassDirection currentFacing)
         {
-            int current = (int)currentFacing - 1;
+            var current = (int)currentFacing - 1;
             if (current == -1)
                 current = 7;
             return (CompassDirection)current;
@@ -111,33 +111,27 @@ namespace ISOTools
         public Point MouseMapper(Point worldPixel)
         {
             //  #1  Account for screen anchor
-            Point p = new Point(ScreenAnchor.X, ScreenAnchor.Y);
+            var p = new Point(ScreenAnchor.X, ScreenAnchor.Y);
                      
             //  #2  upper left of tile map is at [0,0]
-
-            Point plot = TilePlotter(new Point(0, 0));
+            var plot = TilePlotter(new Point(0, 0));
             worldPixel.X -= plot.X;
             worldPixel.Y -= plot.Y;
 
             //  #3  Determine MouseMap coordinates
-
             //  Find coarse co-ordinates
-            Point coarse = new Point();
-            coarse.X = worldPixel.X / tileWidth;
-            coarse.Y = worldPixel.Y / tileHeight;
+            var coarse = new Point {X = worldPixel.X/_tileWidth, Y = worldPixel.Y/_tileHeight};
             //  Find fine coordinates
-            Point fine = new Point();
-            fine.X = worldPixel.X % tileWidth;
-            fine.Y = worldPixel.Y % tileHeight;
+            var fine = new Point {X = worldPixel.X%_tileWidth, Y = worldPixel.Y%_tileHeight};
             //  Adjust for negative fine coordinates
             if (fine.X < 0)
             {
-                fine.X += tileWidth;
+                fine.X += _tileWidth;
                 coarse.X--;
             }
             if (fine.Y < 0)
             {
-                fine.Y += tileHeight;
+                fine.Y += _tileHeight;
                 coarse.Y--;
             }
 
@@ -169,18 +163,18 @@ namespace ISOTools
             }
 
             //  #5  Lookup from MouseMap
-            switch (lookupTable[fine.X, fine.Y])
+            switch (_lookupTable[fine.X, fine.Y])
             {
-                case MM.NE:
+                case MouseMappings.NE:
                     p = TileWalker(p, CompassDirection.NorthEast);
                     break;
-                case MM.NW:
+                case MouseMappings.NW:
                     p = TileWalker(p, CompassDirection.NorthWest);
                     break;
-                case MM.SE:
+                case MouseMappings.SE:
                     p = TileWalker(p, CompassDirection.SouthEast);
                     break;
-                case MM.SW:
+                case MouseMappings.SW:
                     p = TileWalker(p, CompassDirection.SouthWest);
                     break;
             }
@@ -197,8 +191,8 @@ namespace ISOTools
         /// <returns></returns>
         public Point TileWalker(Point startTile, CompassDirection dir, int distance)
         {
-            Point p = startTile;
-            for (int i = 0; i < distance; i++)
+            var p = startTile;
+            for (var i = 0; i < distance; i++)
                 p = TileWalker(p, dir);
             return p;
         }
@@ -211,8 +205,8 @@ namespace ISOTools
         /// <returns></returns>
         public Point TileWalker(Point startTile, CompassDirection dir)
         {
-            Point p = new Point(startTile.X, startTile.Y);
-            switch (style)
+            var p = new Point(startTile.X, startTile.Y);
+            switch (Style)
             {
                 case IsometricStyle.Diamond:
                     switch (dir)
@@ -325,20 +319,20 @@ namespace ISOTools
         /// <returns></returns>
         public Point TilePlotter(Point tile)
         {
-            Point p = new Point();
-            switch (style)
+            var p = new Point();
+            switch (Style)
             {
                 case IsometricStyle.Slide:
-                    p.X = tile.X * tileWidth + tile.Y * tileWidth / 2;
-                    p.Y = tile.Y * tileHeight / 2;
+                    p.X = tile.X * _tileWidth + tile.Y * _tileWidth / 2;
+                    p.Y = tile.Y * _tileHeight / 2;
                     break;
                 case IsometricStyle.Staggered:
-                    p.X = tile.X * tileWidth + (tile.Y & 1) * (tileWidth / 2);
-                    p.Y = tile.Y * (tileHeight / 2);
+                    p.X = tile.X * _tileWidth + (tile.Y & 1) * (_tileWidth / 2);
+                    p.Y = tile.Y * (_tileHeight / 2);
                     break;
                 case IsometricStyle.Diamond:
-                    p.X = (tile.X - tile.Y) * tileWidth / 2;
-                    p.Y = (tile.X + tile.Y) * tileHeight / 2;
+                    p.X = (tile.X - tile.Y) * _tileWidth / 2;
+                    p.Y = (tile.X + tile.Y) * _tileHeight / 2;
                     break;
             }
             return p;
@@ -351,7 +345,7 @@ namespace ISOTools
         /// <returns></returns>
         public Microsoft.Xna.Framework.Point TilePlotter(Microsoft.Xna.Framework.Point tile)
         {
-            Point p = TilePlotter(new Point(tile.X, tile.Y));
+            var p = TilePlotter(new Point(tile.X, tile.Y));
             return new Microsoft.Xna.Framework.Point(p.X, p.Y);
         }
     }

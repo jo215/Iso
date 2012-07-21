@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Globalization;
 
 namespace Editor.View
@@ -17,7 +8,7 @@ namespace Editor.View
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class NewMapSettingsDialog : Window
+    public partial class NewMapSettingsDialog
     {
         public int MapWidth { get; set; }
         public int MapHeight { get; set; }
@@ -33,12 +24,12 @@ namespace Editor.View
             heightBox.Text = "45";
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void WindowLoaded(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void okButton_Click(object sender, RoutedEventArgs e)
+        private void OKButtonClick(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }
@@ -46,25 +37,30 @@ namespace Editor.View
 
     public class NewMapValidationRule : ValidationRule
     {
-        int minSize = 10;
-        int maxSize = 100;
+        int _minSize = 10;
+        int _maxSize = 256;
 
         public int MinSize
         {
-            get { return this.minSize; }
-            set { this.minSize = value; }
+            get { return _minSize; }
+            set { _minSize = value; }
         }
 
         public int MaxSize
         {
-            get { return this.maxSize; }
-            set { this.maxSize = value; }
+            get { return _maxSize; }
+            set { _maxSize = value; }
         }
 
+        /// <summary>
+        /// Validation rule for map size.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="cultureInfo"></param>
+        /// <returns></returns>
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             int size;
-
             // Is an int
             if (!int.TryParse((string)value, out size))
             {
@@ -72,9 +68,9 @@ namespace Editor.View
             }
 
             // Is in range?
-            if ((size < this.minSize) || (size > this.maxSize))
+            if ((size < _minSize) || (size > _maxSize))
             {
-                string msg = string.Format("Margin must be between {0} and {1}.", this.minSize, this.maxSize);
+                var msg = string.Format("Map dimensions must be between {0} and {1}.", _minSize, _maxSize);
                 return new ValidationResult(false, msg);
             }
 

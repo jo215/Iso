@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Editor.Model
+﻿namespace Editor.Model
 {
+    /// <summary>
+    /// Exactly what it says on the tin.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class DoubleLinkedListNode<T>
     {
         private T value;

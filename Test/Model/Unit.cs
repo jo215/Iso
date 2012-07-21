@@ -30,7 +30,7 @@ namespace Editor.Model
     /// </summary>
     public class Unit
     {
-        private static byte _nextID = 0;
+        private static byte _nextID;
         public byte OwnerID { get; set; }
         public byte ID { get; set; }
         public BodyType Body { get; set; }

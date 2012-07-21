@@ -20,9 +20,7 @@ namespace Editor.View
 
         public MapDefinition Map { get; set; }
         public MapCanvas MapCanvas { get; set; }
-
-        
-        
+ 
         DoubleLinkedListNode<MapDefinition> _currentUndoNode;
 
         readonly Dispatcher _uiDispatcher;
@@ -90,9 +88,9 @@ namespace Editor.View
             if (_currentUndoNode != null)
                 _currentUndoNode.Next = newNode;
             _currentUndoNode = newNode;
-            Map.undoInfo.Clear();
-            Map.undoInfo.UnionWith(Map.LegallyPlaceTile(gridPosition, layer, tileToPlace));
-            MapCanvas.adaptiveTileRefresh(Map.undoInfo.OrderBy(x => x.Y));
+            Map.UndoInfo.Clear();
+            Map.UndoInfo.UnionWith(Map.LegallyPlaceTile(gridPosition, layer, tileToPlace));
+            MapCanvas.AdaptiveTileRefresh(Map.UndoInfo.OrderBy(x => x.Y));
         }
 
         /// <summary>
@@ -112,7 +110,7 @@ namespace Editor.View
             if (_currentUndoNode.Previous != null)
                 _currentUndoNode = _currentUndoNode.Previous;
             MapCanvas.Map = Map;
-            MapCanvas.adaptiveTileRefresh(Map.undoInfo.Union(temp.undoInfo).OrderBy(x => x.Y).ThenBy(c => c.X));
+            MapCanvas.AdaptiveTileRefresh(Map.UndoInfo.Union(temp.UndoInfo).OrderBy(x => x.Y).ThenBy(c => c.X));
         }
 
         /// <summary>
@@ -130,7 +128,7 @@ namespace Editor.View
             if (_currentUndoNode.Previous != null)
                 _currentUndoNode.Previous.Next = _currentUndoNode;
             MapCanvas.Map = Map;
-            MapCanvas.adaptiveTileRefresh(Map.undoInfo.Union(temp.undoInfo).OrderBy(x => x.Y).ThenBy(c => c.X));
+            MapCanvas.AdaptiveTileRefresh(Map.UndoInfo.Union(temp.UndoInfo).OrderBy(x => x.Y).ThenBy(c => c.X));
         }
 
         /// <summary>
