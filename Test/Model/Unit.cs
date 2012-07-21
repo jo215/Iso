@@ -91,7 +91,7 @@ namespace Editor.Model
                 }
                 else if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + "\\Images\\Characters\\" + key + ".png"))
                 {
-                    var bim = new BitmapImage(new Uri("\\Images\\Characters\\" + key + ".png"));
+                    var bim = new BitmapImage(new Uri("pack://application:,,,/Images/Characters/" + key + ".png"));
                     bim.CacheOption = BitmapCacheOption.OnLoad;
                     Images.Add(key, bim);
                     return bim;

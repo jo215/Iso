@@ -77,7 +77,7 @@ namespace ZarTools
             Console.WriteLine(_baseSprite.FileName);
 
             var pics = new string[] { "Stand", "StandClub", "StandHeavy", "StandKnife", "StandMinigun", "StandPistol",
-                                        "StandRifle", "StandRocket"};
+                                        "StandRifle", "StandRocket", "StandSMG", "StandSpear"};
             foreach (var q in pics)
             {
                 AnimationSequence seq;
