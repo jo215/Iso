@@ -66,6 +66,9 @@ namespace ZarTools
                 _baseSprite.ReadAnimation(collection2);
         }
 
+        /// <summary>
+        /// Saves out a 1-image reprsentation of this sprite.
+        /// </summary>
         public void SavePreviewImages()
         {
             if (_baseSprite.FileName.Contains("DeathClaw") || _baseSprite.FileName.Contains("Treadmill")
@@ -73,17 +76,26 @@ namespace ZarTools
                 return;
             Console.WriteLine(_baseSprite.FileName);
 
-            var collection = _baseSprite.Sequences["Stand"].AnimCollection;
+            var pics = new string[] { "Stand", "StandClub", "StandHeavy", "StandKnife", "StandMinigun", "StandPistol",
+                                        "StandRifle", "StandRocket"};
+            foreach (var q in pics)
+            {
+                AnimationSequence seq;
+                if (_baseSprite.Sequences.TryGetValue(q, out seq))
+                {
+                    var collection = _baseSprite.Sequences[q].AnimCollection;
 
-            _baseSprite.ReadAnimation(collection);
-            var i = _baseSprite.Collections[collection].FrameCount * 4;
-            var width = _baseSprite.Collections[collection].Textures[i].Width;
-            var height = _baseSprite.Collections[collection].Textures[i].Height;
+                    _baseSprite.ReadAnimation(collection);
+                    var i = _baseSprite.Collections[collection].FrameCount * 4;
+                    var width = _baseSprite.Collections[collection].Textures[i].Width;
+                    var height = _baseSprite.Collections[collection].Textures[i].Height;
 
-            var s = _baseSprite.FileName.Substring(41, _baseSprite.FileName.Length - 45) ;
-            var fileName = "D:\\temp\\" + s + ".png";
-            
-            _baseSprite.Collections[collection].Textures[i].SaveAsPng(new FileStream(fileName,FileMode.OpenOrCreate,FileAccess.Write), width, height);
+                    var s = _baseSprite.FileName.Substring(41, _baseSprite.FileName.Length - 45);
+                    var fileName = "D:\\temp\\" + s + q + ".png";
+
+                    _baseSprite.Collections[collection].Textures[i].SaveAsPng(new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write), width, height);
+                }
+            }
         }
 
         /// <summary>

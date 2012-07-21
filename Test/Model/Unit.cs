@@ -1,13 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Controls;
+using System;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace Editor.Model
 {
     public enum BodyType
     {
         Assault, BeastLord, BOSElder, BOSScribe, CitizenAlpha, CitizenMediumFemale, CitizenMediumMale, CitizenThinFemale, CitizenThinMale,
-        DeathClaw, DeathClawBaby, Dummy, Enclave, Environmental, Ghoul, GhoulArmour, Goliath, LeatherFemale, LeatherMale, MetalFemale, MetalMale,
-        Mutant, MutantArmour, MutantFreak, Omega, Pipboy, Power, RaiderFemale, RaiderMale, RaiderMaleHuge, RaiderMaleLarge, 
-        ReaverFemale, ReaverMale, Sarge, TreadmillMan, TribalFemale, TribalMale, TribalMaleLarge, VaultFemale, VaultMale, WBOS
+        Enclave, Environmental, Ghoul, GhoulArmour, Goliath, LeatherFemale, LeatherMale, MetalFemale, MetalMale,
+        Mutant, MutantArmour, Omega, Pipboy, Power, RaiderFemale, RaiderMale, RaiderMaleHuge, RaiderMaleLarge, 
+        ReaverFemale, ReaverMale, Sarge, TribalFemale, TribalMale, TribalMaleLarge, VaultFemale, VaultMale, WBOS
     }
 
     public enum WeaponType
@@ -31,6 +35,8 @@ namespace Editor.Model
     public class Unit
     {
         private static byte _nextID;
+        public static Dictionary<string, BitmapImage> Images { get; set; }
+
         public byte OwnerID { get; set; }
         public byte ID { get; set; }
         public BodyType Body { get; set; }
@@ -68,5 +74,41 @@ namespace Editor.Model
                 Effects.Add(se);
             }
         }
+
+        public BitmapImage Image
+        {
+            get
+            {
+                Console.WriteLine(System.AppDomain.CurrentDomain.BaseDirectory);
+                if (Images == null)
+                    Images = new Dictionary<string, BitmapImage>();
+
+                string key = Enum.GetName(typeof(BodyType), Body) + "Stand" + Enum.GetName(typeof(WeaponType), Weapon);
+
+                if (Images.ContainsKey(key))
+                {
+                    return Images[key];
+                }
+                else if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + "\\Images\\Characters\\" + key + ".png"))
+                {
+                    var bim = new BitmapImage(new Uri("\\Images\\Characters\\" + key + ".png"));
+                    bim.CacheOption = BitmapCacheOption.OnLoad;
+                    Images.Add(key, bim);
+                    return bim;
+                }
+
+                key = Enum.GetName(typeof(BodyType), Body) + "Stand";
+                
+                if (Images.ContainsKey(key))
+                    return Images[key];
+
+                var bimi = new BitmapImage(new Uri("pack://application:,,,/Images/Characters/" + key + ".png"));
+                bimi.CacheOption = BitmapCacheOption.OnLoad;
+                Images.Add(key, bimi);
+                return bimi;
+            }
+            private set { }
+        }
+        
     }
 }

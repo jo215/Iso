@@ -69,10 +69,25 @@ namespace Editor.View
 
         #endregion
 
+        #region events
+
         private void TextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             SelectedUnit = (Unit) ((TextBlock) e.Source).DataContext;
             selUnit.DataContext = SelectedUnit;
+            image1.Source = SelectedUnit.Image;
+        }
+
+        private void BodySelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            image1.Source = SelectedUnit.Image;
+        }
+
+        #endregion
+
+        private void WeaponSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            image1.Source = SelectedUnit.Image;
         }
 
     }
