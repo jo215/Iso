@@ -12,7 +12,7 @@ namespace Editor.Model
 
     public enum WeaponType
     {
-        Club, Heavy, Knife, Minigun, Pistol, Rifle, Rocket, SMG, Spear
+        None, Club, Heavy, Knife, Minigun, Pistol, Rifle, Rocket, SMG, Spear
     }
 
     public enum Stance
@@ -30,6 +30,7 @@ namespace Editor.Model
     /// </summary>
     public class Unit
     {
+        private static byte _nextID = 0;
         public byte OwnerID { get; set; }
         public byte ID { get; set; }
         public BodyType Body { get; set; }
@@ -46,11 +47,12 @@ namespace Editor.Model
         /// <summary>
         /// Constructor.
         /// </summary>
-        public Unit(byte ownerid, byte id, BodyType body, WeaponType weapon, Stance stance, 
+        public Unit(byte ownerid, BodyType body, WeaponType weapon, Stance stance, 
             byte iHP, byte cHP, byte expertise, ushort x, ushort y, string name, params StatusEffect[] effects )
         {
             OwnerID = ownerid;
-            ID = id;
+            ID = _nextID;
+            _nextID++;
             Body = body;
             Weapon = weapon;
             InitialHitPoints = iHP;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace ZarTools
@@ -12,100 +8,96 @@ namespace ZarTools
     /// </summary>
     internal class ZarConverter
     {
-        private static Color[,] palette = null;
-        private static Zar currentZar;
-        private static int drawPos;
-        private static int zPos;
-        private static int totalFrames;
-        private static int layerWidth, xOff, yOff;
-        private static SpriteBatch sb;
-        private static Texture2D pixel;
+        private static Color[,] _palette;
+        private static Zar _currentZar;
+        private static int _drawPos;
+        private static int _zPos;
+        private static int _totalFrames;
+        private static int _layerWidth, _xOff, _yOff;
+        private static SpriteBatch _sb;
+        private static Texture2D _pixel;
 
         /// <summary>
         /// Decodes a .zar file into a useable Texture2D
         /// </summary>
         /// <param name="device"></param>
         /// <param name="col"></param>
-        public static void makeBims(GraphicsDevice device, AnimationCollection col)
+        public static void MakeBims(GraphicsDevice device, AnimationCollection col)
         {
-            if (sb == null)
-                sb = new SpriteBatch(device);
-            if (pixel == null)
+            if (_sb == null)
+                _sb = new SpriteBatch(device);
+
+            if (_pixel == null)
             {
-                pixel = new Texture2D(device, 1, 1, false, SurfaceFormat.Color);
-                pixel.SetData(new[] { Color.White });
+                _pixel = new Texture2D(device, 1, 1, false, SurfaceFormat.Color);
+                _pixel.SetData(new[] { Color.White });
             }
-		    //	Empty any existing BufferedImage data
-		    //col.getBims().clear();
+
 		    //	Number of images to convert/create
-		    totalFrames = col.dirCount * col.frameCount;
-		    //	Temporary variables
-		    int defaultColor;
-            int command, blockLength;
-		    List<int> RLEblocks;
-		    RenderTarget2D bigBim;
-		    //	Loop through each zar
-		    for ( int zar = 0 ; zar < totalFrames ; zar ++ ) {
+		    _totalFrames = col.DirCount * col.FrameCount;
+
+            //	Loop through each zar
+		    for (var zar = 0 ; zar < _totalFrames ; zar ++ ) {
 			    // Check zar not empty
-			    if ( zar >= col.zars.Count) break;
-			    //	Final image composite of all 4 layers
-			    bigBim = new RenderTarget2D(device, col.frameRect[zar].Width , col.frameRect[zar].Height );
+			    if (zar >= col.Zars.Count)
+                    break;
+			    //	Final image composite of all 4 layers - work out how big a rectangle we need 
+		        var bitmapSize = new Rectangle();
+                for (var layer = 0; layer < col.Sprite.Layers; layer++)
+                {
+                    bitmapSize = Rectangle.Union(bitmapSize,
+                                    new Rectangle(0, 0, col.Zars[zar + (layer*_totalFrames)].Width,
+                                                  col.Zars[zar + (layer*_totalFrames)].Height));
+                }
+		        var bigBim = new RenderTarget2D(device, bitmapSize.Width + 5 , bitmapSize.Height + 5 );
                 device.SetRenderTarget(bigBim);
                 device.Clear(Color.Transparent);
                 
                 //	Draw each layer 
-                sb.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied);
-			    for ( int layer = 0; layer < col.sprite.layers; layer ++ ) {
-
+                _sb.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied);
+			    for (var layer = 0; layer < col.Sprite.Layers; layer ++ ) {
 				    // Check zar not empty
-				    if (col.zars[zar + (layer * totalFrames)] == null) continue;
-
+				    if (col.Zars[zar + (layer * _totalFrames)] == null) continue;
 				    //	Get the correct zar
-				    currentZar = col.zars[zar + (layer * totalFrames)];
-				    if (currentZar.Width == 0) {
-					    layerWidth = 1;
-				    } else {
-					    //	Get this layer's width and offsets
-					    layerWidth = currentZar.Width;
-				    }
-				    xOff = currentZar.XOffset;
-				    yOff = currentZar.YOffset;
+				    _currentZar = col.Zars[zar + (layer * _totalFrames)];
+				    _layerWidth = _currentZar.Width == 0 ? 1 : _currentZar.Width;
+				    _xOff = _currentZar.XOffset;
+				    _yOff = _currentZar.YOffset;
 				    //	Get correct palette - should normally be collection's default palette
-				    palette = col.palette;
-				    defaultColor = currentZar.DefaultColor;
+				    _palette = col.Palette;
+				    var defaultColor = _currentZar.DefaultColor;
 				    //	Sequentially decode the RLE blocks
-				    zPos = 0;
-				    drawPos = 0;
-				    RLEblocks = currentZar.RLEblocks;
-                    
-				    while ( zPos < RLEblocks.Count ) {
+				    _zPos = 0;
+				    _drawPos = 0;
+				    var rleBlocks = _currentZar.RleBlocks;
+				    while ( _zPos < rleBlocks.Count ) {
 					    //	2-bit Command / 6-bit blockLength
-					    command = RLEblocks[zPos] & 3 ;
-					    blockLength = RLEblocks[zPos] >> 2;
-					    zPos ++;
+					    var command = rleBlocks[_zPos] & 3;
+					    var blockLength = rleBlocks[_zPos] >> 2;
+					    _zPos ++;
 					    //	Carry out RLE command
-					    for ( int i = 0; i < blockLength; i ++ ) {
+					    for (var i = 0; i < blockLength; i ++ ) {
 						    switch (command) {
 							    case 0 :	//	Skip the next blockLength pixels
-								    drawPos ++;
+								    _drawPos ++;
 							    break;
 							    case 1 :	//	Pixel RGB from palette, alpha = 255
-								    fastSetPixel(palette[RLEblocks[zPos],layer].R, palette[RLEblocks[zPos],layer].G, palette[RLEblocks[zPos],layer].B, 255);
+								    FastSetPixel(_palette[rleBlocks[_zPos],layer].R, _palette[rleBlocks[_zPos],layer].G, _palette[rleBlocks[_zPos],layer].B, 255);
 							    break;
 							    case 2 :	//	Pixel RGB from palette, alpha value (pair - so extra zPos increment)
-								    fastSetPixel(palette[RLEblocks[zPos],layer].R, palette[RLEblocks[zPos],layer].G, palette[RLEblocks[zPos],layer].B, (int)RLEblocks[zPos + 1]);
-								    zPos ++;
+								    FastSetPixel(_palette[rleBlocks[_zPos],layer].R, _palette[rleBlocks[_zPos],layer].G, _palette[rleBlocks[_zPos],layer].B, rleBlocks[_zPos + 1]);
+								    _zPos ++;
 							    break;
 							    case 3 :	//	Pixel RGB from palette's default color, alpha values
-								    fastSetPixel(palette[defaultColor,layer].R, palette[defaultColor,layer].G, palette[defaultColor,layer].B, (int)RLEblocks[zPos]);
+								    FastSetPixel(_palette[defaultColor,layer].R, _palette[defaultColor,layer].G, _palette[defaultColor,layer].B, rleBlocks[_zPos]);
 							    break;
 						    }
 					    }
 				    }
 			    }
-                sb.End();
+                _sb.End();
 			    //	All 4 layers are drawn - add to collection
-			    col.textures[zar] = (Texture2D)bigBim;
+			    col.Textures[zar] = bigBim;
 		    }
             device.SetRenderTarget(null);
 	    }
@@ -117,11 +109,11 @@ namespace ZarTools
         /// <param name="g"></param>
         /// <param name="b"></param>
         /// <param name="a"></param>
-        private static void fastSetPixel(int r, int g, int b, int a)
+        private static void FastSetPixel(int r, int g, int b, int a)
         {
-            sb.Draw(pixel, new Vector2(drawPos % layerWidth + xOff, drawPos / layerWidth + yOff), new Color(r, g, b, a));
-            drawPos++;
-            zPos++;
+            _sb.Draw(_pixel, new Vector2(_drawPos % _layerWidth + _xOff, _drawPos / _layerWidth + _yOff), new Color(r, g, b, a));
+            _drawPos++;
+            _zPos++;
         }
     }
 }

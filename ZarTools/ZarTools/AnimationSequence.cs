@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ZarTools
 {
     class AnimationSequence
     {
-        internal string name { get; private set; }
-        internal int[] frames { get; private set; }
-        internal Dictionary<int, List<object>> events { get; private set; }
-        internal short animCollection { get; private set; }
+        internal string Name { get; private set; }
+        internal int[] Frames { get; private set; }
+        internal Dictionary<int, List<object>> Events { get; private set; }
+        internal short AnimCollection { get; private set; }
 
         /// <summary>
         /// Constructor.
@@ -21,11 +18,10 @@ namespace ZarTools
         /// <param name="collection"></param>
         public AnimationSequence(string name, int[] framesArray, Dictionary<int, List<object>> events, short collection)
         {
-            // TODO: Complete member initialization
-            this.name = name;
-            this.frames = framesArray;
-            this.events = events;
-            this.animCollection = collection;
+            Name = name;
+            Frames = framesArray;
+            Events = events;
+            AnimCollection = collection;
         }
     }
 }

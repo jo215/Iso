@@ -21,8 +21,8 @@ namespace Editor.View
         public MapDefinition Map { get; set; }
         public MapCanvas MapCanvas { get; set; }
 
-        public ObservableCollection<KeyValuePair<string, ObservableCollection<Unit>>> Units { get; set; }
- 
+        
+        
         DoubleLinkedListNode<MapDefinition> _currentUndoNode;
 
         readonly Dispatcher _uiDispatcher;
@@ -44,14 +44,6 @@ namespace Editor.View
             MapCanvas = new MapCanvas(Map, uiDispatcher, baseContentDir + "tiles\\", iso);
             _useAltEditLayer = false;
 
-            //  Setup units - player 0 reserved for server / future ai
-            Units = new ObservableCollection<KeyValuePair<string, ObservableCollection<Unit>>>
-                        {new KeyValuePair<string, ObservableCollection<Unit>>("AI", new ObservableCollection<Unit>())};
-            //  Max 8 players but just add 2
-            for (var i = 1; i < 3; i++ )
-            {
-                Units.Add(new KeyValuePair<string, ObservableCollection<Unit>>("Player " + i, new ObservableCollection<Unit>()));
-            }
 
             //  Create the available TileSets and collection views
             TileSets = new Dictionary<string, ObservableCollection<ZTile>>();

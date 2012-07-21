@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -12,15 +10,15 @@ namespace ZarTools
     /// </summary>
     internal class AnimationCollection
     {
-        internal BaseZarSprite sprite;
-        internal int fileOffset;
-        internal String name;
-        internal int frameCount, dirCount;
-        internal Rectangle[] frameRect;
-        internal List<Zar> zars;
-        internal Texture2D[] textures;
-        internal Color[,] palette;
-        internal Rectangle collectionOffset;
+        internal BaseZarSprite Sprite;
+        internal int FileOffset;
+        internal String Name;
+        internal int FrameCount, DirCount;
+        internal Rectangle[] FrameRect;
+        internal List<Zar> Zars;
+        internal Texture2D[] Textures;
+        internal Color[,] Palette;
+        internal Rectangle CollectionOffset;
 
         /// <summary>
         /// Constructor.
@@ -35,22 +33,22 @@ namespace ZarTools
         /// <param name="sprite"></param>
         public AnimationCollection(int fileOffset, string colName, int frameCount, int dirCount, Rectangle[] frameRect, Color[,] palette, Rectangle collectionRect, BaseZarSprite sprite)
         {
-            this.fileOffset = fileOffset;
-            this.collectionOffset = collectionRect;
-            this.name = colName;
-            this.frameCount = frameCount;
-            this.dirCount = dirCount;
-            this.frameRect = frameRect;
-            this.palette = palette;
-            this.sprite = sprite;
-            this.zars = new List<Zar>();
-            this.textures = new Texture2D[frameCount * dirCount];
-            for (int i = 0; i < frameRect.Length; i++)
+            FileOffset = fileOffset;
+            CollectionOffset = collectionRect;
+            Name = colName;
+            FrameCount = frameCount;
+            DirCount = dirCount;
+            FrameRect = frameRect;
+            Palette = palette;
+            Sprite = sprite;
+            Zars = new List<Zar>();
+            Textures = new Texture2D[frameCount * dirCount];
+            for (var i = 0; i < frameRect.Length; i++)
             {
                 if (frameRect[i].Width <= 0)
-                    frameRect[i].Width = collectionOffset.Width ;
+                    frameRect[i].Width = CollectionOffset.Width ;
                 if (frameRect[i].Height <= 0)
-                    frameRect[i].Height = collectionOffset.Height;
+                    frameRect[i].Height = CollectionOffset.Height;
             }
         }
     }

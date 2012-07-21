@@ -1,18 +1,79 @@
 ﻿<Window x:Class="Editor.View.CharacterEditor"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:w="clr-namespace:Editor.View"
-        DataContext="{Binding RelativeSource={RelativeSource Self}}"
-        Title="Character Editor" Height="300" Width="600">
+        Title="Character Editor" Height="300" Width="600"
+        xmlns:local="clr-namespace:Editor.View"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+        
+    <Window.Resources>
+        <!-- Treeview related styling-->
+        <Style x:Key="TreeViewStyle" TargetType="TreeView">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value ="Bold"/>
+        </Style>
+    </Window.Resources>
+    <!-- Commands -->
+    <Window.CommandBindings>
+        <CommandBinding Command="local:UnitCommand.NewUnit" Executed="NewUnit"/>
+    </Window.CommandBindings>
     <Grid>
         <!-- Treeview of factions & units-->
-        <TreeView ItemsSource="w:ViewModel.Units}">
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Path=Units}">
-                    <TextBlock Text="Hello" />
-                </HierarchicalDataTemplate>
-                
-            </TreeView.ItemTemplate>
-        </TreeView>
+        <WrapPanel >
+            <StackPanel Margin="5">
+                <Label Content="All units"></Label>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Width="250" MinHeight="230" Height="Auto">
+                    <TreeView Style="{StaticResource TreeViewStyle}" ItemsSource="{x:Static local:CharacterEditor.Factions}">
+                        <!-- Specify the template that will display a node from Factions.  I.e., one each for each player.  It will get its nested
+                        items from the "Units" property of each item -->
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate ItemsSource="{Binding Path=Units}">
+                                <!-- Display the Faction by showing it's Name string -->
+                                <TextBlock  Text="{Binding Path=Name}">
+                                    <TextBlock.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Command="local:UnitCommand.NewUnit" CommandParameter="{Binding Name}">
+                                            </MenuItem>
+                                        </ContextMenu>
+                                    </TextBlock.ContextMenu>
+                                </TextBlock>
+                                <!-- Specify the nested template for the individual Unit items that are within the Factions.-->
+                                <HierarchicalDataTemplate.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
+                                    </DataTemplate>
+                                </HierarchicalDataTemplate.ItemTemplate>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                </ScrollViewer>
+            </StackPanel>
+            <!-- Selected unit information -->
+            <GroupBox Margin ="15, 22, 5, 5" Header="Selected Unit" Padding="5" DataContext="{Binding selectedUnit}" Name="selUnit">
+                <StackPanel>
+                    <!-- Name -->
+                    <WrapPanel >
+                        <Label Content="Name" Width="66" />
+                        <TextBox Width="148" Height="23"  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ></TextBox>
+                    </WrapPanel>
+                    <!--  Body/Armor type -->
+                    <WrapPanel Margin="0,10,0,0">
+                        <Label Content="Body" Width="66" />
+                        <ComboBox Name="body" Width="148" Height="23" SelectedItem="{Binding Body, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></ComboBox>
+                    </WrapPanel>
+                    <!-- Weapon type -->
+                    <WrapPanel>
+                        <Label Content="Weapon" Width="66" />
+                        <ComboBox Name="weapon" Width="148" Height="23" SelectedItem="{Binding Weapon, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></ComboBox>
+                    </WrapPanel>
+                    <!-- Expertise & Hit Points -->
+                    <WrapPanel Margin="0,10,0,0">
+                        <Label Content="Expertise" Width="66" />
+                        <xctk:IntegerUpDown Name="expertise" Value="{Binding Expertise, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Minimum="0" Maximum="255" Height="23"/>
+                        <Label Content="Hit Points" Width="66" />
+                        <xctk:IntegerUpDown Name="hitPoints" Value="{Binding InitialHitPoints, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Minimum="0" Maximum="255" Height="23"/>
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+        </WrapPanel>
     </Grid>
 </Window>

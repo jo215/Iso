@@ -70,3 +70,4 @@ C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Nuclex.Input.xml
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\SlimDX.DirectInput.xml
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Images\Toolbar\characters32.png
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\WPFToolkit.Extended.dll

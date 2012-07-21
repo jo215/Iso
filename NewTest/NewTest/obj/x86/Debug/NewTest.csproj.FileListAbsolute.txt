@@ -1,0 +1,9 @@
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\bin\x86\Debug\NewTest.exe
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\bin\x86\Debug\NewTest.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\bin\x86\Debug\ZarTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\bin\x86\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\bin\x86\Debug\ZarTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\obj\x86\Debug\NewTest.exe
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\NewTest\NewTest\obj\x86\Debug\NewTest.pdb

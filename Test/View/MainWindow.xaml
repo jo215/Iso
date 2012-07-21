@@ -2,9 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:w="clr-namespace:Editor.View"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Title="IsoEdit"
         MouseMove="Window_MouseMove">
+    
     <Window.Resources>
         <!-- The ListView style -->
         <Style x:Key="TilePickerListViewStyle">
@@ -74,8 +76,8 @@
         <!-- Canvas for overlays -->
         <Canvas Name="canvas1" Margin="0,50,0,0">
             <Image Stretch="Fill"  Name="cellOverlayImage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"
-                Width="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelWidth}"
-                Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelHeight}"></Image>
+                Width="{Binding RelativeSource={RelativeSource Self}, Path=Source.Width}"
+                Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.Height}"></Image>
         </Canvas>
         <!-- Tab Control-->
         <TabControl Grid.Column="1" Height="716" HorizontalAlignment="Right" Margin="0,269,5,0" Name="tilePickerTabControl" VerticalAlignment="Top" Width="361" SelectionChanged="tilePickerTabControl_SelectionChanged">

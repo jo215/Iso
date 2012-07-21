@@ -11,10 +11,11 @@ namespace Editor.View
     {
         public string Name { get; set; }
 
-        public ObservableCollection<Unit> Units { get; private set; }
+        public ObservableCollection<Unit> Units { get;  set; }
 
-        public FactionList()
+        public FactionList(string name)
         {
+            Name = name;
             Units = new ObservableCollection<Unit>();
         }
 
