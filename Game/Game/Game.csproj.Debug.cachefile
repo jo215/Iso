@@ -46,7 +46,10 @@ Images\Characters\AssaultStandMinigun.png
 Images\Characters\AssaultStandPistol.png
 Images\Characters\AssaultStandRifle.png
 Images\Characters\AssaultStandRocket.png
+Images\Characters\AssaultStandSMG.png
+Images\Characters\AssaultStandSpear.png
 Images\Characters\BeastLordStand.png
+Images\Characters\BeastLordStandSpear.png
 Images\Characters\BOSElderStand.png
 Images\Characters\BOSScribeStand.png
 Images\Characters\CitizenAlphaStand.png
@@ -63,6 +66,8 @@ Images\Characters\EnclaveStandMinigun.png
 Images\Characters\EnclaveStandPistol.png
 Images\Characters\EnclaveStandRifle.png
 Images\Characters\EnclaveStandRocket.png
+Images\Characters\EnclaveStandSMG.png
+Images\Characters\EnclaveStandSpear.png
 Images\Characters\EnvironmentalStand.png
 Images\Characters\EnvironmentalStandClub.png
 Images\Characters\EnvironmentalStandHeavy.png
@@ -71,6 +76,8 @@ Images\Characters\EnvironmentalStandMinigun.png
 Images\Characters\EnvironmentalStandPistol.png
 Images\Characters\EnvironmentalStandRifle.png
 Images\Characters\EnvironmentalStandRocket.png
+Images\Characters\EnvironmentalStandSMG.png
+Images\Characters\EnvironmentalStandSpear.png
 Images\Characters\GhoulArmourStand.png
 Images\Characters\GhoulArmourStandClub.png
 Images\Characters\GhoulArmourStandHeavy.png
@@ -79,6 +86,8 @@ Images\Characters\GhoulArmourStandMinigun.png
 Images\Characters\GhoulArmourStandPistol.png
 Images\Characters\GhoulArmourStandRifle.png
 Images\Characters\GhoulArmourStandRocket.png
+Images\Characters\GhoulArmourStandSMG.png
+Images\Characters\GhoulArmourStandSpear.png
 Images\Characters\GhoulStand.png
 Images\Characters\GhoulStandClub.png
 Images\Characters\GhoulStandHeavy.png
@@ -87,6 +96,8 @@ Images\Characters\GhoulStandMinigun.png
 Images\Characters\GhoulStandPistol.png
 Images\Characters\GhoulStandRifle.png
 Images\Characters\GhoulStandRocket.png
+Images\Characters\GhoulStandSMG.png
+Images\Characters\GhoulStandSpear.png
 Images\Characters\GoliathStand.png
 Images\Characters\LeatherFemaleStand.png
 Images\Characters\LeatherFemaleStandClub.png
@@ -96,6 +107,8 @@ Images\Characters\LeatherFemaleStandMinigun.png
 Images\Characters\LeatherFemaleStandPistol.png
 Images\Characters\LeatherFemaleStandRifle.png
 Images\Characters\LeatherFemaleStandRocket.png
+Images\Characters\LeatherFemaleStandSMG.png
+Images\Characters\LeatherFemaleStandSpear.png
 Images\Characters\LeatherMaleStand.png
 Images\Characters\LeatherMaleStandClub.png
 Images\Characters\LeatherMaleStandHeavy.png
@@ -104,6 +117,8 @@ Images\Characters\LeatherMaleStandMinigun.png
 Images\Characters\LeatherMaleStandPistol.png
 Images\Characters\LeatherMaleStandRifle.png
 Images\Characters\LeatherMaleStandRocket.png
+Images\Characters\LeatherMaleStandSMG.png
+Images\Characters\LeatherMaleStandSpear.png
 Images\Characters\MetalFemaleStand.png
 Images\Characters\MetalFemaleStandClub.png
 Images\Characters\MetalFemaleStandHeavy.png
@@ -112,6 +127,8 @@ Images\Characters\MetalFemaleStandMinigun.png
 Images\Characters\MetalFemaleStandPistol.png
 Images\Characters\MetalFemaleStandRifle.png
 Images\Characters\MetalFemaleStandRocket.png
+Images\Characters\MetalFemaleStandSMG.png
+Images\Characters\MetalFemaleStandSpear.png
 Images\Characters\MetalMaleStand.png
 Images\Characters\MetalMaleStandClub.png
 Images\Characters\MetalMaleStandHeavy.png
@@ -120,18 +137,22 @@ Images\Characters\MetalMaleStandMinigun.png
 Images\Characters\MetalMaleStandPistol.png
 Images\Characters\MetalMaleStandRifle.png
 Images\Characters\MetalMaleStandRocket.png
+Images\Characters\MetalMaleStandSMG.png
+Images\Characters\MetalMaleStandSpear.png
 Images\Characters\MutantArmourStand.png
 Images\Characters\MutantArmourStandClub.png
 Images\Characters\MutantArmourStandHeavy.png
 Images\Characters\MutantArmourStandKnife.png
 Images\Characters\MutantArmourStandMinigun.png
 Images\Characters\MutantArmourStandRocket.png
+Images\Characters\MutantArmourStandSpear.png
 Images\Characters\MutantStand.png
 Images\Characters\MutantStandClub.png
 Images\Characters\MutantStandHeavy.png
 Images\Characters\MutantStandKnife.png
 Images\Characters\MutantStandMinigun.png
 Images\Characters\MutantStandRocket.png
+Images\Characters\MutantStandSpear.png
 Images\Characters\OmegaStand.png
 Images\Characters\OmegaStandClub.png
 Images\Characters\OmegaStandHeavy.png
@@ -140,6 +161,8 @@ Images\Characters\OmegaStandMinigun.png
 Images\Characters\OmegaStandPistol.png
 Images\Characters\OmegaStandRifle.png
 Images\Characters\OmegaStandRocket.png
+Images\Characters\OmegaStandSMG.png
+Images\Characters\OmegaStandSpear.png
 Images\Characters\PipboyStand.png
 Images\Characters\PipboyStandClub.png
 Images\Characters\PipboyStandHeavy.png
@@ -148,6 +171,8 @@ Images\Characters\PipboyStandMinigun.png
 Images\Characters\PipboyStandPistol.png
 Images\Characters\PipboyStandRifle.png
 Images\Characters\PipboyStandRocket.png
+Images\Characters\PipboyStandSMG.png
+Images\Characters\PipboyStandSpear.png
 Images\Characters\PowerStand.png
 Images\Characters\PowerStandClub.png
 Images\Characters\PowerStandHeavy.png
@@ -156,6 +181,8 @@ Images\Characters\PowerStandMinigun.png
 Images\Characters\PowerStandPistol.png
 Images\Characters\PowerStandRifle.png
 Images\Characters\PowerStandRocket.png
+Images\Characters\PowerStandSMG.png
+Images\Characters\PowerStandSpear.png
 Images\Characters\RaiderFemaleStand.png
 Images\Characters\RaiderFemaleStandClub.png
 Images\Characters\RaiderFemaleStandHeavy.png
@@ -164,6 +191,8 @@ Images\Characters\RaiderFemaleStandMinigun.png
 Images\Characters\RaiderFemaleStandPistol.png
 Images\Characters\RaiderFemaleStandRifle.png
 Images\Characters\RaiderFemaleStandRocket.png
+Images\Characters\RaiderFemaleStandSMG.png
+Images\Characters\RaiderFemaleStandSpear.png
 Images\Characters\RaiderMaleHugeStand.png
 Images\Characters\RaiderMaleHugeStandClub.png
 Images\Characters\RaiderMaleHugeStandHeavy.png
@@ -172,6 +201,8 @@ Images\Characters\RaiderMaleHugeStandMinigun.png
 Images\Characters\RaiderMaleHugeStandPistol.png
 Images\Characters\RaiderMaleHugeStandRifle.png
 Images\Characters\RaiderMaleHugeStandRocket.png
+Images\Characters\RaiderMaleHugeStandSMG.png
+Images\Characters\RaiderMaleHugeStandSpear.png
 Images\Characters\RaiderMaleLargeStand.png
 Images\Characters\RaiderMaleLargeStandClub.png
 Images\Characters\RaiderMaleLargeStandHeavy.png
@@ -180,6 +211,8 @@ Images\Characters\RaiderMaleLargeStandMinigun.png
 Images\Characters\RaiderMaleLargeStandPistol.png
 Images\Characters\RaiderMaleLargeStandRifle.png
 Images\Characters\RaiderMaleLargeStandRocket.png
+Images\Characters\RaiderMaleLargeStandSMG.png
+Images\Characters\RaiderMaleLargeStandSpear.png
 Images\Characters\RaiderMaleStand.png
 Images\Characters\RaiderMaleStandClub.png
 Images\Characters\RaiderMaleStandHeavy.png
@@ -188,6 +221,8 @@ Images\Characters\RaiderMaleStandMinigun.png
 Images\Characters\RaiderMaleStandPistol.png
 Images\Characters\RaiderMaleStandRifle.png
 Images\Characters\RaiderMaleStandRocket.png
+Images\Characters\RaiderMaleStandSMG.png
+Images\Characters\RaiderMaleStandSpear.png
 Images\Characters\ReaverFemaleStand.png
 Images\Characters\ReaverFemaleStandClub.png
 Images\Characters\ReaverFemaleStandHeavy.png
@@ -196,6 +231,8 @@ Images\Characters\ReaverFemaleStandMinigun.png
 Images\Characters\ReaverFemaleStandPistol.png
 Images\Characters\ReaverFemaleStandRifle.png
 Images\Characters\ReaverFemaleStandRocket.png
+Images\Characters\ReaverFemaleStandSMG.png
+Images\Characters\ReaverFemaleStandSpear.png
 Images\Characters\ReaverMaleStand.png
 Images\Characters\ReaverMaleStandClub.png
 Images\Characters\ReaverMaleStandHeavy.png
@@ -204,6 +241,8 @@ Images\Characters\ReaverMaleStandMinigun.png
 Images\Characters\ReaverMaleStandPistol.png
 Images\Characters\ReaverMaleStandRifle.png
 Images\Characters\ReaverMaleStandRocket.png
+Images\Characters\ReaverMaleStandSMG.png
+Images\Characters\ReaverMaleStandSpear.png
 Images\Characters\SargeStand.png
 Images\Characters\SargeStandMinigun.png
 Images\Characters\TribalFemaleStand.png
@@ -214,6 +253,8 @@ Images\Characters\TribalFemaleStandMinigun.png
 Images\Characters\TribalFemaleStandPistol.png
 Images\Characters\TribalFemaleStandRifle.png
 Images\Characters\TribalFemaleStandRocket.png
+Images\Characters\TribalFemaleStandSMG.png
+Images\Characters\TribalFemaleStandSpear.png
 Images\Characters\TribalMaleLarge.png
 Images\Characters\TribalMaleLargeStand.png
 Images\Characters\TribalMaleLargeStandClub.png
@@ -223,6 +264,8 @@ Images\Characters\TribalMaleLargeStandMinigun.png
 Images\Characters\TribalMaleLargeStandPistol.png
 Images\Characters\TribalMaleLargeStandRifle.png
 Images\Characters\TribalMaleLargeStandRocket.png
+Images\Characters\TribalMaleLargeStandSMG.png
+Images\Characters\TribalMaleLargeStandSpear.png
 Images\Characters\TribalMaleStand.png
 Images\Characters\TribalMaleStandClub.png
 Images\Characters\TribalMaleStandHeavy.png
@@ -231,6 +274,8 @@ Images\Characters\TribalMaleStandMinigun.png
 Images\Characters\TribalMaleStandPistol.png
 Images\Characters\TribalMaleStandRifle.png
 Images\Characters\TribalMaleStandRocket.png
+Images\Characters\TribalMaleStandSMG.png
+Images\Characters\TribalMaleStandSpear.png
 Images\Characters\VaultFemaleStand.png
 Images\Characters\VaultMaleStand.png
 Images\Characters\WBOSStand.png
@@ -241,6 +286,8 @@ Images\Characters\WBOSStandMinigun.png
 Images\Characters\WBOSStandPistol.png
 Images\Characters\WBOSStandRifle.png
 Images\Characters\WBOSStandRocket.png
+Images\Characters\WBOSStandSMG.png
+Images\Characters\WBOSStandSpear.png
 Images\Toolbar\grid32.png
 Images\Toolbar\layers32.png
 Images\Toolbar\paste32.png

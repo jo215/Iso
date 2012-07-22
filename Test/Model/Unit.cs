@@ -3,6 +3,9 @@ using System.Windows.Controls;
 using System;
 using System.IO;
 using System.Windows.Media.Imaging;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Windows;
 
 namespace Editor.Model
 {
@@ -36,6 +39,7 @@ namespace Editor.Model
     {
         private static byte _nextID;
         public static Dictionary<string, BitmapImage> Images { get; set; }
+        public static Dictionary<BitmapImage, Bitmap> Bitmaps { get; set; }
 
         public byte OwnerID { get; set; }
         public byte ID { get; set; }
@@ -45,8 +49,8 @@ namespace Editor.Model
         public byte InitialHitPoints { get; set; }
         public byte CurrentHitPoints { get; set; }
         public byte Expertise { get; set; }
-        public ushort X { get; set; }
-        public ushort Y { get; set; }
+        public short X { get; set; }
+        public short Y { get; set; }
         public string Name { get; set; }
         public List<StatusEffect> Effects { get; set; }
 
@@ -54,7 +58,7 @@ namespace Editor.Model
         /// Constructor.
         /// </summary>
         public Unit(byte ownerid, BodyType body, WeaponType weapon, Stance stance, 
-            byte iHP, byte cHP, byte expertise, ushort x, ushort y, string name, params StatusEffect[] effects )
+            byte iHP, byte cHP, byte expertise, short x, short y, string name, params StatusEffect[] effects )
         {
             OwnerID = ownerid;
             ID = _nextID;
@@ -79,7 +83,7 @@ namespace Editor.Model
         {
             get
             {
-                Console.WriteLine(System.AppDomain.CurrentDomain.BaseDirectory);
+                //Console.WriteLine(System.AppDomain.CurrentDomain.BaseDirectory);
                 if (Images == null)
                     Images = new Dictionary<string, BitmapImage>();
 
@@ -94,6 +98,7 @@ namespace Editor.Model
                     var bim = new BitmapImage(new Uri("pack://application:,,,/Images/Characters/" + key + ".png"));
                     bim.CacheOption = BitmapCacheOption.OnLoad;
                     Images.Add(key, bim);
+                    Bitmap b = Bitmap;
                     return bim;
                 }
 
@@ -105,10 +110,30 @@ namespace Editor.Model
                 var bimi = new BitmapImage(new Uri("pack://application:,,,/Images/Characters/" + key + ".png"));
                 bimi.CacheOption = BitmapCacheOption.OnLoad;
                 Images.Add(key, bimi);
+                Bitmap a = Bitmap;
                 return bimi;
             }
             private set { }
         }
-        
+
+        public Bitmap Bitmap
+        {
+            get
+            {
+                if (Bitmaps == null)
+                    Bitmaps = new Dictionary<BitmapImage, Bitmap>();
+
+                if (Bitmaps.ContainsKey(Image))
+                    return Bitmaps[Image];
+
+                Bitmap bmp = new Bitmap(Image.PixelWidth, Image.PixelHeight, PixelFormat.Format32bppPArgb);
+                BitmapData data = bmp.LockBits(new Rectangle(System.Drawing.Point.Empty, bmp.Size), ImageLockMode.WriteOnly, PixelFormat.Format32bppPArgb);
+                Image.CopyPixels(Int32Rect.Empty, data.Scan0, data.Height * data.Stride, data.Stride);
+                bmp.UnlockBits(data);
+                Bitmaps.Add(Image, bmp);
+                return bmp;
+            }
+            private set { }
+        }
     }
 }

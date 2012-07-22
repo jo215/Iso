@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Editor.View.CharacterEditor"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Character Editor" Height="300" Width="713"
+        Title="Character Editor" Height="300" Width="746"
         xmlns:local="clr-namespace:Editor.View"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
         
@@ -15,6 +15,8 @@
     <!-- Commands -->
     <Window.CommandBindings>
         <CommandBinding Command="local:UnitCommand.NewUnit" Executed="NewUnit"/>
+        <CommandBinding Command="local:UnitCommand.DeleteAllUnits" Executed="DeleteAllUnits"/>
+        <CommandBinding Command="local:UnitCommand.DeleteUnit" Executed="DeleteUnit"/>
     </Window.CommandBindings>
     <Grid>
         <!-- Treeview of factions & units-->
@@ -28,18 +30,24 @@
                         <TreeView.ItemTemplate>
                             <HierarchicalDataTemplate ItemsSource="{Binding Path=Units}">
                                 <!-- Display the Faction by showing it's Name string -->
-                                <TextBlock  Text="{Binding Path=Name}">
+                                <TextBlock Text="{Binding Path=Name}" MouseDown="TextBlockMouseDown">
                                     <TextBlock.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Command="local:UnitCommand.NewUnit" CommandParameter="{Binding Name}">
-                                            </MenuItem>
+                                            <MenuItem Command="local:UnitCommand.NewUnit" CommandParameter="{Binding Name}"/>
+                                            <MenuItem Command="local:UnitCommand.DeleteAllUnits" CommandParameter="{Binding Name}"/>
                                         </ContextMenu>
                                     </TextBlock.ContextMenu>
                                 </TextBlock>
                                 <!-- Specify the nested template for the individual Unit items that are within the Factions.-->
                                 <HierarchicalDataTemplate.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Path=Name}" MouseLeftButtonDown="TextBlockMouseLeftButtonDown"/>
+                                        <TextBlock Text="{Binding Path=Name}" MouseDown="UnitTextBlockMouseDown">
+                                            <TextBlock.ContextMenu>
+                                                <ContextMenu>
+                                                    <MenuItem Command="local:UnitCommand.DeleteUnit" CommandParameter="{Binding Name}"/>
+                                                </ContextMenu>
+                                            </TextBlock.ContextMenu>
+                                        </TextBlock>
                                     </DataTemplate>
                                 </HierarchicalDataTemplate.ItemTemplate>
                             </HierarchicalDataTemplate>
@@ -48,22 +56,22 @@
                 </ScrollViewer>
             </StackPanel>
             <!-- Selected unit information -->
-            <GroupBox Margin ="15, 22, 5, 5" Header="Selected Unit" Padding="5" DataContext="{Binding SelectedUnit}" Name="selUnit">
+            <GroupBox Margin ="15, 22, 5, 5" Header="Selected Unit" Padding="5" DataContext="{Binding SelectedUnit}" Name="selUnit" >
                 <StackPanel>
                     <!-- Name -->
                     <WrapPanel >
                         <Label Content="Name" Width="66" />
-                        <TextBox Width="148" Height="23"  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ></TextBox>
+                        <TextBox Width="152" Height="23"  Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ></TextBox>
                     </WrapPanel>
                     <!--  Body/Armor type -->
                     <WrapPanel Margin="0,10,0,0">
                         <Label Content="Body" Width="66" />
-                        <ComboBox Name="body" Width="148" Height="23" SelectedItem="{Binding Body, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="BodySelectionChanged"></ComboBox>
+                        <ComboBox Name="body" Width="152" Height="23" SelectedItem="{Binding Body, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="UnitPictureChanged"></ComboBox>
                     </WrapPanel>
                     <!-- Weapon type -->
                     <WrapPanel>
                         <Label Content="Weapon" Width="66" />
-                        <ComboBox Name="weapon" Width="148" Height="23" SelectedItem="{Binding Weapon, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="WeaponSelectionChanged"></ComboBox>
+                        <ComboBox Name="weapon" Width="152" Height="23" SelectedItem="{Binding Weapon, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="UnitPictureChanged"></ComboBox>
                     </WrapPanel>
                     <!-- Expertise & Hit Points -->
                     <WrapPanel Margin="0,10,0,0">
@@ -72,9 +80,35 @@
                         <Label Content="Hit Points" Width="66" />
                         <xctk:IntegerUpDown Name="hitPoints" Value="{Binding InitialHitPoints, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Minimum="0" Maximum="255" Height="23"/>
                     </WrapPanel>
+                    <WrapPanel Margin="0,10,0,0">
+                        <Label Content="Start Pos." Width="66" />
+
+                        <xctk:IntegerUpDown Name="posX"
+                                            Value="{Binding X, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                            Minimum="-1" Maximum="255" Height="23"
+                                            ValueChanged="PosValueChanged"/>
+                        <xctk:IntegerUpDown Name="posY"
+                                            Value="{Binding Y, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                            Minimum="-1" Maximum="255" Height="23"
+                                            ValueChanged="PosValueChanged"/>
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Label Content="(Select -1,-1 for player-deployment)" />
+                    </WrapPanel>
                 </StackPanel>
             </GroupBox>
-            <Image Height="222" Name="image1" Stretch="None" Width="170" DataContext="{Binding SelectedUnit}" Source="{Binding Image, UpdateSourceTrigger=PropertyChanged}"/>
+            <!-- Preview of the sprite-->
+            <Image  Name="image1"
+                    Stretch="None" 
+                    Width="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelWidth}"
+                    Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelHeight}"
+                    DataContext="{Binding SelectedUnit}" 
+                    Source="{Binding Image, UpdateSourceTrigger=PropertyChanged}"
+                    RenderOptions.BitmapScalingMode="NearestNeighbor" 
+                    ToolTip="You can drag a unit to its starting position."
+                    PreviewMouseLeftButtonDown="image1_PreviewMouseLeftButtonDown" 
+                    PreviewMouseMove="image1_PreviewMouseMove">
+            </Image>
         </WrapPanel>
     </Grid>
 </Window>

@@ -18,6 +18,8 @@ namespace Editor.View
         public Dictionary<string, ObservableCollection<ZTile>> TileSets { get; set; }
         public Dictionary<string, ListCollectionView> TileSetViews { get; set; }
 
+        static public ObservableCollection<FactionList> Factions { get; set; }
+
         public MapDefinition Map { get; set; }
         public MapCanvas MapCanvas { get; set; }
  
@@ -36,10 +38,12 @@ namespace Editor.View
         {
             //  Reference to the UIDispatcher for thread-safe collection manipulation
             _uiDispatcher = uiDispatcher;
-   
+
+            Factions = new ObservableCollection<FactionList> { new FactionList("AI"), new FactionList("Player 1"), new FactionList("Player 2") };
+            
             //  Map setup
             Map = new MapDefinition(new ZTile(baseContentDir + "tiles\\Generic Tiles\\Generic Floors\\DirtSand\\Waste_Floor_Gravel_SandDirtCentre_F_1_NE.til"), iso, baseContentDir);
-            MapCanvas = new MapCanvas(Map, uiDispatcher, baseContentDir + "tiles\\", iso);
+            MapCanvas = new MapCanvas(Map, uiDispatcher, baseContentDir + "tiles\\", iso, Factions);
             _useAltEditLayer = false;
 
 
@@ -70,15 +74,18 @@ namespace Editor.View
             if (!_useAltEditLayer)
             {
                 layer = 0;
+
                 if (tileToPlace.TileType != TileType.Floor)
                 {
                     layer = 3;
                     //  Layers 2 & 4 are generally used for wall filler tiles atm
                     if (tileToPlace.Name.Contains("_ct_") || tileToPlace.Name.Contains("_c_") || tileToPlace.Name.Contains("_d_"))
                         layer = 4;
-                    if (tileToPlace.Name.Contains("_b_") || tileToPlace.Name.Contains("b&d"))
+                    if (tileToPlace.Name.Contains("_b_") || tileToPlace.Name.Contains("b&d") )
                         layer = 2;
                 }
+                if (tileToPlace.Flags.Contains(TileFlag.Ethereal))
+                    layer = 4;
             }
             //  Check we're not swapping for the same thing
             if (Map.Cells[gridPosition.X, gridPosition.Y][layer] == tileToPlace) return;

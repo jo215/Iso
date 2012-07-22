@@ -9,6 +9,7 @@ using ISOTools;
 using System.Collections;
 using Microsoft.Win32;
 using System.Threading;
+using Editor.Model;
 
 namespace Editor.View
 {
@@ -237,13 +238,15 @@ namespace Editor.View
         /// <param name="e"></param>
         private void OnPreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
+
             if (mapScrollViewer.IsMouseCaptured)
             {
                 mapScrollViewer.Cursor = Cursors.Arrow;
                 mapScrollViewer.ReleaseMouseCapture();
             }
             base.OnPreviewMouseUp(e);
+            if (e.ChangedButton == MouseButton.Right) return;
+            ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
         }
 
         /// <summary>
@@ -271,7 +274,7 @@ namespace Editor.View
         /// <param name="e"></param>
         private void WindowMouseMove(object sender, MouseEventArgs e)
         {
-            //  Chek if over map
+            //  Check if over map
             if (((Image)mapScrollViewer.Content).IsMouseOver)
             {
                 //  Get the grid location of mouse
@@ -411,7 +414,74 @@ namespace Editor.View
             _characterEditor.Visibility = _characterEditor.IsVisible ? Visibility.Hidden : Visibility.Visible;
         }
 
+        //  Drag & Drop
+        private void mapCanvasImage_DragEnter(object sender, DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent("myFormat") || sender == e.Source)
+            {
+                e.Effects = DragDropEffects.None;
+               
+            }
+        }
+
+        private void mapCanvasImage_DragOver(object sender, DragEventArgs e)
+        {
+            if (!e.Data.GetDataPresent("myFormat") || sender == e.Source)
+            {
+                e.Effects = DragDropEffects.None;
+                //  Get the grid location of mouse
+                System.Drawing.Point mouseAt = _iso.MouseMapper(e.GetPosition(mapCanvasImage));
+                if (ViewModel.Map.IsOnGrid(mouseAt))
+                {
+                    //  Get the position to draw the overlay at
+                    mouseAt = _iso.TilePlotter(mouseAt);
+                    Unit u = e.Data.GetData("myFormat") as Unit;
+                    cellOverlayImage.Source = u.Image;
+                    cellOverlayImage.Visibility = Visibility.Visible;
+                    Canvas.SetLeft(cellOverlayImage, (mouseAt.X - mapScrollViewer.HorizontalOffset) + (u.Image.PixelWidth/2) );
+                    Canvas.SetTop(cellOverlayImage, (mouseAt.Y - mapScrollViewer.VerticalOffset) - u.Image.PixelHeight  + ViewModel.Map.TileHeight);
+                }
+            }
+        }
+
+        private void mapCanvasImage_DragLeave(object sender, DragEventArgs e)
+        {
+            cellOverlayImage.Source = null;
+            cellOverlayImage.Visibility = Visibility.Hidden;
+        }
+
+        //  Drag & Drop
+        private void mapCanvasImage_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent("myFormat"))
+            {
+                Unit u = e.Data.GetData("myFormat") as Unit;
+                System.Drawing.Point old = new System.Drawing.Point(u.X, u.Y);
+                //  Get the grid location of mouse
+                System.Drawing.Point mouseAt = _iso.MouseMapper(e.GetPosition(mapCanvasImage));
+                u.X = (short) mouseAt.X;
+                u.Y = (short) mouseAt.Y;
+                
+                ViewModel.MapCanvas.AdaptiveTileRefresh(mouseAt);
+                ViewModel.MapCanvas.AdaptiveTileRefresh(old);
+                ViewModel.MapCanvas.AdaptiveTileRefresh(_iso.TileWalker(old, CompassDirection.North));
+                ViewModel.MapCanvas.AdaptiveTileRefresh(_iso.TileWalker(old, CompassDirection.North, 2));
+                ViewModel.MapCanvas.AdaptiveTileRefresh(_iso.TileWalker(old, CompassDirection.NorthEast));
+
+                cellOverlayImage.Source = null;
+                cellOverlayImage.Visibility = Visibility.Hidden;
+            }
+        }
+
         #endregion
+
+
+
+
+
+
+
+
     }
 
     /// <summary>

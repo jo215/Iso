@@ -7,12 +7,14 @@ using System.Windows.Threading;
 using Editor.Model;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace Editor.View
 {
     public class MapCanvas
     {
         public MapDefinition Map { get; set; }
+        ObservableCollection<FactionList> Factions;
         public System.Windows.Controls.Image ImageControl { get; set; }
         public bool ShowGrid { get; set; }
 
@@ -31,9 +33,10 @@ namespace Editor.View
         /// <param name="dispatcher"> </param>
         /// <param name="baseTileDirectory"> </param>
         /// <param name="iso"> </param>
-        public MapCanvas(MapDefinition map, Dispatcher dispatcher, string baseTileDirectory, Isometry iso)
+        public MapCanvas(MapDefinition map, Dispatcher dispatcher, string baseTileDirectory, Isometry iso, ObservableCollection<FactionList> factions)
         {
             Map = map;
+            Factions = factions;
             _dispatcher = dispatcher;
             ShowGrid = false;
             _baseTileDir = baseTileDirectory;
@@ -96,9 +99,13 @@ namespace Editor.View
         private void DrawSingleTile(int layer, int row, int col, Graphics gr)
         {
 
-            if (layer == 2 && ShowGrid)
+            if (layer == 2)
             {
-                DrawGridTile(row, col, gr);
+                if (ShowGrid)
+                {
+                    DrawGridTile(row, col, gr);
+                }
+                DrawCharacters(gr, row, col);
             }
             //  Check for null (no tile)
             if (Map.Cells[col, row][layer] == null) return;
@@ -128,6 +135,27 @@ namespace Editor.View
             lock (Map.Cells[col, row][layer])
             {
                 gr.DrawImage(Map.Cells[col, row][layer].Bitmaps[0], drawPoint);
+
+            }
+        }
+
+        private void DrawCharacters(Graphics gr, int row, int column)
+        {
+            List<Unit> units = new List<Unit>();
+            foreach (FactionList f in Factions)
+            {
+                foreach (Unit u in f.Units)
+                    units.Add(u);
+            }
+            foreach (Unit u in units.Where(x => x.X == column && x.Y == row))
+            {
+                var drawPoint = _iso.TilePlotter(new Point(u.X, u.Y));
+                lock (u.Bitmap)
+                {
+                    drawPoint.X += (u.Bitmap.Width / 2);
+                    drawPoint.Y -= u.Bitmap.Height - Map.TileHeight;
+                    gr.DrawImage(u.Bitmap, drawPoint);
+                }
             }
         }
 
