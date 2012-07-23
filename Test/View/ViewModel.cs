@@ -174,13 +174,13 @@ namespace Editor.View
         /// </summary>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        internal void NewModule(int width, int height)
+        internal void NewModule(int width, int height, IsometricStyle style)
         {
             _currentUndoNode = null;
             Map.ClearAllCells(width, height);
             foreach( FactionList fl in Factions)
                 fl.Units.Clear();
-            
+            Map.Iso.Style = style;
             ThreadPool.QueueUserWorkItem(MapCanvas.RenderMap, null);
         }
 
@@ -189,7 +189,7 @@ namespace Editor.View
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="iso"></param>
-        internal void OpenModule(string fileName, Isometry iso)
+        internal List<Unit> OpenModule(string fileName, Isometry iso)
         {
             _currentUndoNode = null;
             var tempMod = Module.OpenModule(fileName, iso, false);
@@ -197,9 +197,14 @@ namespace Editor.View
             MapCanvas.Map = tempMod.Map;
             foreach (FactionList fl in Factions)
                 fl.Units.Clear();
+
             foreach (Unit u in tempMod.Roster)
+            {
                 Factions[u.OwnerID].Units.Add(u);
+            }
             ThreadPool.QueueUserWorkItem(MapCanvas.RenderMap, null);
+            
+            return tempMod.Roster;
         }
 
         /// <summary>

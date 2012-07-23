@@ -178,7 +178,7 @@ namespace IsoGame.Screens
 
                     case MessageType.MapUpload:
                         var sender = m.ReadByte();
-                        _gameState.Map = MapDefinition.OpenMap(StringCompressor.DecompressString(m.ReadString()),
+                        _gameState.Module = Module.OpenModule(StringCompressor.DecompressString(m.ReadString()),
                                                                _gameState.iso, true);
                         _receivedChat.Add(new KeyValuePair<PlayerState, string>(_gameState.GetPlayerByID(sender), "Sent a map which was received OK."));
                         PushChatUpdates();
@@ -270,7 +270,7 @@ namespace IsoGame.Screens
                     break;
 
                 case "start":
-                    if (_gameState.Map != null)
+                    if (_gameState.Module != null)
                     {
                         ScreenManager.Input.UiIsActive = false;
                         LoadingScreen.Load(ScreenManager, true, PlayerIndex.One, new GameplayScreen(_eventManager));

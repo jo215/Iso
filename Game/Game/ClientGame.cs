@@ -46,7 +46,7 @@ namespace IsoGame
         /// </summary>
         public ClientGame() 
         {
-            _debug = false;
+            _debug = true;
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
@@ -146,7 +146,7 @@ namespace IsoGame
 
                             case MessageType.MapUpload:
                                 m.ReadByte();   //  sender - us!
-                                GameState.Map = MapDefinition.OpenMap(
+                                GameState.Module = Module.OpenModule(
                                     StringCompressor.DecompressString(m.ReadString()),
                                     GameState.iso, true);
                                 gotInfo = true;

@@ -20,7 +20,7 @@ namespace IsoGame.Misc
 
         private ClientGame _game;
         private GameState _state;
-        private MapDefinition _map;
+        private Module _module;
         private Isometry _iso;
         private SpriteBatch _spriteBatch;
 
@@ -31,15 +31,15 @@ namespace IsoGame.Misc
         public Scroller(ClientGame game, GameState state)
         {
             _game = game;
-            _map = state.Map;
-            _iso = _map.Iso;
+            _module = state.Module;
+            _iso = _module.Map.Iso;
             _state = state;
             _spriteBatch = game.SpriteBatch;
             _screenSpace = new Rectangle(0, 0, _game.GraphicsDevice.PresentationParameters.BackBufferWidth, _game.GraphicsDevice.PresentationParameters.BackBufferHeight);
 
             //  World space
-            var max = _iso.TilePlotter(new Point(_map.Width - 1, _map.Height - 1));
-            _worldSpace = new Rectangle(0, 0, max.X + _map.TileWidth, max.Y + _map.TileHeight);
+            var max = _iso.TilePlotter(new Point(_module.Map.Width - 1, _module.Map.Height - 1));
+            _worldSpace = new Rectangle(0, 0, max.X + _module.Map.TileWidth, max.Y + _module.Map.TileHeight);
             //  Anchor space
             _anchorSpace = _worldSpace;
             var horizontal = _screenSpace.Right - _screenSpace.Left;
@@ -53,10 +53,10 @@ namespace IsoGame.Misc
             //  Adjust for staggered maps to eliminate jaggies when scrolling to map edge
             if (_iso.Style == IsometricStyle.Staggered)
             {
-                _anchorSpace.Y += _map.TileHeight;
-                _anchorSpace.Height -= _map.TileHeight;
-                _anchorSpace.X += _map.TileWidth;
-                _anchorSpace.Width -= _map.TileWidth;
+                _anchorSpace.Y += _module.Map.TileHeight / 2;
+                _anchorSpace.Height -= _module.Map.TileHeight;
+                _anchorSpace.X += _module.Map.TileHeight;
+                _anchorSpace.Width -= _module.Map.TileHeight;
                 _screenAnchor = new Point(_anchorSpace.Left, _anchorSpace.Top);
             }
             else
@@ -109,30 +109,30 @@ namespace IsoGame.Misc
         public void Draw(GameTime gameTime)
         {
             _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied);
-            for (var y = 0; y < _map.Height; y++)
-                for (var x = 0; x < _map.Width; x++)
+            for (var y = 0; y < _module.Map.Height; y++)
+                for (var x = 0; x < _module.Map.Width; x++)
                 {
-                    for (var layer = 0; layer < _map.Cells[0, 0].Length; layer++)
+                    for (var layer = 0; layer < _module.Map.Cells[0, 0].Length; layer++)
                                     //  Check for null (no tile)
-                        if (_map.Cells[x, y][layer] != null)
+                        if (_module.Map.Cells[x, y][layer] != null)
                         {
                             //  Base drawing point for a 1x1 tile
                             var drawPoint = _iso.TilePlotter(new Point(x, y));
 
                             //  Correct for height of tile
-                            if (_map.Cells[x, y][layer].Height > _map.TileHeight)
+                            if (_module.Map.Cells[x, y][layer].Height > _module.Map.TileHeight)
                             {
-                                drawPoint.Y -= (_map.Cells[x, y][layer].Height - _map.TileHeight);
+                                drawPoint.Y -= (_module.Map.Cells[x, y][layer].Height - _module.Map.TileHeight);
                             }
 
                             //  And now for width
-                            drawPoint.X += (6 - _map.Cells[x, y][layer].BoundingBox[2])*6;
+                            drawPoint.X += (6 - _module.Map.Cells[x, y][layer].BoundingBox[2]) * 6;
 
                             //  we use layer 2 for wall filler which needs a different offset
                             if (layer == 2)
                             {
-                                if (_map.Cells[x, y][layer].Name.Contains("se") ||
-                                    _map.Cells[x, y][layer].Name.Contains("nw"))
+                                if (_module.Map.Cells[x, y][layer].Name.Contains("se") ||
+                                    _module.Map.Cells[x, y][layer].Name.Contains("nw"))
                                 {
 
                                 }
@@ -143,7 +143,7 @@ namespace IsoGame.Misc
                                 }
                             }
 
-                            _map.Cells[x, y][layer].DrawTexture(_spriteBatch, new Vector2(drawPoint.X - _screenAnchor.X, drawPoint.Y - _screenAnchor.Y), Color.White);
+                            _module.Map.Cells[x, y][layer].DrawTexture(_spriteBatch, new Vector2(drawPoint.X - _screenAnchor.X, drawPoint.Y - _screenAnchor.Y), Color.White);
                         }
                 }
             _spriteBatch.End();

@@ -20,7 +20,7 @@ namespace Editor.View
     public partial class MainWindow : Window
     {
         private const string BaseContentDirectory = "D:\\workspace\\BaseGame\\";
-        private readonly CharacterEditor _characterEditor;
+        private CharacterEditor _characterEditor;
 
         ViewModel ViewModel { get; set; }
 
@@ -82,7 +82,7 @@ namespace Editor.View
             }
             _random = new Random();
 
-            _characterEditor = new CharacterEditor(ViewModel);
+            _characterEditor = new CharacterEditor(ViewModel, Dispatcher);
             _characterEditor.Show();
             _characterEditor.Topmost = true;
         }
@@ -331,6 +331,7 @@ namespace Editor.View
             base.OnKeyUp(e);
         }
 
+        
         #region Commands
 
         //  New Map
@@ -352,7 +353,7 @@ namespace Editor.View
             var dlg = new NewMapSettingsDialog {Owner = this};
 
             if (dlg.ShowDialog() == true)
-                ViewModel.NewModule(int.Parse(dlg.widthBox.Text), int.Parse(dlg.heightBox.Text)); 
+                ViewModel.NewModule(int.Parse(dlg.widthBox.Text), int.Parse(dlg.heightBox.Text),(IsometricStyle) Enum.Parse(typeof(IsometricStyle), dlg.styleBox.Text)); 
         }
 
         //  Save Module as
@@ -382,7 +383,12 @@ namespace Editor.View
             var dlg = new OpenFileDialog {DefaultExt = ".jim", Filter = "Isometric module documents (.jim)|*.jim"};
             var result = dlg.ShowDialog();
             if (result == true)
-                ViewModel.OpenModule(dlg.FileName, _iso);
+            {
+                List<Unit> newRoster = ViewModel.OpenModule(dlg.FileName, _iso);
+                CharacterEditor.Factions = ViewModel.Factions;
+                Unit.Images = null;
+                Unit.Bitmaps = null;
+            }
         }
 
         //  Undo
@@ -474,12 +480,8 @@ namespace Editor.View
                 System.Drawing.Point mouseAt = _iso.MouseMapper(e.GetPosition(mapCanvasImage));
                 u.X = (short) mouseAt.X;
                 u.Y = (short) mouseAt.Y;
-                
-                ViewModel.MapCanvas.AdaptiveTileRefresh(mouseAt);
-                ViewModel.MapCanvas.AdaptiveTileRefresh(old);
-                ViewModel.MapCanvas.AdaptiveTileRefresh(_iso.TileWalker(old, CompassDirection.North));
-                ViewModel.MapCanvas.AdaptiveTileRefresh(_iso.TileWalker(old, CompassDirection.North, 2));
-                ViewModel.MapCanvas.AdaptiveTileRefresh(_iso.TileWalker(old, CompassDirection.NorthEast));
+
+                ViewModel.MapCanvas.RenderMap(null);
 
                 cellOverlayImage.Source = null;
                 cellOverlayImage.Visibility = Visibility.Hidden;
@@ -487,14 +489,6 @@ namespace Editor.View
         }
 
         #endregion
-
-
-
-
-
-
-
-
     }
 
     /// <summary>

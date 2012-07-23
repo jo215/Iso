@@ -30,7 +30,7 @@
                         <TreeView.ItemTemplate>
                             <HierarchicalDataTemplate ItemsSource="{Binding Path=Units}">
                                 <!-- Display the Faction by showing it's Name string -->
-                                <TextBlock Text="{Binding Path=Name}" MouseDown="TextBlockMouseDown">
+                                <TextBlock Text="{Binding Path=Name}" MouseDown="TreeviewTextMouseDown">
                                     <TextBlock.ContextMenu>
                                         <ContextMenu>
                                             <MenuItem Command="local:Command.NewUnit" CommandParameter="{Binding Name}"/>
@@ -66,12 +66,12 @@
                     <!--  Body/Armor type -->
                     <WrapPanel Margin="0,10,0,0">
                         <Label Content="Body" Width="66" />
-                        <ComboBox Name="body" Width="152" Height="23" SelectedItem="{Binding Body, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="UnitPictureChanged"></ComboBox>
+                        <ComboBox Name="body" Width="152" Height="23" SelectedItem="{Binding Body, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ChangeUnitPicture"></ComboBox>
                     </WrapPanel>
                     <!-- Weapon type -->
                     <WrapPanel>
                         <Label Content="Weapon" Width="66" />
-                        <ComboBox Name="weapon" Width="152" Height="23" SelectedItem="{Binding Weapon, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="UnitPictureChanged"></ComboBox>
+                        <ComboBox Name="weapon" Width="152" Height="23" SelectedItem="{Binding Weapon, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectionChanged="ChangeUnitPicture"></ComboBox>
                     </WrapPanel>
                     <!-- Expertise & Hit Points -->
                     <WrapPanel Margin="0,10,0,0">
@@ -90,11 +90,11 @@
                         <xctk:IntegerUpDown Name="posX"
                                             Value="{Binding X, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                                             Minimum="-1" Maximum="255" Height="23"
-                                            ValueChanged="PosValueChanged"/>
+                                            ValueChanged="CharacterPositionChanged"/>
                         <xctk:IntegerUpDown Name="posY"
                                             Value="{Binding Y, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                                             Minimum="-1" Maximum="255" Height="23"
-                                            ValueChanged="PosValueChanged"/>
+                                            ValueChanged="CharacterPositionChanged"/>
                     </WrapPanel>
                     <WrapPanel>
                         <Label Content="(Select -1,-1 for player-deployment)" />
@@ -106,8 +106,8 @@
                     Stretch="None" 
                     Width="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelWidth}"
                     Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelHeight}"
-                    DataContext="{Binding SelectedUnit}" 
-                    Source="{Binding Image, UpdateSourceTrigger=PropertyChanged}"
+                    DataContext="{Binding SelectedUnit, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                    Source="{Binding Path=Image, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                     RenderOptions.BitmapScalingMode="NearestNeighbor" 
                     ToolTip="You can drag a unit to its starting position."
                     PreviewMouseLeftButtonDown="image1_PreviewMouseLeftButtonDown" 

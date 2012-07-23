@@ -10,8 +10,7 @@ namespace IsoGame.State
     {
         public List<PlayerState> Players { get; private set; }
         public int ActivePlayer { get; set; }
-        public List<Unit> Units { get; private set; } 
-        public MapDefinition Map { get; set; }
+        public Module Module { get; set; }
         public Isometry iso;
 
         /// <summary>
@@ -20,7 +19,6 @@ namespace IsoGame.State
         public GameState(string mouseMapPath)
         {
             Players = new List<PlayerState>();
-            Units = new List<Unit>();
             iso = new Isometry(IsometricStyle.Staggered, mouseMapPath);
         }
 

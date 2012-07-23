@@ -348,5 +348,31 @@ namespace ISOTools
             var p = TilePlotter(new Point(tile.X, tile.Y));
             return new Microsoft.Xna.Framework.Point(p.X, p.Y);
         }
+
+        /// <summary>
+        /// Converts staggered co-ordinates to diamond coordinates.
+        /// </summary>
+        /// <param name="staggeredX"></param>
+        /// <param name="staggeredY"></param>
+        /// <returns></returns>
+        public Microsoft.Xna.Framework.Point StaggeredToDiamond(int staggeredX, int staggeredY)
+        {
+            int DiamondX = (staggeredY >> 1) + staggeredY & 1 + staggeredX;
+            int DiamondY = (staggeredY >> 1) - staggeredX;
+            return new Microsoft.Xna.Framework.Point(DiamondX, DiamondY);
+        }
+
+        /// <summary>
+        /// Converts diamond coordinates to staggered coordinates.
+        /// </summary>
+        /// <param name="diamondX"></param>
+        /// <param name="diamondY"></param>
+        /// <returns></returns>
+        public Microsoft.Xna.Framework.Point DiamondToStaggered(int diamondX, int diamondY)
+        {
+            int StaggeredX = (diamondX - diamondY) >> 1;
+            int StaggeredY = (diamondX + diamondY);
+            return new Microsoft.Xna.Framework.Point(StaggeredX, StaggeredY);
+        }
     }
 }

@@ -7,6 +7,9 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Editor.Model;
 using System.Windows.Media;
+using System.Threading;
+using System.Windows.Threading;
+using System.Collections.Generic;
 
 namespace Editor.View
 {
@@ -21,23 +24,32 @@ namespace Editor.View
 
         public Unit SelectedUnit { get; set; }
         public string Test { get; set; }
-
+        private Dispatcher _uiDispatcher;
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="viewModel"></param>
-        public CharacterEditor(ViewModel viewModel)
+        public CharacterEditor(ViewModel viewModel, Dispatcher uiDispatcher, List<Unit> newRoster = null)
         {
-           
+            _uiDispatcher = uiDispatcher;
             DataContext = this;
             Test = "dhsfuifbvosfbo";
             WindowStyle = WindowStyle.ToolWindow;
             ViewModel = viewModel;
             //  Faction unit lists
             Factions = ViewModel.Factions;
-            Factions[1].Units.Add(new Unit(1, BodyType.Omega, WeaponType.SMG, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "James"));
-            Factions[2].Units.Add(new Unit(2, BodyType.TribalFemale, WeaponType.Club, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "John"));
-            SelectedUnit = Factions[1].Units[0];
+            if (newRoster == null)
+            {
+                Factions[1].Units.Add(new Unit(1, BodyType.Omega, WeaponType.SMG, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "James"));
+                Factions[2].Units.Add(new Unit(2, BodyType.TribalFemale, WeaponType.Club, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "John"));
+            }
+            else
+            {
+                foreach (Unit u in newRoster)
+                {
+                    Factions[u.OwnerID].Units.Add(u);
+                }
+            }
             InitializeComponent();
             body.ItemsSource = Enum.GetValues(typeof (BodyType));
             weapon.ItemsSource = Enum.GetValues(typeof (WeaponType));
@@ -74,7 +86,13 @@ namespace Editor.View
             {
                 f.Units.Remove(unit);
             }
-            ViewModel.MapCanvas.RenderMap(null);
+            if (SelectedUnit == unit)
+            {
+                SelectedUnit = null;
+                selUnit.DataContext = SelectedUnit;
+                image1.DataContext = SelectedUnit;
+            }
+            ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
         }
 
         //  Deletes all units belonging to the selected player
@@ -82,7 +100,10 @@ namespace Editor.View
         {
             var faction = GetFactionByName((string)e.Parameter);
             faction.Units.Clear();
-            ViewModel.MapCanvas.RenderMap(null);
+            SelectedUnit = null;
+            selUnit.DataContext = SelectedUnit;
+            image1.DataContext = SelectedUnit;
+            ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
         }
 
         //  Gets a faction object by name
@@ -100,15 +121,18 @@ namespace Editor.View
         {
             SelectedUnit = (Unit) ((TextBlock) e.Source).DataContext;
             selUnit.DataContext = SelectedUnit;
+            image1.DataContext = SelectedUnit;
             image1.Source = SelectedUnit.Image;
-            TextBlockMouseDown(sender, e);
+            TreeviewTextMouseDown(sender, e);
         }
 
         //  Change selected unit image
-        private void UnitPictureChanged(object sender, SelectionChangedEventArgs e)
+        private void ChangeUnitPicture(object sender, SelectionChangedEventArgs e)
         {
             image1.Source = SelectedUnit.Image;
-            ViewModel.MapCanvas.RenderMap(null);
+
+            if (SelectedUnit.X >= 0 || SelectedUnit.Y >= 0)
+                ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
         }
         
         //  Drag & Drop 
@@ -146,7 +170,7 @@ namespace Editor.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextBlockMouseDown(object sender, MouseButtonEventArgs e)
+        private void TreeviewTextMouseDown(object sender, MouseButtonEventArgs e)
         {
             TreeViewItem treeViewItem = VisualUpwardSearch(e.OriginalSource as DependencyObject);
             
@@ -172,12 +196,23 @@ namespace Editor.View
 
         public Point startPoint { get; set; }
 
-        private void PosValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        private void CharacterPositionChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            ViewModel.MapCanvas.RenderMap(null);
+            ThreadPool.QueueUserWorkItem(ViewModel.MapCanvas.RenderMap, null);
         }
 
-
+        internal void AddUnits(System.Collections.Generic.List<Unit> units)
+        {
+            Unit.Bitmaps = null;
+            Unit.Images = null;
+            foreach (Unit u in units)
+            {
+                Factions[u.OwnerID].Units.Add(u);
+            }
+            SelectedUnit = null;
+            selUnit.DataContext = SelectedUnit;
+            image1.DataContext = SelectedUnit;
+        }
     }
 
 

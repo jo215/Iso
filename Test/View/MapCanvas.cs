@@ -45,15 +45,17 @@ namespace Editor.View
             _greenGrid.SetResolution(96, 96);
             _redGrid = new Bitmap(_baseTileDir + "notWalkable.png");
             _redGrid.SetResolution(96, 96);
+            //  Iso helper
+            _iso = iso;
             //  Main canvas updated from UI thread
             _canvas = new Bitmap(map.Width * map.TileWidth, map.Height * map.TileHeight / 2);
+            
             _g = Graphics.FromImage(_canvas);
             _g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
             _g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
             //  Canvas for background thread
-            _tempCanvas = new Bitmap(map.Width * map.TileWidth, map.Height * map.TileHeight / 2);
-            //  Iso helper
-            _iso = iso;
+            _tempCanvas = new Bitmap(_canvas.Width, _canvas.Height);
+
             //  Render entire map
             ThreadPool.QueueUserWorkItem(RenderMap, null);
         }
@@ -99,6 +101,7 @@ namespace Editor.View
         private void DrawSingleTile(int layer, int row, int col, Graphics gr)
         {
 
+            //  After floors are drawn we may draw grid and/or characters
             if (layer == 2)
             {
                 if (ShowGrid)

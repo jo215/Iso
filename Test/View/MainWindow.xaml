@@ -76,7 +76,8 @@
                    DragOver="mapCanvasImage_DragOver"
                    DragLeave="mapCanvasImage_DragLeave"
                    Drop="mapCanvasImage_Drop"
-                   AllowDrop="True"></Image>
+                   AllowDrop="True"
+                   ></Image>
         </ScrollViewer>
         <!-- Canvas for overlays -->
         <Canvas Name="canvas1" Margin="0,50,0,0">

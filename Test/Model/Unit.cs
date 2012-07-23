@@ -190,7 +190,7 @@ namespace Editor.Model
         }
 
         /// <summary>
-        /// Gets the placeholder BitmapImage
+        /// Gets the placeholder BitmapImage. Although we cache, WPF requires a reload when accessing from a different thread than the creator.
         /// </summary>
         internal BitmapImage Image
         {
@@ -202,28 +202,23 @@ namespace Editor.Model
 
                 string key = Enum.GetName(typeof(BodyType), Body) + "Stand" + Enum.GetName(typeof(WeaponType), Weapon);
 
-                if (Images.ContainsKey(key))
-                {
-                    return Images[key];
-                }
-                else if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + "\\Images\\Characters\\" + key + ".png"))
+                if (File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + "\\Images\\Characters\\" + key + ".png"))
                 {
                     var bim = new BitmapImage(new Uri("pack://application:,,,/Images/Characters/" + key + ".png"));
                     bim.CacheOption = BitmapCacheOption.OnLoad;
-                    Images.Add(key, bim);
-                    Bitmap b = Bitmap;
+                    if (!Images.ContainsKey(key))
+                        Images.Add(key, bim);
                     return bim;
                 }
 
                 key = Enum.GetName(typeof(BodyType), Body) + "Stand";
                 
-                if (Images.ContainsKey(key))
-                    return Images[key];
 
                 var bimi = new BitmapImage(new Uri("pack://application:,,,/Images/Characters/" + key + ".png"));
                 bimi.CacheOption = BitmapCacheOption.OnLoad;
-                Images.Add(key, bimi);
-                Bitmap a = Bitmap;
+                if (!Images.ContainsKey(key))
+                    Images.Add(key, bimi);
+
                 return bimi;
             }
             private set { }

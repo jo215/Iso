@@ -73,7 +73,7 @@ namespace IsoGame.Network
             var id = m.ReadByte();
             var small = m.ReadString();
             var big = StringCompressor.DecompressString(small);
-            _gameState.Map = MapDefinition.OpenMap(big, _gameState.iso, true);
+            _gameState.Module = Module.OpenModule(big, _gameState.iso, true);
 
             //  Send map to all players
             foreach(var player in _gameState.Players)
