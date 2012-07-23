@@ -35,8 +35,8 @@ namespace Editor.View
             ViewModel = viewModel;
             //  Faction unit lists
             Factions = ViewModel.Factions;
-            Factions[1].Units.Add(new Unit(1, BodyType.Omega, WeaponType.SMG, Stance.Stand, 4, 4, 4, -1, -1, "James"));
-            Factions[2].Units.Add(new Unit(2, BodyType.TribalFemale, WeaponType.Club, Stance.Stand, 4, 4, 4, -1, -1, "John"));
+            Factions[1].Units.Add(new Unit(1, BodyType.Omega, WeaponType.SMG, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "James"));
+            Factions[2].Units.Add(new Unit(2, BodyType.TribalFemale, WeaponType.Club, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "John"));
             SelectedUnit = Factions[1].Units[0];
             InitializeComponent();
             body.ItemsSource = Enum.GetValues(typeof (BodyType));
@@ -62,7 +62,8 @@ namespace Editor.View
         private void NewUnit(object sender, ExecutedRoutedEventArgs e)
         {
             var faction = GetFactionByName((string) e.Parameter);
-            faction.Units.Add(new Unit(1, BodyType.TribalMale, WeaponType.None, Stance.Stand, 1, 1, 1, -1, -1, "Unnamed"));
+            var facId = faction.ID;
+            faction.Units.Add(new Unit(facId, BodyType.TribalMale, WeaponType.None, Stance.Stand, 1, 1, 1, 1, 1, -1, -1, "Unnamed"));
         }
 
         //  Deletes the selected unit
@@ -73,6 +74,7 @@ namespace Editor.View
             {
                 f.Units.Remove(unit);
             }
+            ViewModel.MapCanvas.RenderMap(null);
         }
 
         //  Deletes all units belonging to the selected player
@@ -80,6 +82,7 @@ namespace Editor.View
         {
             var faction = GetFactionByName((string)e.Parameter);
             faction.Units.Clear();
+            ViewModel.MapCanvas.RenderMap(null);
         }
 
         //  Gets a faction object by name
@@ -177,14 +180,5 @@ namespace Editor.View
 
     }
 
-    /// <summary>
-    /// Command declarations.
-    /// </summary>
-    public static class UnitCommand
-    {
-        public static readonly RoutedUICommand NewUnit = new RoutedUICommand("New unit", "NewUnit", typeof(CharacterEditor));
-        public static readonly RoutedUICommand DeleteAllUnits = new RoutedUICommand("Delete all units", "DeleteAllUnits", typeof(CharacterEditor));
-        public static readonly RoutedUICommand DeleteUnit = new RoutedUICommand("Delete unit", "DeleteUnit", typeof(CharacterEditor));
 
-    }
 }

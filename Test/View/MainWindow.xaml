@@ -47,9 +47,9 @@
     <Window.CommandBindings>
         <CommandBinding Command="Undo" Executed="Undo" />
         <CommandBinding Command="Redo" Executed="Redo" />
-        <CommandBinding Command="SaveAs" Executed="SaveMapAs" />
-        <CommandBinding Command="Open" Executed="OpenMap" />
-        <CommandBinding Command="New" Executed="NewMap" />
+        <CommandBinding Command="SaveAs" Executed="SaveModuleAs" />
+        <CommandBinding Command="Open" Executed="OpenModule" />
+        <CommandBinding Command="New" Executed="NewModule" />
         <CommandBinding Command="Refresh" Executed="Refresh" />
         <CommandBinding Command="w:Command.SelectNothing"  Executed="SelectNothing" />
         <CommandBinding Command="w:Command.ShowGrid" Executed="ShowGrid"/>

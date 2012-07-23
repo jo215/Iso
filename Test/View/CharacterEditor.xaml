@@ -14,9 +14,9 @@
     </Window.Resources>
     <!-- Commands -->
     <Window.CommandBindings>
-        <CommandBinding Command="local:UnitCommand.NewUnit" Executed="NewUnit"/>
-        <CommandBinding Command="local:UnitCommand.DeleteAllUnits" Executed="DeleteAllUnits"/>
-        <CommandBinding Command="local:UnitCommand.DeleteUnit" Executed="DeleteUnit"/>
+        <CommandBinding Command="local:Command.NewUnit" Executed="NewUnit"/>
+        <CommandBinding Command="local:Command.DeleteAllUnits" Executed="DeleteAllUnits"/>
+        <CommandBinding Command="local:Command.DeleteUnit" Executed="DeleteUnit"/>
     </Window.CommandBindings>
     <Grid>
         <!-- Treeview of factions & units-->
@@ -33,8 +33,8 @@
                                 <TextBlock Text="{Binding Path=Name}" MouseDown="TextBlockMouseDown">
                                     <TextBlock.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Command="local:UnitCommand.NewUnit" CommandParameter="{Binding Name}"/>
-                                            <MenuItem Command="local:UnitCommand.DeleteAllUnits" CommandParameter="{Binding Name}"/>
+                                            <MenuItem Command="local:Command.NewUnit" CommandParameter="{Binding Name}"/>
+                                            <MenuItem Command="local:Command.DeleteAllUnits" CommandParameter="{Binding Name}"/>
                                         </ContextMenu>
                                     </TextBlock.ContextMenu>
                                 </TextBlock>
@@ -44,7 +44,7 @@
                                         <TextBlock Text="{Binding Path=Name}" MouseDown="UnitTextBlockMouseDown">
                                             <TextBlock.ContextMenu>
                                                 <ContextMenu>
-                                                    <MenuItem Command="local:UnitCommand.DeleteUnit" CommandParameter="{Binding Name}"/>
+                                                    <MenuItem Command="local:Command.DeleteUnit" CommandParameter="{Binding Name}"/>
                                                 </ContextMenu>
                                             </TextBlock.ContextMenu>
                                         </TextBlock>
@@ -56,7 +56,7 @@
                 </ScrollViewer>
             </StackPanel>
             <!-- Selected unit information -->
-            <GroupBox Margin ="15, 22, 5, 5" Header="Selected Unit" Padding="5" DataContext="{Binding SelectedUnit}" Name="selUnit" >
+            <GroupBox Header="Selected Unit" Padding="5" DataContext="{Binding SelectedUnit}" Name="selUnit" Height="254">
                 <StackPanel>
                     <!-- Name -->
                     <WrapPanel >
@@ -79,6 +79,10 @@
                         <xctk:IntegerUpDown Name="expertise" Value="{Binding Expertise, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Minimum="0" Maximum="255" Height="23"/>
                         <Label Content="Hit Points" Width="66" />
                         <xctk:IntegerUpDown Name="hitPoints" Value="{Binding InitialHitPoints, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Minimum="0" Maximum="255" Height="23"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="0,5,0,0">
+                        <Label Content="APs" Width="66" />
+                        <xctk:IntegerUpDown Name="actionPoints" Value="{Binding InitialActionPoints, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Minimum="0" Maximum="255" Height="23"/>
                     </WrapPanel>
                     <WrapPanel Margin="0,10,0,0">
                         <Label Content="Start Pos." Width="66" />

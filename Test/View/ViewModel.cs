@@ -170,24 +170,35 @@ namespace Editor.View
         }
 
         /// <summary>
-        /// Starts a new map.
+        /// Starts a new module.
         /// </summary>
         /// <param name="width"></param>
         /// <param name="height"></param>
-        internal void NewMap(int width, int height)
+        internal void NewModule(int width, int height)
         {
             _currentUndoNode = null;
             Map.ClearAllCells(width, height);
+            foreach( FactionList fl in Factions)
+                fl.Units.Clear();
+            
             ThreadPool.QueueUserWorkItem(MapCanvas.RenderMap, null);
         }
 
-        internal void OpenMap(string fileName, Isometry iso)
+        /// <summary>
+        /// Opens module from file.
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="iso"></param>
+        internal void OpenModule(string fileName, Isometry iso)
         {
             _currentUndoNode = null;
-            var tempMap = MapDefinition.OpenMap(fileName, iso, false);
-            Map = tempMap;
-            MapCanvas.Map = tempMap;
-
+            var tempMod = Module.OpenModule(fileName, iso, false);
+            Map = tempMod.Map;
+            MapCanvas.Map = tempMod.Map;
+            foreach (FactionList fl in Factions)
+                fl.Units.Clear();
+            foreach (Unit u in tempMod.Roster)
+                Factions[u.OwnerID].Units.Add(u);
             ThreadPool.QueueUserWorkItem(MapCanvas.RenderMap, null);
         }
 

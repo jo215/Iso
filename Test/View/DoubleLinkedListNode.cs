@@ -1,4 +1,4 @@
-﻿namespace Editor.Model
+﻿namespace Editor.View
 {
     /// <summary>
     /// Exactly what it says on the tin.

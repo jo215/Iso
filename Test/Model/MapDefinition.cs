@@ -67,46 +67,110 @@ namespace Editor.Model
         }
 
         /// <summary>
-        /// Saves this map.
+        /// Appends this map to the given stream.
+        /// </summary>
+        /// <param name="stream"></param>
+        public void AppendMap(TextWriter stream)
+        {
+            if (stream == null)
+                return;
+            //  Map info
+            stream.WriteLine("<Map>");
+            stream.WriteLine(Enum.GetName(typeof(IsometricStyle), Iso.Style));
+            stream.WriteLine(Width);
+            stream.WriteLine(Height);
+            stream.WriteLine(TileWidth);
+            stream.WriteLine(TileHeight);
+            stream.WriteLine("</Map>");
+
+            //  Set of all used tiles
+            stream.WriteLine("<TileDictionary>");
+            var tileDictionary = new HashSet<string>();
+
+            foreach (var cell in Cells)
+            {
+                foreach (var tile in cell.AllTiles().Where(tile => tile != null))
+                {
+                    tileDictionary.Add(tile.RelativePath);
+                }
+            }
+            var finalList = tileDictionary.ToList();
+            foreach (var t in finalList)
+            {
+                stream.WriteLine(t);
+            }
+            stream.WriteLine("</TileDictionary>");
+
+            //  Map cell info
+            stream.WriteLine("<Cells>");
+            for (var x = 0; x < Cells.GetLength(0); x++)
+                for (var y = 0; y < Cells.GetLength(1); y++)
+                    Cells[x, y].ToStream(stream, this, finalList);
+            stream.WriteLine("</Cells>");
+        }
+
+        /// <summary>
+        /// Saves this map to a new file.
         /// </summary>
         public void SaveMap(string filePath)
         {
             if (filePath == null)
                 return;
-            using (TextWriter file = new StreamWriter(filePath))
+            using (var stream = new StreamWriter(filePath))
             {
-                //  Map info
-                file.WriteLine("<Map>");
-                file.WriteLine(Enum.GetName(typeof(IsometricStyle), Iso.Style));
-                file.WriteLine(Width);
-                file.WriteLine(Height);
-                file.WriteLine(TileWidth);
-                file.WriteLine(TileHeight);
-                file.WriteLine("</Map>");
-                //  Set of all used tiles
-                file.WriteLine("<TileDictionary>");
-                var tileDictionary = new HashSet<string>();
+                AppendMap(stream);
+            }
+        }
 
-                foreach (var cell in Cells)
+        /// <summary>
+        /// Reads a map from the given stream.
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <param name="iso"></param>
+        /// <returns></returns>
+        public static MapDefinition ReadMap(TextReader stream, Isometry iso)
+        {
+            var newMap = new MapDefinition(null, iso, _baseContentDir);
+            
+            if (stream == null)
+                return newMap;
+            
+            stream.ReadLine(); // <Map>
+            newMap.Iso.Style = (IsometricStyle)Enum.Parse(typeof(IsometricStyle), stream.ReadLine());
+            newMap.ClearAllCells(int.Parse(stream.ReadLine()), int.Parse(stream.ReadLine()));
+            newMap.TileWidth = int.Parse(stream.ReadLine());
+            newMap.TileHeight = int.Parse(stream.ReadLine());
+            stream.ReadLine(); // </Map>
+
+            stream.ReadLine(); // <TileDictionary>
+            var requiredTiles = new List<ZTile>();
+            var line = stream.ReadLine();
+            while (!line.Equals("</TileDictionary>"))
+            {
+                requiredTiles.Add(new ZTile("D:\\workspace\\BaseGame\\" + line));
+
+                line = stream.ReadLine();
+            }
+            Console.WriteLine(requiredTiles[0].Bitmaps.Count());
+
+            stream.ReadLine(); // <Cells>
+            for (var x = 0; x < newMap.Cells.GetLength(0); x++)
+                for (var y = 0; y < newMap.Cells.GetLength(1); y++)
                 {
-                    foreach (var tile in cell.AllTiles().Where(tile => tile != null))
+                    newMap.Cells[x, y] = MapCell.FromStream(stream, requiredTiles);
+                }
+            stream.ReadLine(); // </Cells>
+
+            //  Remake Parent links
+            for (var x = 0; x < newMap.Cells.GetLength(0); x++)
+                for (var y = 0; y < newMap.Cells.GetLength(1); y++)
+                {
+                    if (newMap.Cells[x, y].TempPoint.X != -1)
                     {
-                        tileDictionary.Add(tile.RelativePath);
+                        newMap.Cells[x, y].ParentCell = newMap.Cells[newMap.Cells[x, y].TempPoint.X, newMap.Cells[x, y].TempPoint.Y];
                     }
                 }
-                var finalList = tileDictionary.ToList();
-                foreach (var t in finalList)
-                {
-                    file.WriteLine(t);
-                }
-                file.WriteLine("</TileDictionary>");
-                //  Map cell info
-                file.WriteLine("<Cells>");
-                for (var x = 0; x < Cells.GetLength(0); x++)
-                    for (var y = 0; y < Cells.GetLength(1); y++)
-                        Cells[x, y].ToStream(file, this, finalList);
-                file.WriteLine("</Cells>");
-            }
+            return newMap;
         }
 
         /// <summary>
@@ -120,49 +184,22 @@ namespace Editor.Model
         {
             if (filePath == null)
                 return new MapDefinition(null, Iso, _baseContentDir) ;
-            var newMap = new MapDefinition(null, Iso, _baseContentDir);
-
+            
             TextReader file;
             if (asString)
-                file = new StringReader(filePath);
-            else
-                file = new StreamReader(filePath);
-            
-                file.ReadLine(); // <Map>
-                newMap.Iso.Style = (IsometricStyle)Enum.Parse(typeof(IsometricStyle), file.ReadLine());
-                newMap.ClearAllCells(int.Parse(file.ReadLine()), int.Parse(file.ReadLine()));
-                newMap.TileWidth = int.Parse(file.ReadLine());
-                newMap.TileHeight = int.Parse(file.ReadLine());
-                file.ReadLine(); // </Map>
-                file.ReadLine(); // <TileDictionary>
-                var requiredTiles = new List<ZTile>();
-                var line = file.ReadLine();
-                while (!line.Equals("</TileDictionary>"))
+            {
+                using (file = new StringReader(filePath))
                 {
-                    requiredTiles.Add(new ZTile("D:\\workspace\\BaseGame\\" + line));
-                    
-                    line = file.ReadLine();
+                    return ReadMap(file, Iso);
                 }
-                Console.WriteLine(requiredTiles[0].Bitmaps.Count());
-                file.ReadLine(); // <Cells>
-                for (var x = 0; x < newMap.Cells.GetLength(0); x++)
-                    for (var y = 0; y < newMap.Cells.GetLength(1); y++)
-                    {
-                        newMap.Cells[x, y] = MapCell.FromStream(file, requiredTiles);
-                    }
-                file.ReadLine(); // </Cells>
-                //  Remake Parent links
-                for (var x = 0; x < newMap.Cells.GetLength(0); x++)
-                    for (var y = 0; y < newMap.Cells.GetLength(1); y++)
-                    {
-                        if (newMap.Cells[x, y].TempPoint.X != -1)
-                        {
-                            newMap.Cells[x, y].ParentCell = newMap.Cells[newMap.Cells[x, y].TempPoint.X, newMap.Cells[x, y].TempPoint.Y];
-                        }
-                    }
-
-            file.Close();
-            return newMap;
+            }
+            else
+            {
+                using (file = new StreamReader(filePath))
+                {
+                    return ReadMap(file, Iso);
+                }
+            }
         }
 
         /// <summary>

@@ -10,6 +10,7 @@ using System.Collections;
 using Microsoft.Win32;
 using System.Threading;
 using Editor.Model;
+using System.Collections.Generic;
 
 namespace Editor.View
 {
@@ -333,7 +334,7 @@ namespace Editor.View
         #region Commands
 
         //  New Map
-        private void NewMap(object sender, ExecutedRoutedEventArgs e)
+        private void NewModule(object sender, ExecutedRoutedEventArgs e)
         {
             var result = 
                 MessageBox.Show("Do you want to save your changes?", "New Map",
@@ -345,31 +346,43 @@ namespace Editor.View
                 case MessageBoxResult.None:
                     return;
                 case MessageBoxResult.Yes:
-                    SaveMapAs(null, null);
+                    SaveModuleAs(null, null);
                     break;
             }
             var dlg = new NewMapSettingsDialog {Owner = this};
 
             if (dlg.ShowDialog() == true)
-                ViewModel.NewMap(int.Parse(dlg.widthBox.Text), int.Parse(dlg.heightBox.Text)); 
+                ViewModel.NewModule(int.Parse(dlg.widthBox.Text), int.Parse(dlg.heightBox.Text)); 
         }
 
-        //  Save map as
-        private void SaveMapAs(object sender, ExecutedRoutedEventArgs e)
+        //  Save Module as
+        private void SaveModuleAs(object sender, ExecutedRoutedEventArgs e)
         {
-            var dlg = new SaveFileDialog {DefaultExt = ".jim", Filter = "Isometric map documents (.jim)|*.jim"};
+            var dlg = new SaveFileDialog {DefaultExt = ".jim", Filter = "Isometric module documents (.jim)|*.jim"};
             var result = dlg.ShowDialog();
             if (result == true)
-                ViewModel.Map.SaveMap(dlg.FileName);
+            {
+                List<Unit> roster = new List<Unit>();
+                foreach(FactionList fl in ViewModel.Factions)
+                {
+                    foreach(Unit u in fl.Units)
+                    {
+                        u.CurrentActionPoints = u.InitialActionPoints;
+                        u.CurrentHitPoints = u.InitialHitPoints;
+                    }
+                    roster.AddRange(fl.Units);
+                }
+                Module.Save(dlg.FileName, ViewModel.Map, roster);
+            }
         }
 
-        //  Open map
-        private void OpenMap(object sender, ExecutedRoutedEventArgs e)
+        //  Open Module
+        private void OpenModule(object sender, ExecutedRoutedEventArgs e)
         {
-            var dlg = new OpenFileDialog {DefaultExt = ".jim", Filter = "Isometric map documents (.jim)|*.jim"};
+            var dlg = new OpenFileDialog {DefaultExt = ".jim", Filter = "Isometric module documents (.jim)|*.jim"};
             var result = dlg.ShowDialog();
             if (result == true)
-                ViewModel.OpenMap(dlg.FileName, _iso);
+                ViewModel.OpenModule(dlg.FileName, _iso);
         }
 
         //  Undo
@@ -493,5 +506,9 @@ namespace Editor.View
         public static readonly RoutedUICommand ShowGrid = new RoutedUICommand("Show grid", "ShowGrid", typeof(MainWindow));
         public static readonly RoutedUICommand ChangeLayer = new RoutedUICommand("Change edit layer", "ChangeLayer", typeof(MainWindow));
         public static readonly RoutedUICommand EditCharacters = new RoutedUICommand("Edit characters", "EditCharacters", typeof(MainWindow));
+        public static readonly RoutedUICommand NewUnit = new RoutedUICommand("New unit", "NewUnit", typeof(CharacterEditor));
+        public static readonly RoutedUICommand DeleteAllUnits = new RoutedUICommand("Delete all units", "DeleteAllUnits", typeof(CharacterEditor));
+        public static readonly RoutedUICommand DeleteUnit = new RoutedUICommand("Delete unit", "DeleteUnit", typeof(CharacterEditor));
+
     }
 }

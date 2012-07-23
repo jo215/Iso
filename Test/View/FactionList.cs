@@ -7,7 +7,9 @@ namespace Editor.View
 {
     public class FactionList
     {
+        private static byte nextID;
         public string Name { get; set; }
+        public byte ID { get; set; }
         public ObservableCollection<Unit> Units { get;  set; }
 
         /// <summary>
@@ -18,11 +20,13 @@ namespace Editor.View
         {
             Name = name;
             Units = new ObservableCollection<Unit>();
+            ID = nextID;
+            nextID++;
         }
 
         public FactionList(string name, ObservableCollection<Unit> units)
+            :this(name)
         {
-            Name = name;
             Units = units;
         }
     }

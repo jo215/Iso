@@ -81,8 +81,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\DoubleLinkedListNode.cs" />
-    <Compile Include="Model\Roster.cs" />
+    <Compile Include="Model\Module.cs" />
+    <Compile Include="View\DoubleLinkedListNode.cs" />
     <Compile Include="Model\Unit.cs" />
     <Compile Include="View\CharacterEditor.xaml.cs">
       <DependentUpon>CharacterEditor.xaml</DependentUpon>
