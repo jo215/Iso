@@ -46,7 +46,7 @@ namespace IsoGame
         /// </summary>
         public ClientGame() 
         {
-            _debug = true;
+            _debug = false;
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 

@@ -8,5 +8,6 @@
         PlayerInfo,
         Chat,
         MapUpload,
+        PlayerEnteredMap,
     }
 }

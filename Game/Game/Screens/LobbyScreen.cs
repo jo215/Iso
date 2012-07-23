@@ -29,7 +29,7 @@ namespace IsoGame.Screens
         private GameState _gameState;
         private ClientGame _game;
         readonly List<KeyValuePair<PlayerState, string>> _receivedChat;
-
+        byte playersInMap;
         float _pauseAlpha;
 
         /// <summary>
@@ -183,6 +183,13 @@ namespace IsoGame.Screens
                         _receivedChat.Add(new KeyValuePair<PlayerState, string>(_gameState.GetPlayerByID(sender), "Sent a map which was received OK."));
                         PushChatUpdates();
                         _ui.WebView.ExecuteJavascript("document.getElementById('startButton').style.visibility='visible'");
+                        break;
+
+                    case MessageType.PlayerEnteredMap:
+                        playersInMap++;
+                        sender = m.ReadByte();
+                        _receivedChat.Add(new KeyValuePair<PlayerState, string>(_gameState.GetPlayerByID(sender), "Entered the map."));
+                        PushChatUpdates();
                         break;
                 }
             }

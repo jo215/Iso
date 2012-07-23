@@ -81,7 +81,10 @@ namespace IsoGame.Screens
             // it should not try to catch up.
             ScreenManager.Game.ResetElapsedTime();
             _eventManager.QueueEvent(new GameEvent(EventType.GetReady));
-
+            //  Tell the server we're here
+            _game.Agent.WriteMessage((byte)MessageType.PlayerEnteredMap);
+            _game.Agent.WriteMessage(_game.PlayerID);
+            _game.Agent.SendMessage(_game.Agent.Connections[0]);
             ScreenManager.Input.UiIsActive = true;
         }
 
@@ -111,7 +114,6 @@ namespace IsoGame.Screens
 
             if (IsActive)
             {
-
                 //  Do game stuff here
                 _scroller.Update(gameTime, ScreenManager.Input);
             }

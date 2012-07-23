@@ -22,6 +22,7 @@ namespace IsoGame.Network
 
         internal bool SomebodyOnceConnected;
         internal Dictionary<NetConnection, PlayerState> IPDictionary;
+
         internal ContentManager Content;
         /// <summary>
         /// Constructor.
@@ -41,7 +42,6 @@ namespace IsoGame.Network
         /// </summary>
         private void Run()
         {
-            
             while (IsRunning)
             {
                 try
@@ -55,7 +55,6 @@ namespace IsoGame.Network
                 if (GameState.Players.Count == 0 && SomebodyOnceConnected)
                     IsRunning = false;
             }
-
         }
 
         /// <summary>

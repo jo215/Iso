@@ -12,6 +12,7 @@ namespace IsoGame.Network
         readonly GameState _gameState;
         readonly NetworkAgent _agent;
         internal byte NextPlayerID;
+        byte playersInMap;
 
         /// <summary>
         /// Constructor.
@@ -58,10 +59,31 @@ namespace IsoGame.Network
                             case MessageType.MapUpload:
                                 ReceiveAndSendMap(m);
                                 break;
+                            case MessageType.PlayerEnteredMap:
+                                PlayerEnteredMap(m);
+                                break;
                         }
                         break;
                 }
             }
+        }
+
+        /// <summary>
+        /// Called when a player leaves the lobby and enters the map.
+        /// </summary>
+        /// <param name="m"></param>
+        private void PlayerEnteredMap(NetIncomingMessage m)
+        {
+            var id = m.ReadByte();
+            foreach (var player in _gameState.Players)
+            {
+                _agent.WriteMessage((byte)MessageType.PlayerEnteredMap);
+                _agent.WriteMessage(id);
+                _agent.SendMessage(player.NetConnection);
+            }
+            playersInMap++;
+            if (playersInMap == _gameState.Players.Count)
+                _server.CurrentServerState = new GameServerState(_server);
         }
 
         /// <summary>

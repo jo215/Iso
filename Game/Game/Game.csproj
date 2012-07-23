@@ -125,6 +125,7 @@
     <Compile Include="Misc\Debug.cs" />
     <Compile Include="Misc\Scroller.cs" />
     <Compile Include="Misc\StringCompressor.cs" />
+    <Compile Include="Network\GameServerState.cs" />
     <Compile Include="Network\MessageType.cs" />
     <Compile Include="Network\NetworkAgent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
