@@ -1203,3 +1203,1348 @@ Network thread started
 Status Message: Re
 Status Message: Con
 Initiated average roundtrip time to 3.03 ms Remote time is: 3.75022721290588
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.08775871992111
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.68 ms Remote time is: 1.08993130922318
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.79 ms Remote time is: 1.12391102313995
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.07 ms Remote time is: 1.11952048540115
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.71 ms Remote time is: 1.11070483922958
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.68 ms Remote time is: 1.06788301467896
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.45 ms Remote time is: 1.03650724887848
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.75 ms Remote time is: 1.25486600399017
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.93 ms Remote time is: 1.14695858955383
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.94 ms Remote time is: 1.061802983284
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.30 ms Remote time is: 1.17297315597534
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.16086113452911
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.33 ms Remote time is: 1.09146898984909
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.11794978380203
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.49 ms Remote time is: 1.10097897052765
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.44 ms Remote time is: 1.19173336029053
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.27076250314713
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 1.11607015132904
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 1.09720247983932
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.79 ms Remote time is: 1.00972598791122
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.13 ms Remote time is: 1.09200727939606
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.70 ms Remote time is: 1.14291322231293
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.69 ms Remote time is: 1.10838305950165
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.70 ms Remote time is: 1.04790019989014
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.12789899110794
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.01 ms Remote time is: 1.16769480705261
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.88 ms Remote time is: 1.13247573375702
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.76 ms Remote time is: 1.07632607221603
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.36 ms Remote time is: 1.15066260099411
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.31 ms Remote time is: 1.09770935773849
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.12654274702072
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.38 ms Remote time is: 1.07327419519424
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.10154259204865
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 4.16 ms Remote time is: 1.19793957471848
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.17 ms Remote time is: 1.1454873085022
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.11580795049667
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.78 ms Remote time is: 1.11199605464935
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.07994115352631
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.21103817224503
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.66 ms Remote time is: 1.09366279840469
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.85 ms Remote time is: 1.13146835565567
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.11351102590561
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.84 ms Remote time is: 1.08417028188705
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.98 ms Remote time is: 1.13423210382462
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.83 ms Remote time is: 1.11257660388947
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.78 ms Remote time is: 1.19619429111481
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 4.59 ms Remote time is: 1.18143910169601
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.10452026128769
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.14783281087875
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.15479773283005
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.84 ms Remote time is: 1.21904623508453
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.19558024406433
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.75 ms Remote time is: 1.10417360067368
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.88 ms Remote time is: 1.13806629180908
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.88 ms Remote time is: 1.07965743541718
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.06918299198151
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.08855015039444
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 4.63 ms Remote time is: 1.12821418046951
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.08 ms Remote time is: 1.03814029693604
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.12746393680573
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.07677513360977
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.67 ms Remote time is: 1.16339021921158
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 4.90 ms Remote time is: 1.07712763547897
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.96 ms Remote time is: 1.02387344837189
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.18 ms Remote time is: 0.984683215618134
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.55 ms Remote time is: 1.04219400882721
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.47 ms Remote time is: 1.08887124061584
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.50 ms Remote time is: 1.12551862001419
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 1.07896035909653
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.08136463165283
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.13 ms Remote time is: 1.13532739877701
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.02 ms Remote time is: 1.12234860658646
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.53 ms Remote time is: 1.16646522283554
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.68 ms Remote time is: 1.08354508876801
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.04505956172943
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.58 ms Remote time is: 1.10746645927429
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.62 ms Remote time is: 1.03016883134842
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.92 ms Remote time is: 1.09798640012741
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 1.11133950948715
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.79 ms Remote time is: 1.09503537416458
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.95 ms Remote time is: 1.18302696943283
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.70 ms Remote time is: 1.10658985376358
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.85 ms Remote time is: 2.11059904098511
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.40 ms Remote time is: 1.22017699480057
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.96 ms Remote time is: 1.11829161643982
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.1865268945694
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.84 ms Remote time is: 1.19645738601685
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.2992627620697
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.06 ms Remote time is: 1.26059383153915
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.07 ms Remote time is: 1.14769053459167
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.74 ms Remote time is: 1.0636682510376
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.83 ms Remote time is: 1.15351796150208
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 1.17165178060532
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 1.11460077762604
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 1.22630441188812
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.90 ms Remote time is: 1.13264232873917
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.71 ms Remote time is: 1.15236192941666
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 6.97 ms Remote time is: 1.19368195533752
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.19379717111588
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.11 ms Remote time is: 1.05602914094925
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.85 ms Remote time is: 1.11902314424515
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.62 ms Remote time is: 1.19223010540009
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.43 ms Remote time is: 1.18033635616302
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.35 ms Remote time is: 1.2383616566658
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.75 ms Remote time is: 1.18438762426376
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.75 ms Remote time is: 1.09226411581039
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.17285287380219
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.26 ms Remote time is: 1.15330231189728
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.00 ms Remote time is: 1.15920025110245
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.65 ms Remote time is: 1.19711023569107
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.77 ms Remote time is: 1.18665313720703
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.19285577535629
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 1.09759968519211
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 5.62 ms Remote time is: 1.1719428896904
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.20 ms Remote time is: 1.23568725585938
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.74 ms Remote time is: 1.1420151591301
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 1.23238372802734
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.21 ms Remote time is: 1.09879159927368
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.12893712520599
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.76 ms Remote time is: 1.20987635850906
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 1.23403853178024
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.79 ms Remote time is: 1.07546728849411
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.42 ms Remote time is: 1.162109375
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.43 ms Remote time is: 1.20779198408127
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.06 ms Remote time is: 1.18607914447784
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.22814381122589
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.69 ms Remote time is: 1.11967712640762
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.25 ms Remote time is: 1.1573172211647
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.52 ms Remote time is: 1.21425497531891
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 1.11249321699142
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.93 ms Remote time is: 1.15692746639252
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.60 ms Remote time is: 1.21138483285904
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.77 ms Remote time is: 1.15809869766235
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.12 ms Remote time is: 1.1018100976944
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 1.13045674562454
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.02 ms Remote time is: 1.11430597305298
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.19663113355637
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.76 ms Remote time is: 1.15700340270996
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.65 ms Remote time is: 1.17460864782333
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.49 ms Remote time is: 1.16903865337372
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.74 ms Remote time is: 1.18245005607605
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.11 ms Remote time is: 1.17169380187988
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.73 ms Remote time is: 1.14287853240967
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.11880630254745
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.44 ms Remote time is: 1.1862695813179
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.74 ms Remote time is: 1.17961776256561
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.39 ms Remote time is: 1.12307405471802
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.55 ms Remote time is: 1.14203357696533
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.08 ms Remote time is: 1.22121286392212
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 1.1495658159256
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.79 ms Remote time is: 1.17185020446777
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.84 ms Remote time is: 1.15520048141479
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.75 ms Remote time is: 1.16848224401474
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.43 ms Remote time is: 1.17212742567062
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.42 ms Remote time is: 1.12863504886627
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.84 ms Remote time is: 1.15670877695084
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.15893739461899
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.51 ms Remote time is: 1.1910811662674
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 1.11778545379639
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.11 ms Remote time is: 1.16733253002167
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.81 ms Remote time is: 1.19864988327026
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 1.20388835668564
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.22834753990173
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.79 ms Remote time is: 1.17764258384705
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.11918956041336
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.78 ms Remote time is: 1.1502451300621
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.43 ms Remote time is: 1.20856380462646
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.81 ms Remote time is: 1.18697738647461
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.59 ms Remote time is: 1.1831688284874
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.19748115539551
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.11 ms Remote time is: 1.17467945814133
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.43 ms Remote time is: 1.16262298822403
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.69 ms Remote time is: 1.14072424173355
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.11042875051498
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.76 ms Remote time is: 1.21557193994522
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.73 ms Remote time is: 1.13965493440628
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.95 ms Remote time is: 1.1820375919342
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.37 ms Remote time is: 1.17982363700867
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.19113636016846
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.75 ms Remote time is: 1.1618600487709
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.87 ms Remote time is: 1.18717402219772
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 4.21 ms Remote time is: 1.1112197637558
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.47 ms Remote time is: 1.19696348905563
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.98 ms Remote time is: 1.1452499628067
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.24 ms Remote time is: 1.13715600967407
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.20262742042542
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.81 ms Remote time is: 1.14143931865692
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.89 ms Remote time is: 1.23167079687119
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.84 ms Remote time is: 1.24360662698746
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.71 ms Remote time is: 1.16389816999435
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.59 ms Remote time is: 1.18472301959991
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.68 ms Remote time is: 1.22763895988464
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.83 ms Remote time is: 1.16824090480804
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.96 ms Remote time is: 1.14867639541626
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.22798174619675
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.99 ms Remote time is: 1.18419599533081
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.43 ms Remote time is: 1.10988628864288
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.79 ms Remote time is: 1.12254536151886
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.83 ms Remote time is: 1.2007709145546
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.92 ms Remote time is: 1.18863552808762
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.84 ms Remote time is: 1.2044478058815
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.69 ms Remote time is: 1.08929419517517
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.69 ms Remote time is: 1.13620150089264
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.79 ms Remote time is: 1.19318777322769
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.78 ms Remote time is: 1.12949806451797
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.62 ms Remote time is: 1.17469948530197
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 4.66 ms Remote time is: 1.17768263816833
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.74 ms Remote time is: 1.18440037965775
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.89 ms Remote time is: 1.1544491648674
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.54 ms Remote time is: 1.1959428191185
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.96 ms Remote time is: 1.16478914022446
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.25 ms Remote time is: 1.14842134714127
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.79 ms Remote time is: 1.19327163696289
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.72 ms Remote time is: 1.10802888870239
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.93 ms Remote time is: 1.03313863277435
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.09 ms Remote time is: 1.11259174346924
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.72 ms Remote time is: 1.11981546878815
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.77 ms Remote time is: 1.03647238016129
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.70 ms Remote time is: 1.13062638044357
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.80 ms Remote time is: 1.1951230764389
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.06 ms Remote time is: 1.10234403610229
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.15 ms Remote time is: 1.13303172588348
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.79 ms Remote time is: 1.08836960792542
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.74 ms Remote time is: 1.18900871276855
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.53 ms Remote time is: 1.11035001277924
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.71 ms Remote time is: 1.10636460781097
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.78 ms Remote time is: 1.13213163614273
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 3.38 ms Remote time is: 1.05959045886993
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.84 ms Remote time is: 1.11778748035431
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.55 ms Remote time is: 1.07248818874359
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 5.12 ms Remote time is: 1.1215273141861
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.76 ms Remote time is: 1.10318517684937
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.16 ms Remote time is: 1.12780928611755
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 5.58 ms Remote time is: 1.1491025686264
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.46 ms Remote time is: 1.13134109973907
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.79 ms Remote time is: 1.09556061029434
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.17910897731781
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 1.09573930501938
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.68 ms Remote time is: 1.09149152040482
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.03511798381805
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.90 ms Remote time is: 1.1523494720459
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.56 ms Remote time is: 1.09613692760468
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.71 ms Remote time is: 1.1709007024765
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.85 ms Remote time is: 1.07089155912399
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.10435914993286
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.18 ms Remote time is: 1.12660330533981
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.48 ms Remote time is: 1.12217766046524
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.96 ms Remote time is: 1.09771454334259
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.55 ms Remote time is: 1.12964159250259
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.04820609092712
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.34 ms Remote time is: 1.14655190706253
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.10 ms Remote time is: 1.1828305721283
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.86 ms Remote time is: 1.17634898424149
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.22 ms Remote time is: 1.20279330015182
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.00 ms Remote time is: 1.11399507522583
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.79 ms Remote time is: 1.17327636480331
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.48 ms Remote time is: 1.11438864469528
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.91 ms Remote time is: 1.07445269823074
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.10 ms Remote time is: 1.20753073692322
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.11 ms Remote time is: 1.14872568845749
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.81 ms Remote time is: 1.12147849798203
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.85 ms Remote time is: 1.09348094463348
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.23 ms Remote time is: 1.17755246162415
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.70 ms Remote time is: 1.19516634941101
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 1.11 ms Remote time is: 1.06803625822067
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.10 ms Remote time is: 1.12932676076889
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 0.74 ms Remote time is: 1.09694713354111
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 5.26 ms Remote time is: 1.14502251148224
+Socket bound to 0.0.0.0:11000: True
+Network thread started
+Status Message: Re
+Status Message: Con
+Initiated average roundtrip time to 2.64 ms Remote time is: 1.08371651172638

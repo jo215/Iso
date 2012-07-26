@@ -6,26 +6,11 @@ using System.Windows.Media.Imaging;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows;
+using ZarTools;
+using ISOTools;
 
 namespace Editor.Model
 {
-    public enum BodyType
-    {
-        Assault, BeastLord, BOSElder, BOSScribe, CitizenAlpha, CitizenMediumFemale, CitizenMediumMale, CitizenThinFemale, CitizenThinMale,
-        Enclave, Environmental, Ghoul, GhoulArmour, Goliath, LeatherFemale, LeatherMale, MetalFemale, MetalMale,
-        Mutant, MutantArmour, Omega, Pipboy, Power, RaiderFemale, RaiderMale, RaiderMaleHuge, RaiderMaleLarge, 
-        ReaverFemale, ReaverMale, Sarge, TribalFemale, TribalMale, TribalMaleLarge, VaultFemale, VaultMale, WBOS
-    }
-
-    public enum WeaponType
-    {
-        None, Club, Heavy, Knife, Minigun, Pistol, Rifle, Rocket, SMG, Spear
-    }
-
-    public enum Stance
-    {
-        Stand, Crouch, Prone
-    }
 
     public enum StatusEffect
     {
@@ -47,6 +32,7 @@ namespace Editor.Model
         public BodyType Body { get; set; }
         public WeaponType Weapon { get; set; }
         public Stance Stance { get; set; }
+        public CompassDirection Facing { get; set; }
 
         public byte InitialHitPoints { get; set; }
         public byte CurrentHitPoints { get; set; }
@@ -59,6 +45,8 @@ namespace Editor.Model
 
         public string Name { get; set; }
         public List<StatusEffect> Effects { get; set; }
+
+        public ZSprite Sprite { get; set; }
 
         /// <summary>
         /// Constructor.
@@ -132,6 +120,7 @@ namespace Editor.Model
             unit.Body = (BodyType)Enum.Parse(typeof(BodyType), stream.ReadLine());
             unit.Weapon = (WeaponType)Enum.Parse(typeof(WeaponType), stream.ReadLine());
             unit.Stance = (Stance)Enum.Parse(typeof(Stance), stream.ReadLine());
+            unit.Facing = (CompassDirection)Enum.Parse(typeof(CompassDirection), stream.ReadLine());
             unit.InitialHitPoints = byte.Parse(stream.ReadLine());
             unit.CurrentHitPoints = byte.Parse(stream.ReadLine());
             unit.InitialActionPoints = byte.Parse(stream.ReadLine());
@@ -176,6 +165,7 @@ namespace Editor.Model
             stream.WriteLine(Enum.GetName(typeof(BodyType), Body));
             stream.WriteLine(Enum.GetName(typeof(WeaponType), Weapon));
             stream.WriteLine(Enum.GetName(typeof(Stance), Stance));
+            stream.WriteLine(Enum.GetName(typeof(CompassDirection), Facing));
             stream.WriteLine(InitialHitPoints);
             stream.WriteLine(CurrentHitPoints);
             stream.WriteLine(InitialActionPoints);

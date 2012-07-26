@@ -71,8 +71,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sounds\Explosion\Collision.wav">
-      <Name>Collision</Name>
+    <Compile Include="Sounds\Explosion\Impact.wav">
+      <Name>Impact</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

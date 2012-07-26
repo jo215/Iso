@@ -9,27 +9,6 @@ using System.Windows.Media;
 namespace ZarTools
 {
     /// <summary>
-    /// The base type of a tile.
-    /// </summary>
-    public enum TileType {
-        Wall, Floor, Object, Stairs, Roof, Unknown
-    }
-
-    /// <summary>
-    /// The base material of a tile.
-    /// </summary>
-    public enum TileMaterial {
-        Stone, Gravel, Metal, Wood, Water, Snow, Ladder, Unknown
-    }
-
-    /// <summary>
-    /// Flags pertaining to tiles.
-    /// </summary>
-    public enum TileFlag {
-        Ethereal, HurtsNPC, Window, NoShadow, Climbable, NoPop, Exit, Invisible
-    }
-
-    /// <summary>
     /// Represents a Tile.
     /// </summary>
     public class ZTile

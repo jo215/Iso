@@ -28,8 +28,6 @@ namespace IsoGame.Events
             Map.Add(Keys.S, EventType.MoveBack);
             Map.Add(Keys.A, EventType.MoveLeft);
             Map.Add(Keys.D, EventType.MoveRight);
-            Map.Add(Keys.Q, EventType.RollAntiClockwise);
-            Map.Add(Keys.E, EventType.RollClockwise);
         }
     }
 }

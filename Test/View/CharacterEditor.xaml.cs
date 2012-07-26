@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Threading;
 using System.Windows.Threading;
 using System.Collections.Generic;
+using ZarTools;
 
 namespace Editor.View
 {
@@ -25,6 +26,7 @@ namespace Editor.View
         public Unit SelectedUnit { get; set; }
         public string Test { get; set; }
         private Dispatcher _uiDispatcher;
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -40,7 +42,7 @@ namespace Editor.View
             Factions = ViewModel.Factions;
             if (newRoster == null)
             {
-                Factions[1].Units.Add(new Unit(1, BodyType.Omega, WeaponType.SMG, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "James"));
+                Factions[1].Units.Add(new Unit(1, BodyType.Enclave, WeaponType.SMG, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "James"));
                 Factions[2].Units.Add(new Unit(2, BodyType.TribalFemale, WeaponType.Club, Stance.Stand, 10, 10, 10, 10, 10, -1, -1, "John"));
             }
             else

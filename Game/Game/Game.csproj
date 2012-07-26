@@ -113,6 +113,7 @@
     <Reference Include="System.Net">
       <Private>False</Private>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio\AudioManager.cs" />
@@ -123,11 +124,14 @@
     <Compile Include="Events\Keymap.cs" />
     <Compile Include="Misc\AwesomiumUIManager.cs" />
     <Compile Include="Misc\Debug.cs" />
-    <Compile Include="Misc\Scroller.cs" />
+    <Compile Include="Misc\MapScroller.cs" />
     <Compile Include="Misc\StringCompressor.cs" />
     <Compile Include="Network\GameServerState.cs" />
     <Compile Include="Network\MessageType.cs" />
     <Compile Include="Network\NetworkAgent.cs" />
+    <Compile Include="Processes\AnimProcess.cs" />
+    <Compile Include="Processes\IProcess.cs" />
+    <Compile Include="Processes\ProcessManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ClientGame.cs" />

@@ -38,15 +38,6 @@
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\Explosion\collision.wav</Source>
-      <Name>Sounds\Explosion\collision</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Explosion\collision.xnb</Output>
-      <Time>2012-07-09T23:40:45.5802229+01:00</Time>
-    </Item>
-    <Item>
       <Source>Sounds\UI\menuCancel.wav</Source>
       <Name>Sounds\UI\menuCancel</Name>
       <Importer>WavImporter</Importer>
@@ -135,6 +126,15 @@
       <Options>None</Options>
       <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
       <Time>2012-07-09T23:45:45.2404285+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Explosion\Impact.wav</Source>
+      <Name>Sounds\Explosion\Impact</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Explosion\Impact.xnb</Output>
+      <Time>2012-07-09T23:40:45.5802229+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

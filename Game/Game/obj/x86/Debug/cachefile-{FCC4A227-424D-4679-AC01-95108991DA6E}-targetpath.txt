@@ -2,7 +2,6 @@ Content\Sounds\Betty\getReady.xnb
 Content\Sounds\Betty\loading.xnb
 Content\Sounds\Betty\paused.xnb
 Content\Sounds\Betty\saving.xnb
-Content\Sounds\Explosion\collision.xnb
 Content\Sounds\UI\menuCancel.xnb
 Content\Sounds\UI\menuChange.xnb
 Content\Sounds\UI\menuHover.xnb
@@ -13,11 +12,12 @@ Content\Textures\Menu\milkyway.xnb
 Content\Shaders\webEffect.xnb
 Content\Fonts\gameFont.xnb
 Content\Fonts\menufont.xnb
+Content\Sounds\Explosion\Impact.xnb
 Content\Sounds\Betty\GetReady.wav
 Content\Sounds\Betty\Loading.wav
 Content\Sounds\Betty\Paused.wav
 Content\Sounds\Betty\Saving.wav
-Content\Sounds\Explosion\Collision.wav
+Content\Sounds\Explosion\Impact.wav
 Content\Sounds\UI\MenuCancel.wav
 Content\Sounds\UI\MenuChange.wav
 Content\Sounds\UI\MenuHover.wav

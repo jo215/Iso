@@ -8,17 +8,17 @@ namespace ZarTools
     /// <summary>
     /// Animation collections.
     /// </summary>
-    internal class AnimationCollection
+    public class AnimationCollection
     {
-        internal BaseZarSprite Sprite;
-        internal int FileOffset;
-        internal String Name;
-        internal int FrameCount, DirCount;
-        internal Rectangle[] FrameRect;
-        internal List<Zar> Zars;
-        internal Texture2D[] Textures;
-        internal Color[,] Palette;
-        internal Rectangle CollectionOffset;
+        public BaseZarSprite Sprite;
+        public int FileOffset;
+        public String Name;
+        public int FrameCount, DirCount;
+        public Rectangle[] FrameRect;
+        public List<Zar> Zars;
+        public Texture2D[] Textures;
+        public Color[,] Palette;
+        public Rectangle CollectionOffset;
 
         /// <summary>
         /// Constructor.

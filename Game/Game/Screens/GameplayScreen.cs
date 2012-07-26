@@ -15,6 +15,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Editor.Model;
+using IsoGame.Processes;
 
 namespace IsoGame.Screens
 {
@@ -35,7 +37,7 @@ namespace IsoGame.Screens
 
         GraphicsDevice _device;
         private SpriteBatch _spriteBatch;
-        private Scroller _scroller;
+        private MapScroller _scroller;
 
         // Measure the framerate.
         //  We're locked at 60fps but can unlock in game.cs for testing
@@ -72,7 +74,7 @@ namespace IsoGame.Screens
             _agent = _game.Agent;
             _gameState = _game.GameState;
             _ui = _game.UI;
-            _scroller = new Scroller(_game, _gameState);
+            _scroller = new MapScroller(_game, _gameState);
             //  Add all components local to this screen
 
 

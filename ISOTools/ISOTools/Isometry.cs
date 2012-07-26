@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System;
 
 namespace ISOTools
 {
@@ -15,7 +16,7 @@ namespace ISOTools
     /// </summary>
     public enum CompassDirection
     {
-        North = 0, NorthEast = 1, East = 2, SouthEast = 3, South = 4, SouthWest = 5, West = 6, NorthWest = 7
+        NorthWest = 0, North = 1, NorthEast = 2, East = 3, SouthEast = 4, South = 5, SouthWest = 6, West = 7
     }
 
     enum MouseMappings
@@ -357,9 +358,13 @@ namespace ISOTools
         /// <returns></returns>
         public Microsoft.Xna.Framework.Point StaggeredToDiamond(int staggeredX, int staggeredY)
         {
-            int DiamondX = (staggeredY >> 1) + staggeredY & 1 + staggeredX;
-            int DiamondY = (staggeredY >> 1) - staggeredX;
-            return new Microsoft.Xna.Framework.Point(DiamondX, DiamondY);
+
+            int diamondX = (int) Math.Floor((staggeredY / 2.0) + (staggeredY % 2.0) + staggeredX);
+            int diamondY = (int) Math.Floor((staggeredY / 2.0) - staggeredX);
+
+            //int DiamondX = (staggeredY >> 1) + staggeredY & 1 + staggeredX;
+            //int DiamondY = (staggeredY >> 1) - staggeredX;
+            return new Microsoft.Xna.Framework.Point(diamondX, diamondY);
         }
 
         /// <summary>

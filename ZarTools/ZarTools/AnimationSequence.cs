@@ -2,12 +2,12 @@
 
 namespace ZarTools
 {
-    class AnimationSequence
+    public class AnimationSequence
     {
-        internal string Name { get; private set; }
-        internal int[] Frames { get; private set; }
-        internal Dictionary<int, List<object>> Events { get; private set; }
-        internal short AnimCollection { get; private set; }
+        public string Name { get; private set; }
+        public int[] Frames { get; private set; }
+        public Dictionary<int, List<object>> Events { get; private set; }
+        public short AnimCollection { get; private set; }
 
         /// <summary>
         /// Constructor.

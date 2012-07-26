@@ -10,7 +10,7 @@ namespace ZarTools
     /// <summary>
     /// A .zar-based sprite encapsulated with its animations.
     /// </summary>
-    internal class BaseZarSprite
+    public class BaseZarSprite
     {
         public bool Debug { get; set; }
 
@@ -22,17 +22,17 @@ namespace ZarTools
         public string FileName { get; private set; }
         internal long FileSize { get; private set; }
         public Vector2 Center { get; private set; }
-        internal Dictionary<string, AnimationSequence> Sequences { get; private set; }
-        internal AnimationCollection[] Collections { get; private set; }
+        public Dictionary<string, AnimationSequence> Sequences { get; private set; }
+        public AnimationCollection[] Collections { get; private set; }
         internal int Layers;
 
         //  Temporary variables
-        private static byte[] _buffer;
-        private static int _bufferPos;
-        private static byte[] _result;
-        private static int[] _unsignedResult;
+        private byte[] _buffer;
+        private int _bufferPos;
+        private byte[] _result;
+        private int[] _unsignedResult;
         private int _zarPos;
-        private static Color[,] _palette;
+        private Color[,] _palette;
 
         /// <summary>
         /// Private constructor. 
@@ -41,6 +41,7 @@ namespace ZarTools
         /// <param name="fileName"></param>
         private BaseZarSprite(GraphicsDevice device, String fileName)
         {
+            Debug = false;
             FileName = fileName;
             _device = device;
             if (Debug)
@@ -72,7 +73,7 @@ namespace ZarTools
         /// Decodes a specific animation.
         /// </summary>
         /// <param name="n"></param>
-        internal void ReadAnimation(int n)
+        public void ReadAnimation(int n)
         {
 
             var nextPos = FileSize;
@@ -86,13 +87,12 @@ namespace ZarTools
             {
                 ReadZar(n);
             }
-            
             ZarConverter.MakeBims(_device, Collections[n]);
             if (Debug)
                 Console.WriteLine("Loaded sprite " + n);
             //	Release memory
             _palette = null;
-            Collections[n].Zars.Clear();
+            //Collections[n].Zars.Clear();
             _result = null;
             _unsignedResult = null;
         }
@@ -106,7 +106,7 @@ namespace ZarTools
             switch (_unsignedResult[_zarPos])
             {
 			    case 0:		//	An empty frame
-				    if (Layers == 4) Collections[i].Zars.Add(new Zar(new List<int>(), 0, 0, 0, 0, 0, 0, null));
+				    if (Layers > 1) Collections[i].Zars.Add(new Zar(new List<int>(), 0, 0, 0, 0, 0, 0, null));
 				    _zarPos ++;
 				    break;
 			    case 1 :		//	Standard frame definition
@@ -140,6 +140,7 @@ namespace ZarTools
 				    _zarPos = _zarPos + rleSize + 21;
 				    break;
 			    default :		//	issue found
+                    Console.WriteLine(FileName);
 				    Console.WriteLine("Unknown frame type : " + _unsignedResult[_zarPos]);
 				    _zarPos++;
 				    break;
@@ -193,7 +194,8 @@ namespace ZarTools
         {
             _bufferPos = startPos;
             var plainSize = GetInt();
-            var inf = new Inflater(false);
+            Inflater inf;
+            inf = new Inflater(false);
             var input = nextPos - startPos > _buffer.Length - _bufferPos ? new byte[_buffer.Length - _bufferPos] : new byte[nextPos-startPos];
             _result = new byte[plainSize];
             GetBytes(input);
@@ -244,9 +246,10 @@ namespace ZarTools
             int animCount = GetShort();
             Layers = 4;
             //  Exceptions for single-layer zars
-            if (FileName.Contains("Enclave") ||FileName.Contains("Assault") || FileName.Contains("Omega") || FileName.Contains("Deathclaw")
-                || FileName.Contains("Goliath") || FileName.Contains("WBOS"))
+            if (FileName.Contains("Enclave") ||FileName.Contains("Assault") || FileName.Contains("Deathclaw")
+                || FileName.Contains("Goliath") || FileName.Contains("WBOS") || FileName.Contains("Omega"))
                 Layers = 1;
+
             if (Debug)
                 Console.WriteLine("Found: " + animCount + " collections");
             Collections = new AnimationCollection[animCount];
@@ -267,14 +270,16 @@ namespace ZarTools
                 var frameRect = new Rectangle[total];
                 for (var a = 0; a < frameCount; a++)
                     for (var b = 0; b < dirCount; b++)
-                        frameRect[frameCount * b + a] = new Rectangle(GetInt(), GetInt(), GetInt(), GetInt());
+                    {
+                        int x1 = GetInt();
+                        int y1 = GetInt();
+                        frameRect[frameCount * b + a] = new Rectangle(x1, y1 , GetInt() - x1, GetInt() - y1);
+
+                    }
                 var collectionRect = frameRect[0];
                 for (var a = 1; a < frameCount * dirCount; a++)
                 {
-                    if (frameRect[a].X < collectionRect.X) collectionRect.X = frameRect[a].X;
-                    if (frameRect[a].Y < collectionRect.Y) collectionRect.Y = frameRect[a].Y;
-                    if (frameRect[a].Width > collectionRect.Width) collectionRect.Width = frameRect[a].Width;
-                    if (frameRect[a].Height > collectionRect.Height) collectionRect.Height = frameRect[a].Height;
+                    collectionRect = Rectangle.Union(collectionRect, frameRect[a]);
                 }
                 Collections[k] = new AnimationCollection(fileOffset, colName, frameCount, dirCount, frameRect, null, collectionRect, this);
             }
@@ -426,28 +431,28 @@ namespace ZarTools
         }
 
         //  Helper methods.
-        private static byte GetByte()
+        private byte GetByte()
         {
             var result = _buffer[_bufferPos];
             _bufferPos++;
             return result;
         }
 
-        private static short GetShort()
+        private short GetShort()
         {
             var result = BitConverter.ToInt16(_buffer, _bufferPos);
             _bufferPos += 2;
             return result;
         }
 
-        private static int GetInt()
+        private int GetInt()
         {
             var result = BitConverter.ToInt32(_buffer, _bufferPos);
             _bufferPos += 4;
             return result;
         }
 
-        private static void PositionBuffer(int p)
+        private void PositionBuffer(int p)
         {
             _bufferPos = p;
         }

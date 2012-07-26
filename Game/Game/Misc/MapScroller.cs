@@ -8,10 +8,13 @@ using IsoGame.State;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using IsoGame.Screens.Base;
+using ZarTools;
+using Microsoft.Xna.Framework.Input;
+using IsoGame.Processes;
 
 namespace IsoGame.Misc
 {
-    public class Scroller
+    public class MapScroller
     {
         private Rectangle _worldSpace;
         private Rectangle _screenSpace;
@@ -23,18 +26,21 @@ namespace IsoGame.Misc
         private Module _module;
         private Isometry _iso;
         private SpriteBatch _spriteBatch;
+        private SpriteFont _gameFont;
 
         /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="game"></param>
-        public Scroller(ClientGame game, GameState state)
+        public MapScroller(ClientGame game, GameState state)
         {
             _game = game;
             _module = state.Module;
             _iso = _module.Map.Iso;
             _state = state;
             _spriteBatch = game.SpriteBatch;
+            _gameFont = game.Content.Load<SpriteFont>("Fonts//gameFont"); 
+
             _screenSpace = new Rectangle(0, 0, _game.GraphicsDevice.PresentationParameters.BackBufferWidth, _game.GraphicsDevice.PresentationParameters.BackBufferHeight);
 
             //  World space
@@ -54,9 +60,11 @@ namespace IsoGame.Misc
             if (_iso.Style == IsometricStyle.Staggered)
             {
                 _anchorSpace.Y += _module.Map.TileHeight / 2;
-                _anchorSpace.Height -= _module.Map.TileHeight;
-                _anchorSpace.X += _module.Map.TileHeight;
-                _anchorSpace.Width -= _module.Map.TileHeight;
+                _anchorSpace.Height -= _module.Map.TileHeight / 2;
+
+                _anchorSpace.X += _module.Map.TileWidth / 2;
+                _anchorSpace.Width -= _module.Map.TileWidth / 2;
+
                 _screenAnchor = new Point(_anchorSpace.Left, _anchorSpace.Top);
             }
             else
@@ -72,6 +80,7 @@ namespace IsoGame.Misc
         /// <param name="gameTime"></param>
         internal void Update(GameTime gameTime, InputState input)
         {
+            
             //  Scroll map on mouse at edges 
             if (input.CurrentMouseState.Y < 10)
                 if (_screenAnchor.Y > _anchorSpace.Top)
@@ -91,6 +100,7 @@ namespace IsoGame.Misc
                 if (_screenAnchor.X < _anchorSpace.Right)
                     _screenAnchor.X += 10 - (_screenSpace.Right - input.CurrentMouseState.X);
 
+            //  Bounds
             if (_screenAnchor.X < _anchorSpace.X)
                 _screenAnchor.X = _anchorSpace.X;
             if (_screenAnchor.X > _anchorSpace.Right)
@@ -109,11 +119,16 @@ namespace IsoGame.Misc
         public void Draw(GameTime gameTime)
         {
             _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied);
-            for (var y = 0; y < _module.Map.Height; y++)
-                for (var x = 0; x < _module.Map.Width; x++)
-                {
+
                     for (var layer = 0; layer < _module.Map.Cells[0, 0].Length; layer++)
-                                    //  Check for null (no tile)
+                    {
+                        for (var y = 0; y < _module.Map.Height; y++)
+                            for (var x = 0; x < _module.Map.Width; x++)
+                            {
+                        //  Draw any characters
+                        if (layer == 3)
+                            DrawCharacters(x, y, gameTime);
+                        //  Check for null (no tile)
                         if (_module.Map.Cells[x, y][layer] != null)
                         {
                             //  Base drawing point for a 1x1 tile
@@ -145,8 +160,67 @@ namespace IsoGame.Misc
 
                             _module.Map.Cells[x, y][layer].DrawTexture(_spriteBatch, new Vector2(drawPoint.X - _screenAnchor.X, drawPoint.Y - _screenAnchor.Y), Color.White);
                         }
+                    }
                 }
+
+            var tile = _iso.MouseMapper(new System.Drawing.Point(Mouse.GetState().X + _screenAnchor.X, Mouse.GetState().Y + _screenAnchor.Y));
+            _spriteBatch.DrawString(_gameFont, "Staggered Coordinates " + tile.X + " / " + tile.Y, new Vector2(10, 975), Color.Red);
+
+            var diamond = _iso.StaggeredToDiamond(tile.X, tile.Y);
+            _spriteBatch.DrawString(_gameFont, "Diamond Coordinates " + diamond.X + " / " + diamond.Y, new Vector2(10, 1000), Color.Red);
+
+            var stag = _iso.DiamondToStaggered(diamond.X, diamond.Y);
+            _spriteBatch.DrawString(_gameFont, "Staggered Coordinates " + stag.X + " / " + stag.Y, new Vector2(10, 1025), Color.Red);
+
             _spriteBatch.End();
+        }
+
+        /// <summary>
+        /// Draws the characters
+        /// </summary>
+        /// <param name="gameTime"></param>
+        private void DrawCharacters(int x, int y, GameTime gameTime)
+        {
+            foreach (var unit in _module.Roster)
+            {
+                if ((unit.X == x && unit.Y == y))
+                {
+                    ZSprite sprite = GetSprite(unit);
+                    Point p = _iso.TilePlotter(new Point(unit.X, unit.Y));
+                    //  Beware the magic numbers!
+                    Vector2 position = new Vector2(p.X - _screenAnchor.X, (int)(p.Y - _screenAnchor.Y));
+                    sprite.DrawCurrentImage(_spriteBatch, position, Color.White);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns the sprite for the given unit.
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns></returns>
+        private ZSprite GetSprite(Unit unit)
+        {
+            if (unit.Sprite != null) return unit.Sprite;
+            //  Lazy load
+            unit.Weapon = WeaponType.Rocket;
+            unit.Facing = CompassDirection.NorthWest;
+            ZSprite sprite = new ZSprite(_game.GraphicsDevice, "D:\\workspace\\BaseGame\\sprites\\characters\\" + Enum.GetName(typeof(BodyType), unit.Body) + ".spr");
+            sprite._baseSprite.ReadAnimation(sprite.Sequences["StandBreathe"].AnimCollection);
+            sprite.CurrentSequence = "StandBreathe";
+            
+            unit.Sprite = sprite;
+
+            //  Test some anims!
+            var proc = new AnimProcess(unit, AnimAction.Breathe);
+            proc.Next = new AnimProcess(unit, AnimAction.Single);
+            proc.Next.Next = new AnimProcess(unit, AnimAction.Breathe);
+            proc.Next.Next.Next = new AnimProcess(unit, AnimAction.Single);
+            proc.Next.Next.Next.Next = new AnimProcess(unit, AnimAction.Crouch);
+            proc.Next.Next.Next.Next.Next = new AnimProcess(unit, AnimAction.Walk);
+            proc.Next.Next.Next.Next.Next.Next = new AnimProcess(unit, AnimAction.Magic);
+            ClientGame._processManager.ProcessList.Add(proc);
+            return sprite;
         }
     }
 }

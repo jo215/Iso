@@ -6,7 +6,7 @@ namespace ZarTools
     /// <summary>
     /// Represents an individual .zar file.
     /// </summary>
-    internal class Zar
+    public class Zar
     {
         //  The run-length encoded blocks which define the image pixels.
         public List<int> RleBlocks { get; private set; }

@@ -10,6 +10,8 @@ using System.Linq;
 using IsoGame.Screens.Base;
 using Microsoft.Xna.Framework;
 using IsoGame.Events;
+using Editor.Model;
+using IsoGame.Processes;
 
 namespace IsoGame.Screens
 {
@@ -66,6 +68,7 @@ namespace IsoGame.Screens
 
             screenManager.AddScreen(loadingScreen, controllingPlayer);
             screenManager.EventManager.QueueEvent(new GameEvent(EventType.Loading));
+            //  Set all characters to breathe
         }
 
         /// <summary>

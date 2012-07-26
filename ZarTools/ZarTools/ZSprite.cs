@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace ZarTools
 {
@@ -11,31 +12,18 @@ namespace ZarTools
     /// </summary>
     public class ZSprite
     {
-        static StringBuilder _stringBuilder;
+        public readonly BaseZarSprite _baseSprite;
 
-        readonly BaseZarSprite _baseSprite;
-        string _stance = "Stand";
-        public string Stance { get { return _stance; } set { _stance = value; RebuildSequence(); } }
-        string _action = "Walk";
-        public string Action { get { return _action; } set { _action = value; RebuildSequence(); } }
-        string _weapon = "SMG";
-        public string Weapon { get { return _weapon; } set { _weapon = value; RebuildSequence(); } }
-        string _attack = "Burst";
-        public string Attack { get { return _attack; } set { _attack = value; RebuildSequence(); } }
-        short _direction = 3;
-        public short Direction { get { return _direction; } set { _direction = value; if (_direction < 0) _direction = 7; if (_direction > 7) _direction = 0; RebuildSequence(); } }
+        public Dictionary<string, AnimationSequence> Sequences { get { return _baseSprite.Sequences; } private set { } }
+        public AnimationCollection[] Collections { get { return _baseSprite.Collections; } private set { } }
 
-        private string _sequence;
-        private void RebuildSequence()
-        {
-            _ticks = 0;
-            _overlay = false;
-            _sequence = BuildSequenceName();
-        }
-
-        int _ticks, _overlayTicks;
+        public string CurrentSequence { get; set; }
+        public int CurrentFrameInSequence { get; set; }
+        public int CurrentFrameInCollection { get; set; }
+        
         bool _overlay;
         string _overlayName;
+        int overlayFrame, overlayEnd, lastFrameInSequence;
 
         /// <summary>
         /// Constructor.
@@ -44,26 +32,8 @@ namespace ZarTools
         /// <param name="fileName"></param>
         public ZSprite(GraphicsDevice device, String fileName)
         {
-            if (_stringBuilder == null)
-                _stringBuilder = new StringBuilder();
             _baseSprite = BaseZarSprite.GetInstance(device, fileName);
-            RebuildSequence();
-        }
 
-        /// <summary>
-        /// Ensure the respective AnimationCollection is decoded. Therefore must be called before DrawCurrentImage()
-        /// </summary>
-        public void GetCurrentImage()
-        {
-            var collection = _baseSprite.Sequences[_sequence].AnimCollection;
-            if (_baseSprite.Collections[collection].Textures[0] != null) return;
-            _baseSprite.ReadAnimation(collection);
-            //  Overlay
-            if (!_baseSprite.Sequences[_sequence].Events[_ticks/5].Contains("sproverlay")) return;
-            _overlayName = _sequence + "Overlay";
-            var collection2 = _baseSprite.Sequences[_overlayName].AnimCollection;
-            if (_baseSprite.Collections[collection2].Textures[0] == null)
-                _baseSprite.ReadAnimation(collection2);
         }
 
         /// <summary>
@@ -106,117 +76,58 @@ namespace ZarTools
         /// <param name="c"></param>
         public void DrawCurrentImage(SpriteBatch sb, Vector2 position, Color c)
         {
-            
-            var collection = _baseSprite.Sequences[_sequence].AnimCollection;
-
-            var fCount = _baseSprite.Collections[collection].FrameCount;
-
-            //  Figure out total frames and current frame in sequence
-            var totalFrames = _baseSprite.Sequences[_sequence].Frames.Length;
-            var currentFrame = _baseSprite.Sequences[_sequence].Frames[_ticks / 5] + fCount * _direction;
+            var collection = _baseSprite.Sequences[CurrentSequence].AnimCollection;
 
             //  Add in frame position offsets
             var nuPosition = position;
-            nuPosition.X += _baseSprite.Collections[collection].FrameRect[currentFrame].X;
-            nuPosition.Y += _baseSprite.Collections[collection].FrameRect[currentFrame].Y;
-            //  Subtract collection offset
-            nuPosition.X -= _baseSprite.Collections[0].CollectionOffset.X;
-            nuPosition.Y -= _baseSprite.Collections[0].CollectionOffset.Y;
+            nuPosition.X += _baseSprite.Collections[collection].FrameRect[CurrentFrameInCollection].X;
+            nuPosition.Y += _baseSprite.Collections[collection].FrameRect[CurrentFrameInCollection].Y;
 
+            nuPosition.X -= _baseSprite.Center.X - 36;
+            nuPosition.Y -= _baseSprite.Center.Y - 30;
+            
             //  Draw
-            sb.Draw(_baseSprite.Collections[collection].Textures[currentFrame], nuPosition, c);
+            sb.Draw(_baseSprite.Collections[collection].Textures[CurrentFrameInCollection], nuPosition, c);
+
             //  Overlay begins
-            if (_baseSprite.Sequences[_sequence].Events[_ticks / 5].Contains("sproverlay"))
+
+            if (_baseSprite.Sequences[CurrentSequence].Events.ContainsKey(CurrentFrameInSequence)
+                && _baseSprite.Sequences[CurrentSequence].Events[CurrentFrameInSequence].Contains("sproverlay"))
             {
                 _overlay = true;
-                _overlayTicks = _ticks;
-                _overlayName = _sequence + "Overlay";
+                overlayFrame = 0;
+                lastFrameInSequence = CurrentFrameInSequence;
+                _overlayName = CurrentSequence + "Overlay";
+                overlayEnd = overlayFrame + 18;
+                
             }
             //  Take care of overlay
             if (_overlay)
             {
                 var collection2 = _baseSprite.Sequences[_overlayName].AnimCollection;
                 var nuPosition2 = position;
-                fCount = _baseSprite.Collections[collection2].FrameCount;
+
                 //  Figure out current frame in sequence
-                if ((_ticks - _overlayTicks) / 5 < _baseSprite.Sequences[_overlayName].Frames.Length)
+                if (overlayFrame < overlayEnd)
                 {
-                    currentFrame = _baseSprite.Sequences[_overlayName].Frames[(_ticks - _overlayTicks) / 5] + fCount * _direction;
                     //  Add in frame position offsets
-                    nuPosition2.X += _baseSprite.Collections[collection2].FrameRect[currentFrame].X;
-                    nuPosition2.Y += _baseSprite.Collections[collection2].FrameRect[currentFrame].Y;
-                    //  Subtract collection offset
-                    nuPosition2.X -= _baseSprite.Collections[0].CollectionOffset.X;
-                    nuPosition2.Y -= _baseSprite.Collections[0].CollectionOffset.Y;
-                    //  Draw
-                    sb.Draw(_baseSprite.Collections[collection2].Textures[currentFrame], nuPosition2, c);
+                    nuPosition2.X += _baseSprite.Collections[collection2].FrameRect[overlayFrame].X;
+                    nuPosition2.Y += _baseSprite.Collections[collection2].FrameRect[overlayFrame].Y;
+
+                    nuPosition2.X -= _baseSprite.Center.X - 36;
+                    nuPosition2.Y -= _baseSprite.Center.Y - 30;
+
+                    sb.Draw(_baseSprite.Collections[collection2].Textures[overlayFrame], nuPosition2, c);
+                    if (lastFrameInSequence != CurrentFrameInSequence)
+                        overlayFrame++;
+
+                    lastFrameInSequence = CurrentFrameInSequence;
+                }
+                else
+                {
+                    _overlay = false;
                 }
             }
-
-            //  End of sequence actions
-            _ticks += 1;
-            if (_ticks < totalFrames*5) return;
-            switch (_action)
-            {
-                case "Walk":
-                    _action = "Walk";
-                    break;
-                case "Fallback":
-                    _action = "Getupback";
-                    break;
-                case "Fallforward":
-                    _action = "Getupforward";
-                    break;
-                case "Crouch":
-                    _action = "Breathe";
-                    _stance = "Crouch";
-                    break;
-                case "Prone":
-                    _action = "Breathe";
-                    _stance = "Prone";
-                    break;
-                case "Stand":
-                    _action = "Breathe";
-                    _stance = "Stand";
-                    break;
-                default:
-                    _action = "Breathe";
-                    break;
-            }
-            if (_stance.Equals("Death"))
-            {
-                _stance = "Stand";
-                _action = "Breathe";
-            }
-            RebuildSequence();
-        }
-
-        //  Helper to build the correct name for the animation sequence to display.
-        private string BuildSequenceName()
-        {
-            //  Build the sequence name
-            _stringBuilder.Clear();
-            _stringBuilder.Append(_stance);
-            _stringBuilder.Append(_action);
-            switch (_stance)
-            {
-                case "Death":
-                    break;
-                case "Stand":
-                    if (_action.Equals("Attack") || _action.Equals("Breathe") || _action.Equals("Walk"))
-                        _stringBuilder.Append(_weapon);
-                    break;
-                default:
-                    if (_action.Equals("Attack") || _action.Equals("Breathe"))
-                        _stringBuilder.Append(_weapon);
-                    break;
-            }
-            if (_action.Equals("Attack"))
-                _stringBuilder.Append(_attack);
-
-            var sequence = _stringBuilder.ToString();
-
-            return sequence;
         }
     }
 }

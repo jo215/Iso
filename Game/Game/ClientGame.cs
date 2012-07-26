@@ -12,6 +12,7 @@ using IsoGame.Audio;
 using IsoGame.State;
 using IsoGame.Network;
 using IsoGame.Misc;
+using IsoGame.Processes;
 
 namespace IsoGame
 {
@@ -30,7 +31,8 @@ namespace IsoGame
         readonly GraphicsDeviceManager _graphics;
         internal SpriteBatch SpriteBatch;
 
-        readonly EventManager _eventManager;
+        public static EventManager _eventManager;
+        public static ProcessManager _processManager;
         readonly ScreenManager _screenManager;
         readonly AudioManager _audioManager;
         
@@ -46,7 +48,7 @@ namespace IsoGame
         /// </summary>
         public ClientGame() 
         {
-            _debug = false;
+            _debug = true;
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
@@ -65,14 +67,16 @@ namespace IsoGame
 
             IsMouseVisible = true;
 
-            //  Hook up the event manager
+            //  Hook up the event & process managers
             _eventManager = new EventManager(this);
             Components.Add(_eventManager);
+            _processManager = new ProcessManager(this);
+            Components.Add(_processManager);
 
             //  Starting screens
-            _screenManager = new ScreenManager(this, _eventManager) {Debug = _debug};
-
+            _screenManager = new ScreenManager(this, _eventManager) { Debug = _debug };
             Components.Add(_screenManager);
+
             //  Start the threaded audio manager component
             _audioManager = new AudioManager(this, _eventManager);
 
@@ -178,6 +182,9 @@ namespace IsoGame
             //  Audio thread
             _audioManager.IsRunning = false;
             //  Close the socket connection
+            Agent.WriteMessage((byte)MessageType.PlayerQuit);
+            Agent.WriteMessage(PlayerID);
+            Agent.SendMessage(Agent.Connections[0]);
             Agent.Shutdown();
         }
 

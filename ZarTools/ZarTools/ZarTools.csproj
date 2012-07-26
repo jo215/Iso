@@ -74,10 +74,13 @@
     <Compile Include="AnimationCollection.cs" />
     <Compile Include="AnimationSequence.cs" />
     <Compile Include="BitmapTools.cs" />
+    <Compile Include="GameEvent.cs" />
+    <Compile Include="Unit.cs" />
     <Compile Include="Zar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZarConverter.cs" />
     <Compile Include="BaseZarSprite.cs" />
+    <Compile Include="ZEnums.cs" />
     <Compile Include="ZSprite.cs" />
     <Compile Include="ZTile.cs" />
   </ItemGroup>
