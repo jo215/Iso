@@ -6,10 +6,9 @@ using System.Threading;
 using System.IO;
 using System.Windows.Threading;
 using System.Windows.Data;
-using Editor.Model;
 using System.Drawing;
-using ISOTools;
 using System.Linq;
+using IsoTools;
 
 namespace Editor.View
 {

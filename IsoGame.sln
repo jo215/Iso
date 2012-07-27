@@ -7,13 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game\Game.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameContent", "Game\GameContent\GameContent.contentproj", "{FCC4A227-424D-4679-AC01-95108991DA6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISOTools", "ISOTools\ISOTools\ISOTools.csproj", "{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "ISOTools\ISOTools\Core.csproj", "{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZarTools", "ZarTools\ZarTools\ZarTools.csproj", "{BB1439C6-5C86-4CDD-BD2A-3A93950F0723}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewTest", "NewTest\NewTest\NewTest.csproj", "{8F5F8BD4-732A-41F8-953C-43910CA7812B}"
-EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "NewTestContent", "NewTest\NewTestContent\NewTestContent.contentproj", "{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,26 +81,6 @@ Global
 		{BB1439C6-5C86-4CDD-BD2A-3A93950F0723}.Release|x64.ActiveCfg = Release|x86
 		{BB1439C6-5C86-4CDD-BD2A-3A93950F0723}.Release|x86.ActiveCfg = Release|x86
 		{BB1439C6-5C86-4CDD-BD2A-3A93950F0723}.Release|x86.Build.0 = Release|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Debug|x64.ActiveCfg = Debug|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Debug|x86.ActiveCfg = Debug|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Debug|x86.Build.0 = Debug|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Release|Any CPU.ActiveCfg = Release|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Release|Mixed Platforms.Build.0 = Release|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Release|x64.ActiveCfg = Release|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Release|x86.ActiveCfg = Release|x86
-		{8F5F8BD4-732A-41F8-953C-43910CA7812B}.Release|x86.Build.0 = Release|x86
-		{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}.Debug|x64.ActiveCfg = Debug|x86
-		{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}.Debug|x86.ActiveCfg = Debug|x86
-		{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}.Release|Any CPU.ActiveCfg = Release|x86
-		{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}.Release|x64.ActiveCfg = Release|x86
-		{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

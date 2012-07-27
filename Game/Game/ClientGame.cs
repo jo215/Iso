@@ -1,6 +1,5 @@
 using System.IO;
 using System.Linq;
-using Editor.Model;
 using IsoGame.Screens.Base;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
@@ -13,6 +12,8 @@ using IsoGame.State;
 using IsoGame.Network;
 using IsoGame.Misc;
 using IsoGame.Processes;
+using IsoTools;
+using System.Windows.Forms;
 
 namespace IsoGame
 {
@@ -27,7 +28,7 @@ namespace IsoGame
         internal NetworkAgent Agent;
 
         internal AwesomiumUIManager UI;
-
+        public static Form winForm;
         readonly GraphicsDeviceManager _graphics;
         internal SpriteBatch SpriteBatch;
 
@@ -38,11 +39,11 @@ namespace IsoGame
         
         internal GameState GameState;
 
-        // ReSharper disable ConvertToConstant.Local
         private readonly bool _debug;
-        // ReSharper restore ConvertToConstant.Local
+
         public byte PlayerID;
         public string PlayerName;
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -51,6 +52,9 @@ namespace IsoGame
             _debug = true;
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            winForm = (Form)Form.FromHandle(this.Window.Handle);
+            winForm.Cursor = CustomCursors.Normal;
 
             // Most games will want to leave both these values set to true to ensure
             // smoother updates, but when you are doing performance work it can be
@@ -195,9 +199,6 @@ namespace IsoGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                Exit();
 
             UI.Update(gameTime);
 

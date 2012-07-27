@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using Editor.Model;
 using IsoGame.Screens.Base;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -12,6 +11,7 @@ using Lidgren.Network;
 using IsoGame.Network;
 using IsoGame.State;
 using System.IO;
+using IsoTools;
 
 namespace IsoGame.Screens
 {

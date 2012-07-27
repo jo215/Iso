@@ -88,8 +88,9 @@
       <Name>ZarTools</Name>
     </ProjectReference>
     <ProjectReference Include="..\NewTestContent\NewTestContent.contentproj">
-      <Name>NewTestContent</Name>
+      <Name>NewTestContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{3C4D247C-6D77-4ECE-A2EC-83918ADB47EA}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

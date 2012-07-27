@@ -10,8 +10,8 @@ using System.Linq;
 using IsoGame.Screens.Base;
 using Microsoft.Xna.Framework;
 using IsoGame.Events;
-using Editor.Model;
 using IsoGame.Processes;
+using IsoGame.Misc;
 
 namespace IsoGame.Screens
 {
@@ -58,6 +58,7 @@ namespace IsoGame.Screens
                                 PlayerIndex? controllingPlayer,
                                 params GameScreen[] screensToLoad)
         {
+            ClientGame.winForm.Cursor = CustomCursors.Busy;
             // Tell all the current screens to transition off.
             foreach (var screen in screenManager.GetScreens())
                 screen.ExitScreen();

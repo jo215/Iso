@@ -101,6 +101,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
@@ -123,6 +124,7 @@
     <Compile Include="Events\IEventListener.cs" />
     <Compile Include="Events\Keymap.cs" />
     <Compile Include="Misc\AwesomiumUIManager.cs" />
+    <Compile Include="Misc\CustomCursors.cs" />
     <Compile Include="Misc\Debug.cs" />
     <Compile Include="Misc\MapScroller.cs" />
     <Compile Include="Misc\StringCompressor.cs" />
@@ -160,9 +162,9 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ISOTools\ISOTools\ISOTools.csproj">
+    <ProjectReference Include="..\..\ISOTools\ISOTools\Core.csproj">
       <Project>{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}</Project>
-      <Name>ISOTools</Name>
+      <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Test\Editor.csproj">
       <Project>{0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A}</Project>
@@ -173,8 +175,9 @@
       <Name>ZarTools</Name>
     </ProjectReference>
     <ProjectReference Include="..\GameContent\GameContent.contentproj">
-      <Name>GameContent</Name>
+      <Name>GameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{FCC4A227-424D-4679-AC01-95108991DA6E}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

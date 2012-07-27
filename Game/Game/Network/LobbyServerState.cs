@@ -1,8 +1,8 @@
-﻿using Editor.Model;
-using IsoGame.Misc;
+﻿using IsoGame.Misc;
 using IsoGame.State;
 using Lidgren.Network;
 using System;
+using IsoTools;
 
 namespace IsoGame.Network
 {

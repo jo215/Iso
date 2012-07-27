@@ -15,7 +15,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Editor.Model;
 using IsoGame.Processes;
 
 namespace IsoGame.Screens
@@ -88,6 +87,7 @@ namespace IsoGame.Screens
             _game.Agent.WriteMessage(_game.PlayerID);
             _game.Agent.SendMessage(_game.Agent.Connections[0]);
             ScreenManager.Input.UiIsActive = true;
+            ClientGame.winForm.Cursor = CustomCursors.Normal;
         }
 
 

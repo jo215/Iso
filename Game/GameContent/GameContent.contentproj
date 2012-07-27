@@ -136,6 +136,70 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Cursors\Roundling\Alt.ani">
+      <Name>Alt</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\Busy.ani">
+      <Name>Busy</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\BusyBkg.ani">
+      <Name>BusyBkg</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\EW.ani">
+      <Name>EW</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\HandWrite.ani">
+      <Name>HandWrite</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\Help.ani">
+      <Name>Help</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\Link.ani">
+      <Name>Link</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\Move.ani">
+      <Name>Move</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\NESW.ani">
+      <Name>NESW</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\Normal.ani">
+      <Name>Normal</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\NS.ani">
+      <Name>NS</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\NWSE.ani">
+      <Name>NWSE</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\RedSightLink.ani">
+      <Name>RedSightLink</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\Regular.ani">
+      <Name>Regular</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\Text.ani">
+      <Name>Text</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Cursors\Roundling\Unavailable.ani">
+      <Name>Unavailable</Name>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="html\css\lobby.css">
       <Name>lobby</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -210,6 +274,12 @@
       <Name>mousemap</Name>
       <Importer>TextureImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cursors\Roundling\precision.cur">
+      <Name>precision</Name>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

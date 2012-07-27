@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Editor.Model;
 using Microsoft.Xna.Framework;
 using ZarTools;
 using IsoGame.Events;
+using IsoTools;
 
 namespace IsoGame.Processes
 {
@@ -65,6 +65,7 @@ namespace IsoGame.Processes
             TotalFrames = Sprite.Sequences[sequence].Frames.Length;
             Sprite.CurrentFrameInCollection = Sprite.Sequences[sequence].Frames[CurrentFrame] + frameCount * (int)Unit.Facing;
             Sprite.CurrentFrameInSequence = 0;
+            Sprite.Direction = (int)Unit.Facing;
         }
 
         /// <summary>
@@ -149,16 +150,21 @@ namespace IsoGame.Processes
             if (period == ShowPeriod)
             {
                 CurrentFrame++;
-                period = 0;
-                int frameCount = Sprite.Collections[Sprite.Sequences[sequence].AnimCollection].FrameCount;
-                Sprite.CurrentFrameInCollection = Sprite.Sequences[sequence].Frames[CurrentFrame] + frameCount * (int)Unit.Facing;
-                Sprite.CurrentFrameInSequence = CurrentFrame;
-            }
-            if (CurrentFrame == TotalFrames - 1)
-                if (IsRepeating)
-                    CurrentFrame = 0;
+                if (CurrentFrame != TotalFrames)
+                {
+                    period = 0;
+                    int frameCount = Sprite.Collections[Sprite.Sequences[sequence].AnimCollection].FrameCount;
+                    Sprite.CurrentFrameInCollection = Sprite.Sequences[sequence].Frames[CurrentFrame] + frameCount * (int)Unit.Facing;
+                    Sprite.CurrentFrameInSequence = CurrentFrame;
+                }
                 else
-                    Kill();
+                {
+                    if (IsRepeating)
+                        CurrentFrame = 0;
+                    else
+                        Kill();
+                }
+            }
         }
 
         /// <summary>

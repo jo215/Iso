@@ -1,7 +1,8 @@
 ﻿using System.Collections.ObjectModel;
-using Editor.Model;
+
 using System.Collections.Generic;
 using System.Windows.Controls;
+using IsoTools;
 
 namespace Editor.View
 {

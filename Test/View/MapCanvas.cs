@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Threading;
-using ISOTools;
 using ZarTools;
 using System.Windows.Threading;
-using Editor.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections.ObjectModel;
+using IsoTools;
 
 namespace Editor.View
 {

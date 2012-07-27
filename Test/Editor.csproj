@@ -81,16 +81,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Module.cs" />
     <Compile Include="View\DoubleLinkedListNode.cs" />
-    <Compile Include="Model\Unit.cs" />
     <Compile Include="View\CharacterEditor.xaml.cs">
       <DependentUpon>CharacterEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FactionList.cs" />
     <Compile Include="View\MapCanvas.cs" />
-    <Compile Include="Model\MapCell.cs" />
-    <Compile Include="Model\MapDefinition.cs" />
     <Compile Include="View\ViewModel.cs" />
     <Compile Include="View\NewMapSettings.xaml.cs">
       <DependentUpon>NewMapSettings.xaml</DependentUpon>
@@ -929,9 +925,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ISOTools\ISOTools\ISOTools.csproj">
+    <ProjectReference Include="..\ISOTools\ISOTools\Core.csproj">
       <Project>{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}</Project>
-      <Name>ISOTools</Name>
+      <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZarTools\ZarTools\ZarTools.csproj">
       <Project>{BB1439C6-5C86-4CDD-BD2A-3A93950F0723}</Project>

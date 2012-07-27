@@ -5,12 +5,12 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Editor.Model;
 using System.Windows.Media;
 using System.Threading;
 using System.Windows.Threading;
 using System.Collections.Generic;
 using ZarTools;
+using IsoTools;
 
 namespace Editor.View
 {

@@ -5,12 +5,11 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using ZarTools;
-using ISOTools;
 using System.Collections;
 using Microsoft.Win32;
 using System.Threading;
-using Editor.Model;
 using System.Collections.Generic;
+using IsoTools;
 
 namespace Editor.View
 {

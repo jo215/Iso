@@ -20,7 +20,9 @@ namespace ZarTools
         public string CurrentSequence { get; set; }
         public int CurrentFrameInSequence { get; set; }
         public int CurrentFrameInCollection { get; set; }
-        
+        public int Direction { get; set; }
+        Rectangle CurrentPickRect;
+
         bool _overlay;
         string _overlayName;
         int overlayFrame, overlayEnd, lastFrameInSequence;
@@ -69,6 +71,19 @@ namespace ZarTools
         }
 
         /// <summary>
+        /// Returns true if the passed in screen co-ordinates are over the sprite's current position.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public bool HitTest(int x, int y)
+        {
+            if (CurrentPickRect.Contains(new Point(x, y)))
+                return true;
+            return false;
+        }
+
+        /// <summary>
         /// Draws the correct image for this sprite's current animation sequence.
         /// </summary>
         /// <param name="sb"></param>
@@ -86,6 +101,9 @@ namespace ZarTools
             nuPosition.X -= _baseSprite.Center.X - 36;
             nuPosition.Y -= _baseSprite.Center.Y - 30;
             
+            //  Update picking rectangle
+            CurrentPickRect = new Rectangle((int)nuPosition.X, (int)nuPosition.Y, _baseSprite.Collections[collection].Textures[CurrentFrameInCollection].Width, _baseSprite.Collections[collection].Textures[CurrentFrameInCollection].Height);
+
             //  Draw
             sb.Draw(_baseSprite.Collections[collection].Textures[CurrentFrameInCollection], nuPosition, c);
 
@@ -98,26 +116,27 @@ namespace ZarTools
                 overlayFrame = 0;
                 lastFrameInSequence = CurrentFrameInSequence;
                 _overlayName = CurrentSequence + "Overlay";
-                overlayEnd = overlayFrame + 18;
+                overlayEnd = overlayFrame + _baseSprite.Sequences[_overlayName].Frames.Length;
                 
             }
             //  Take care of overlay
             if (_overlay)
             {
-                var collection2 = _baseSprite.Sequences[_overlayName].AnimCollection;
-                var nuPosition2 = position;
-
                 //  Figure out current frame in sequence
                 if (overlayFrame < overlayEnd)
                 {
+                    var collection2 = _baseSprite.Sequences[_overlayName].AnimCollection;
+                    var nuPosition2 = position;
+                    var overlayCollectionFrame = overlayFrame + (Direction * _baseSprite.Sequences[_overlayName].Frames.Length);
                     //  Add in frame position offsets
-                    nuPosition2.X += _baseSprite.Collections[collection2].FrameRect[overlayFrame].X;
-                    nuPosition2.Y += _baseSprite.Collections[collection2].FrameRect[overlayFrame].Y;
+                    nuPosition2.X += _baseSprite.Collections[collection2].FrameRect[overlayCollectionFrame].X;
+                    nuPosition2.Y += _baseSprite.Collections[collection2].FrameRect[overlayCollectionFrame].Y;
 
                     nuPosition2.X -= _baseSprite.Center.X - 36;
                     nuPosition2.Y -= _baseSprite.Center.Y - 30;
 
-                    sb.Draw(_baseSprite.Collections[collection2].Textures[overlayFrame], nuPosition2, c);
+                    sb.Draw(_baseSprite.Collections[collection2].Textures[overlayCollectionFrame], nuPosition2, c);
+                    
                     if (lastFrameInSequence != CurrentFrameInSequence)
                         overlayFrame++;
 

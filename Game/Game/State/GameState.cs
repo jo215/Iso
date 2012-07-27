@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using Editor.Model;
 using System.Linq;
-using ISOTools;
+using IsoTools;
 
 namespace IsoGame.State
 {

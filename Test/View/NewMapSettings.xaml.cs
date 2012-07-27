@@ -17,7 +17,7 @@ namespace Editor.View
         {
             DataContext = this;
             InitializeComponent();
-            styleBox.ItemsSource = Enum.GetNames(typeof(ISOTools.IsometricStyle));
+            styleBox.ItemsSource = Enum.GetNames(typeof(IsoTools.IsometricStyle));
             styleBox.SelectedIndex = 1;
 
             widthBox.Text = "26";

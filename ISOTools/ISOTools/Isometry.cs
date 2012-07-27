@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System;
 
-namespace ISOTools
+namespace IsoTools
 {
     /// <summary>
     /// The styles of isometric map used.

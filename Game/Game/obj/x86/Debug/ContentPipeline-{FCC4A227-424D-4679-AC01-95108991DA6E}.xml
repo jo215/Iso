@@ -2,75 +2,84 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Sounds\Betty\getReady.wav</Source>
-      <Name>Sounds\Betty\getReady</Name>
+      <Source>Sounds\Betty\GetReady.wav</Source>
+      <Name>Sounds\Betty\GetReady</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\getReady.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\GetReady.xnb</Output>
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\Betty\loading.wav</Source>
-      <Name>Sounds\Betty\loading</Name>
+      <Source>Sounds\Betty\Loading.wav</Source>
+      <Name>Sounds\Betty\Loading</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\loading.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Loading.xnb</Output>
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\Betty\paused.wav</Source>
-      <Name>Sounds\Betty\paused</Name>
+      <Source>Sounds\Betty\Paused.wav</Source>
+      <Name>Sounds\Betty\Paused</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\paused.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Paused.xnb</Output>
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\Betty\saving.wav</Source>
-      <Name>Sounds\Betty\saving</Name>
+      <Source>Sounds\Betty\Saving.wav</Source>
+      <Name>Sounds\Betty\Saving</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\saving.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Saving.xnb</Output>
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\UI\menuCancel.wav</Source>
-      <Name>Sounds\UI\menuCancel</Name>
+      <Source>Sounds\Explosion\Impact.wav</Source>
+      <Name>Sounds\Explosion\Impact</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\menuCancel.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Explosion\Impact.xnb</Output>
+      <Time>2012-07-09T23:40:45.5802229+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\UI\MenuCancel.wav</Source>
+      <Name>Sounds\UI\MenuCancel</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuCancel.xnb</Output>
       <Time>2012-07-09T23:40:57.5774587+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\UI\menuChange.wav</Source>
-      <Name>Sounds\UI\menuChange</Name>
+      <Source>Sounds\UI\MenuChange.wav</Source>
+      <Name>Sounds\UI\MenuChange</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\menuChange.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuChange.xnb</Output>
       <Time>2012-07-09T23:40:57.5774587+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\UI\menuHover.wav</Source>
-      <Name>Sounds\UI\menuHover</Name>
+      <Source>Sounds\UI\MenuHover.wav</Source>
+      <Name>Sounds\UI\MenuHover</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\menuHover.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuHover.xnb</Output>
       <Time>2012-07-09T23:40:57.5774587+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\UI\menuSelect.wav</Source>
-      <Name>Sounds\UI\menuSelect</Name>
+      <Source>Sounds\UI\MenuSelect.wav</Source>
+      <Name>Sounds\UI\MenuSelect</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\menuSelect.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuSelect.xnb</Output>
       <Time>2012-07-09T23:40:57.5774587+01:00</Time>
     </Item>
     <Item>
@@ -101,15 +110,6 @@
       <Time>2012-07-09T23:43:36.2435887+01:00</Time>
     </Item>
     <Item>
-      <Source>Shaders\webEffect.fx</Source>
-      <Name>Shaders\webEffect</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Shaders\webEffect.xnb</Output>
-      <Time>2012-07-12T15:20:07.5102668+01:00</Time>
-    </Item>
-    <Item>
       <Source>Fonts\gameFont.spritefont</Source>
       <Name>Fonts\gameFont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -128,13 +128,13 @@
       <Time>2012-07-09T23:45:45.2404285+01:00</Time>
     </Item>
     <Item>
-      <Source>Sounds\Explosion\Impact.wav</Source>
-      <Name>Sounds\Explosion\Impact</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
+      <Source>Shaders\webEffect.fx</Source>
+      <Name>Shaders\webEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Explosion\Impact.xnb</Output>
-      <Time>2012-07-09T23:40:45.5802229+01:00</Time>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Shaders\webEffect.xnb</Output>
+      <Time>2012-07-12T15:20:07.5102668+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
