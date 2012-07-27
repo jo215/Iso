@@ -8,7 +8,7 @@ using System.Windows.Threading;
 using System.Windows.Data;
 using System.Drawing;
 using System.Linq;
-using IsoTools;
+using Core;
 
 namespace Editor.View
 {

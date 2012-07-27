@@ -9,7 +9,7 @@ using System.Collections;
 using Microsoft.Win32;
 using System.Threading;
 using System.Collections.Generic;
-using IsoTools;
+using Core;
 
 namespace Editor.View
 {

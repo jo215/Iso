@@ -12,7 +12,7 @@ using IsoGame.State;
 using IsoGame.Network;
 using IsoGame.Misc;
 using IsoGame.Processes;
-using IsoTools;
+using Core;
 using System.Windows.Forms;
 
 namespace IsoGame

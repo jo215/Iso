@@ -10,7 +10,7 @@ using System.Threading;
 using System.Windows.Threading;
 using System.Collections.Generic;
 using ZarTools;
-using IsoTools;
+using Core;
 
 namespace Editor.View
 {

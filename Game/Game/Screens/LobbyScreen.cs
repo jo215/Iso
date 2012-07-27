@@ -11,7 +11,7 @@ using Lidgren.Network;
 using IsoGame.Network;
 using IsoGame.State;
 using System.IO;
-using IsoTools;
+using Core;
 
 namespace IsoGame.Screens
 {

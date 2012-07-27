@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using ZarTools;
 using IsoGame.Events;
-using IsoTools;
+using Core;
 
 namespace IsoGame.Processes
 {

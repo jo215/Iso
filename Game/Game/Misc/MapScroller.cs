@@ -9,7 +9,7 @@ using IsoGame.Screens.Base;
 using ZarTools;
 using Microsoft.Xna.Framework.Input;
 using IsoGame.Processes;
-using IsoTools;
+using Core;
 using System.Windows.Forms;
 
 namespace IsoGame.Misc

@@ -925,7 +925,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ISOTools\ISOTools\Core.csproj">
+    <ProjectReference Include="..\Core\Core\Core.csproj">
       <Project>{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}</Project>
       <Name>Core</Name>
     </ProjectReference>

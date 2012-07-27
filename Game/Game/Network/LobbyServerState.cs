@@ -2,7 +2,7 @@
 using IsoGame.State;
 using Lidgren.Network;
 using System;
-using IsoTools;
+using Core;
 
 namespace IsoGame.Network
 {
