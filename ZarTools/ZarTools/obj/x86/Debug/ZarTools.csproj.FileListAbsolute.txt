@@ -17,3 +17,9 @@ C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\obj\x86\Debug\ZarTools.dll
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\ZarTools\ZarTools\obj\x86\Debug\ZarTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\ZarTools\ZarTools\bin\x86\Debug\ZarTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\ZarTools\ZarTools\bin\x86\Debug\ZarTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\ZarTools\ZarTools\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\ZarTools\ZarTools\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\ZarTools\ZarTools\obj\x86\Debug\ZarTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\ZarTools\ZarTools\obj\x86\Debug\ZarTools.pdb

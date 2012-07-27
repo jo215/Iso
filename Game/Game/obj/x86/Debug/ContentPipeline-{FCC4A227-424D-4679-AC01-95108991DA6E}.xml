@@ -7,7 +7,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\GetReady.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\Betty\GetReady.xnb</Output>
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Loading.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Loading.xnb</Output>
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Paused.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Paused.xnb</Output>
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Saving.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\Betty\Saving.xnb</Output>
       <Time>2012-07-09T23:40:28.7165932+01:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\Explosion\Impact.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\Explosion\Impact.xnb</Output>
       <Time>2012-07-09T23:40:45.5802229+01:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuCancel.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuCancel.xnb</Output>
       <Time>2012-07-09T23:40:57.5774587+01:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuChange.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuChange.xnb</Output>
       <Time>2012-07-09T23:40:57.5774587+01:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuHover.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuHover.xnb</Output>
       <Time>2012-07-09T23:40:57.5774587+01:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuSelect.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Sounds\UI\MenuSelect.xnb</Output>
       <Time>2012-07-09T23:40:57.5774587+01:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Textures\Menu\blank.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Textures\Menu\blank.xnb</Output>
       <Time>2012-07-09T23:43:36.2435887+01:00</Time>
     </Item>
     <Item>
@@ -97,7 +97,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Textures\Menu\gradient.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Textures\Menu\gradient.xnb</Output>
       <Time>2012-07-09T23:43:36.2435887+01:00</Time>
     </Item>
     <Item>
@@ -106,7 +106,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Textures\Menu\milkyway.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Textures\Menu\milkyway.xnb</Output>
       <Time>2012-07-09T23:43:36.2435887+01:00</Time>
     </Item>
     <Item>
@@ -115,7 +115,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Fonts\gameFont.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Fonts\gameFont.xnb</Output>
       <Time>2012-07-09T23:45:45.2404285+01:00</Time>
     </Item>
     <Item>
@@ -124,7 +124,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Fonts\menufont.xnb</Output>
       <Time>2012-07-09T23:45:45.2404285+01:00</Time>
     </Item>
     <Item>
@@ -133,7 +133,7 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\Shaders\webEffect.xnb</Output>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Shaders\webEffect.xnb</Output>
       <Time>2012-07-12T15:20:07.5102668+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -143,10 +143,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\GameContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Game\Game\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\GameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
