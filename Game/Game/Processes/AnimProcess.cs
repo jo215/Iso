@@ -30,7 +30,7 @@ namespace IsoGame.Processes
         /// <param name="unit"></param>
         /// <param name="isRepeating"></param>
         /// <param name="showPeriod"></param>
-        public AnimProcess(Unit unit, AnimAction action, bool isRepeating = false, int showPeriod = 7)
+        public AnimProcess(Unit unit, AnimAction action, bool isRepeating = false, int showPeriod = 6)
             : base()
         {
             Unit = unit;
@@ -48,9 +48,6 @@ namespace IsoGame.Processes
             //  If we're not just standing around we're busy
             if (Action != AnimAction.None && Action != AnimAction.Breathe)
                 ClientGame._eventManager.QueueEvent(new GameEvent(EventType.CharacterBusy, Unit.ID));
-
-            //  If we were previously idle - stop any existing animations
-
 
             //  Get the correct sequence
             sequence = GetSequenceName();
@@ -146,24 +143,25 @@ namespace IsoGame.Processes
         {
             base.Update(gameTime);
 
+            int frameCount = Sprite.Collections[Sprite.Sequences[sequence].AnimCollection].FrameCount;
+            Sprite.CurrentFrameInCollection = Sprite.Sequences[sequence].Frames[CurrentFrame] + frameCount * (int)Unit.Facing;
+            Sprite.CurrentFrameInSequence = CurrentFrame;  
+
             period++;
             if (period == ShowPeriod)
             {
                 CurrentFrame++;
-                if (CurrentFrame != TotalFrames)
-                {
-                    period = 0;
-                    int frameCount = Sprite.Collections[Sprite.Sequences[sequence].AnimCollection].FrameCount;
-                    Sprite.CurrentFrameInCollection = Sprite.Sequences[sequence].Frames[CurrentFrame] + frameCount * (int)Unit.Facing;
-                    Sprite.CurrentFrameInSequence = CurrentFrame;
-                }
-                else
+                if (CurrentFrame == TotalFrames)
                 {
                     if (IsRepeating)
+                    {
                         CurrentFrame = 0;
+                    }
                     else
                         Kill();
+
                 }
+                period = 0;
             }
         }
 
@@ -171,6 +169,24 @@ namespace IsoGame.Processes
         /// Kills off this animation.
         /// </summary>
         public override void Kill()
+        {
+            KillAndStopAnimating();
+            AnimProcess ap = Next as AnimProcess;
+            if (ap == null)
+            {
+                if (!IsDeathAction(Action))
+                {
+                    //  If this is the end of all queued animations for this character we set to breathe
+                    Next = new AnimProcess(Unit, AnimAction.Breathe, true, 7);
+                    ClientGame._eventManager.QueueEvent(new GameEvent(EventType.CharacterAvailable, Unit.ID));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Kills this process without going into the looping idle animation.
+        /// </summary>
+        public void KillAndStopAnimating()
         {
             base.Kill();
 
@@ -181,16 +197,6 @@ namespace IsoGame.Processes
                 Unit.Stance = Stance.Stand;
             else if (Action == AnimAction.Crouch)
                 Unit.Stance = Stance.Crouch;
-
-            if (Next == null)
-            {
-                if (!IsDeathAction(Action))
-                {
-                    //  If this is the end of all queued animations for this character we set to breathe
-                    Next = new AnimProcess(Unit, AnimAction.Breathe, true);
-                    ClientGame._eventManager.QueueEvent(new GameEvent(EventType.CharacterAvailable, Unit.ID));
-                }
-            }
         }
 
         /// <summary>

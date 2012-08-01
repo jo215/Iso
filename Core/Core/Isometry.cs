@@ -19,6 +19,9 @@ namespace Core
         NorthWest = 0, North = 1, NorthEast = 2, East = 3, SouthEast = 4, South = 5, SouthWest = 6, West = 7
     }
 
+    /// <summary>
+    /// For the mousemap.
+    /// </summary>
     enum MouseMappings
     {
         NW, NE, SW, SE, Center
@@ -301,7 +304,7 @@ namespace Core
                             p.X += ((startTile.Y & 1) - 1);
                             break;
                         case CompassDirection.West:
-                            p.X++;
+                            p.X--;
                             break;
                         case CompassDirection.NorthWest:
                             p.Y--;
@@ -378,6 +381,25 @@ namespace Core
             int StaggeredX = (diamondX - diamondY) >> 1;
             int StaggeredY = (diamondX + diamondY);
             return new Microsoft.Xna.Framework.Point(StaggeredX, StaggeredY);
+        }
+
+        /// <summary>
+        /// Returns the direction of a neighbour.
+        /// </summary>
+        /// <param name="point"></param>
+        /// <param name="point2"></param>
+        /// <returns></returns>
+        public CompassDirection DirectionOfNeighbour(Point point, Point point2)
+        {
+            foreach (CompassDirection dir in Enum.GetValues(typeof(CompassDirection)))
+            {
+                if (TileWalker(point, dir) == point2)
+                {
+                    return dir;
+                }
+            }
+            //Shouldn't get here
+            return CompassDirection.North;
         }
     }
 }

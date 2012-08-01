@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using ZarTools;
 using System.Drawing;
+using Core.AStar;
 
 namespace Core
 {
     /// <summary>
     /// An individual Map cell (location)
     /// </summary>
-    public class MapCell
+    public class MapCell : IHasNeighbours<MapCell>
     {
         private readonly ZTile[] _layers = new ZTile[5];
         public MapCell ParentCell { get; set; }
@@ -19,6 +20,9 @@ namespace Core
         //  These are set on creation
         public Point MapCoordinate { get; set; }
         public MapDefinition Map { get; set; }
+
+        //  Denotes if a character is occupying this cell.
+        public bool IsOccupied { get; set; }
 
         /// <summary>
         /// Constructor.
@@ -37,6 +41,7 @@ namespace Core
             _layers[2] = layer2;
             _layers[3] = layer3;
             _layers[4] = layer4;
+            IsOccupied = false;
         }
         public MapCell(MapDefinition map, Point coords, ZTile floor) : this(map, coords, floor, null, null, null, null) { }
         public MapCell(MapDefinition map, Point coords) : this(map, coords, null, null, null, null, null) { }
@@ -48,6 +53,8 @@ namespace Core
         /// <returns></returns>
         public bool IsWalkable()
         {
+            if (IsOccupied)
+                return false;
             for (var layer = 2; layer < Length; layer++)
             {
                 if (this[layer] != null)
@@ -152,6 +159,90 @@ namespace Core
             }
             Console.WriteLine("MapCell: file was null.");
             return null;
+        }
+
+        /// <summary>
+        /// Returns the list of MapCells which surround this one.
+        /// </summary>
+        public IEnumerable<MapCell> Neighbours
+        {
+            get {
+                List<MapCell> neighbours = new List<MapCell>();
+                foreach (CompassDirection dir in Enum.GetValues(typeof(CompassDirection)))
+                {
+                    Point p = Map.Iso.TileWalker(MapCoordinate, dir);
+                    if (Map.IsOnGrid(p))
+                    {
+                        neighbours.Add(Map.Cells[p.X, p.Y]);
+                    }
+                    
+                }
+                return neighbours;
+            }
+        }
+
+        /// <summary>
+        /// Returns the exact distance between 2 neighbours.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static double Distance(MapCell n, MapCell goal)
+        {
+            if (!goal.IsWalkable())
+                return double.MaxValue;
+
+            //  Make sure we convert to diamond style coodinates
+            Microsoft.Xna.Framework.Point nCoord, goalCoord;
+            if (n.Map.Iso.Style == IsometricStyle.Staggered)
+            {
+                nCoord = n.Map.Iso.StaggeredToDiamond(n.MapCoordinate.X, n.MapCoordinate.Y);
+                goalCoord = n.Map.Iso.StaggeredToDiamond(goal.MapCoordinate.X, goal.MapCoordinate.Y);
+            }
+            else
+            {
+                nCoord = new Microsoft.Xna.Framework.Point(n.MapCoordinate.X, n.MapCoordinate.Y);
+                goalCoord = new Microsoft.Xna.Framework.Point(goal.MapCoordinate.X, goal.MapCoordinate.Y);
+            }
+            var h_diagonal = Math.Min(Math.Abs(nCoord.X - goalCoord.X), Math.Abs(nCoord.Y - goalCoord.Y));
+
+            if (h_diagonal > 0)
+                return 1.4121;
+            else
+                return 1;
+        }
+
+        /// <summary>
+        /// A 8-way diagonal movement heuristic for A*
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="goal"></param>
+        /// <returns></returns>
+        public static double DiagonalHeuristic(MapCell n, MapCell goal)
+        {
+            //  Movement costs for straight / diagonal
+            var D = 1;
+            var D2 = 1.4121;
+
+            //  Make sure we convert to diamond style coodinates
+            Microsoft.Xna.Framework.Point nCoord, goalCoord;
+            if (n.Map.Iso.Style == IsometricStyle.Staggered)
+            {
+                nCoord = n.Map.Iso.StaggeredToDiamond(n.MapCoordinate.X, n.MapCoordinate.Y);
+                goalCoord = n.Map.Iso.StaggeredToDiamond(goal.MapCoordinate.X, goal.MapCoordinate.Y);
+            }
+            else
+            {
+                nCoord = new Microsoft.Xna.Framework.Point(n.MapCoordinate.X, n.MapCoordinate.Y);
+                goalCoord = new Microsoft.Xna.Framework.Point(goal.MapCoordinate.X, goal.MapCoordinate.Y);
+            }
+
+            var h_diagonal = Math.Min(Math.Abs(nCoord.X - goalCoord.X), Math.Abs(nCoord.Y - goalCoord.Y));
+            var h_straight = (Math.Abs(nCoord.X - goalCoord.X) + Math.Abs(nCoord.Y - goalCoord.Y));
+
+            var hn = D2 * h_diagonal + D * (h_straight - 2*h_diagonal);
+
+            return hn;
         }
     }
 }

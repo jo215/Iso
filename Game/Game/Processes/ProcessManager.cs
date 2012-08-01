@@ -91,8 +91,10 @@ namespace IsoGame.Processes
                 AnimProcess ap = p as AnimProcess;
                 if (ap != null && ap.Unit == Unit)
                 {
-                    ap.Kill();
-                    ap.Next = null;
+                    if (ap.Action == ZarTools.AnimAction.Breathe || ap.Action == ZarTools.AnimAction.None)
+                    {
+                        ap.KillAndStopAnimating();
+                    }
                 }
             }
         }

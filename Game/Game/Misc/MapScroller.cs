@@ -11,10 +11,12 @@ using Microsoft.Xna.Framework.Input;
 using IsoGame.Processes;
 using Core;
 using System.Windows.Forms;
+using Core.AStar;
+using IsoGame.Events;
 
 namespace IsoGame.Misc
 {
-    public class MapScroller
+    public class MapScroller : IEventListener
     {
         private Rectangle _worldSpace;
         private Rectangle _screenSpace;
@@ -28,6 +30,10 @@ namespace IsoGame.Misc
         private SpriteBatch _spriteBatch;
         private SpriteFont _gameFont;
         private Cursor _lastCursor;
+        private Texture2D _circle;
+
+        public Unit SelectedUnit { get; set; }
+        bool characterAvailable;
 
         /// <summary>
         /// Constructor.
@@ -35,13 +41,15 @@ namespace IsoGame.Misc
         /// <param name="game"></param>
         public MapScroller(ClientGame game, GameState state)
         {
+            RegisterListeners();
+            characterAvailable = true;
             _game = game;
             _module = state.Module;
             _iso = _module.Map.Iso;
             _state = state;
             _spriteBatch = game.SpriteBatch;
-            _gameFont = game.Content.Load<SpriteFont>("Fonts//gameFont"); 
-
+            _gameFont = game.Content.Load<SpriteFont>("Fonts//gameFont");
+            _circle = _game.Content.Load<Texture2D>("Textures//circle");
             _screenSpace = new Rectangle(0, 0, _game.GraphicsDevice.PresentationParameters.BackBufferWidth, _game.GraphicsDevice.PresentationParameters.BackBufferHeight);
 
             //  World space
@@ -73,6 +81,7 @@ namespace IsoGame.Misc
                 //  Screen anchor
                 _screenAnchor = new Point(0, 0);
             }
+
         }
 
         /// <summary>
@@ -82,7 +91,71 @@ namespace IsoGame.Misc
         internal void Update(GameTime gameTime, InputState input)
         {
             ScrollMap(input);
+            HandleInput(input);
             UpdateCursor(input);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        private void HandleInput(InputState input)
+        {
+            //  LMB Mouse clicks
+            if (input.CurrentMouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed
+                && input.LastMouseState.LeftButton != Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+            {
+                //  Check for click on unit
+                foreach (Unit u in _module.Roster)
+                {
+                    if (GetSprite(u).HitTest(input.CurrentMouseState.X, input.CurrentMouseState.Y))
+                    {
+                        if (u.OwnerID == _game.PlayerID)
+                        {
+                            //  Own unit - select
+                            SelectedUnit = u;
+                        }
+                        else
+                        {
+                            //  Enemy unit - Handle attack order
+                        }
+                        return;
+                    }
+                }
+
+                //  Check for move order
+                if (SelectedUnit != null && characterAvailable)
+                {
+                    var destination = _iso.MouseMapper(new System.Drawing.Point(
+                                                        input.CurrentMouseState.X + _screenAnchor.X,
+                                                        input.CurrentMouseState.Y + _screenAnchor.Y));
+                    //  Check destination is valid
+                    if (_module.Map.IsOnGrid(destination) && _module.Map.Cells[destination.X, destination.Y].IsWalkable()
+                        && destination != new System.Drawing.Point(SelectedUnit.X, SelectedUnit.Y))
+                    {
+                        //  Get the path if one exists
+                        Path<MapCell> path = AStar.FindPath<MapCell>
+                            (_module.Map.Cells[SelectedUnit.X, SelectedUnit.Y],
+                            _module.Map.Cells[destination.X, destination.Y],
+                            MapCell.Distance, MapCell.DiagonalHeuristic);
+                        if (path == null) return;
+                        //  Do it
+                        MapCell prev = null;
+                        List<CompassDirection> dirs = new List<CompassDirection>();
+                        foreach (MapCell cell in path.Reverse())
+                        {
+                            if (prev != null)
+                            {
+                                dirs.Add(_iso.DirectionOfNeighbour(prev.MapCoordinate, cell.MapCoordinate));
+                            }
+                            prev = cell;
+                        }
+                        AnimatedMoveProcess proc = new AnimatedMoveProcess(SelectedUnit, _iso, dirs.ToArray());
+
+                        ClientGame._processManager.ProcessList.Add(proc);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -147,17 +220,18 @@ namespace IsoGame.Misc
         public void Draw(GameTime gameTime)
         {
             _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied);
-            var charsDrawn = false;
-            for (var layer = 0; layer < _module.Map.Cells[0, 0].Length; layer++)
-            {
-                for (var y = 0; y < _module.Map.Height; y++)
-                    for (var x = 0; x < _module.Map.Width; x++)
+
+            for (var y = 0; y < _module.Map.Height; y++)
+                for (var x = 0; x < _module.Map.Width; x++)
+                {
+                    _module.Map.Cells[x, y].IsOccupied = false;
+
+                    for (var layer = 0; layer < _module.Map.Cells[0, 0].Length; layer++)
                     {
                         //  Draw any characters
-                        if (layer == 3 && charsDrawn == false)
+                        if (layer == 2 )
                         {
-                            charsDrawn = true;
-                            DrawCharacters(gameTime);
+                            DrawCharacters(x, y, gameTime);
                         }
                         //  Check for null (no tile)
                         if (_module.Map.Cells[x, y][layer] != null)
@@ -193,21 +267,6 @@ namespace IsoGame.Misc
                         }
                     }
                 }
-
-            var tile = _iso.MouseMapper(new System.Drawing.Point(Mouse.GetState().X + _screenAnchor.X, Mouse.GetState().Y + _screenAnchor.Y));
-            _spriteBatch.DrawString(_gameFont, "Staggered Coordinates " + tile.X + " / " + tile.Y, new Vector2(10, 975), Color.Red);
-
-            var diamond = _iso.StaggeredToDiamond(tile.X, tile.Y);
-            _spriteBatch.DrawString(_gameFont, "Diamond Coordinates " + diamond.X + " / " + diamond.Y, new Vector2(10, 1000), Color.Red);
-
-            var stag = _iso.DiamondToStaggered(diamond.X, diamond.Y);
-            _spriteBatch.DrawString(_gameFont, "Staggered Coordinates " + stag.X + " / " + stag.Y, new Vector2(10, 1025), Color.Red);
-            if (_module.Map.IsOnGrid(tile))
-            {
-                var check = _module.Map.Cells[tile.X, tile.Y];
-                var checks = check.MapCoordinate;
-                _spriteBatch.DrawString(_gameFont, "Tile Reports " + checks.X + " / " + checks.Y, new Vector2(10, 950), Color.Red);
-            }
             _spriteBatch.End();
         }
 
@@ -215,15 +274,50 @@ namespace IsoGame.Misc
         /// Draws the characters
         /// </summary>
         /// <param name="gameTime"></param>
-        private void DrawCharacters(GameTime gameTime)
+        private void DrawCharacters(int x, int y, GameTime gameTime)
         {
-            foreach (var unit in _module.Roster.OrderBy(x => x.Y).ThenBy(y => y.Y))
+            foreach (var unit in _module.Roster)
             {
                 ZSprite sprite = GetSprite(unit);
-                Point p = _iso.TilePlotter(new Point(unit.X, unit.Y));
-                //  Beware the magic numbers!
-                Vector2 position = new Vector2(p.X - _screenAnchor.X, (int)(p.Y - _screenAnchor.Y));
-                sprite.DrawCurrentImage(_spriteBatch, position, Color.White);
+
+                if (sprite.AnimXOffset != 0 || sprite.AnimYOffset != 0)
+                {
+                    //  We're moving so adjust draw order
+                    switch (unit.Facing)
+                    {
+                        case CompassDirection.East:
+                            y--;
+                            x--;
+                            break;
+                        case CompassDirection.West:
+                            y--;
+                            break;
+                        case CompassDirection.SouthEast:
+                            y--;
+                            x--;
+                            break;
+                        case CompassDirection.South:
+                            y -= 2;
+                            break;
+                        case CompassDirection.SouthWest:
+                            y--;
+                            x--;
+                            break;
+                    }
+                }
+
+                if (unit.X == x && unit.Y == y)
+                {
+                    _module.Map.Cells[x, y].IsOccupied = true;
+
+                    Point p = _iso.TilePlotter(new Point(unit.X, unit.Y));
+
+                    Vector2 position = new Vector2(p.X - _screenAnchor.X, (p.Y - _screenAnchor.Y));
+                    //  Selection circle
+                    if (unit == SelectedUnit)
+                        _spriteBatch.Draw(_circle, new Vector2(position.X + _module.Map.TileHeight / 2 + sprite.AnimXOffset, position.Y + _module.Map.TileHeight / 4 + sprite.AnimYOffset), Color.DarkCyan);
+                    sprite.DrawCurrentImage(_spriteBatch, position, Color.White);
+                }
             }
         }
 
@@ -237,24 +331,42 @@ namespace IsoGame.Misc
             if (unit.Sprite != null) return unit.Sprite;
             //  Lazy load
             unit.Body = BodyType.LeatherMale;
-            unit.Weapon = WeaponType.Rocket;
+            unit.Weapon = WeaponType.SMG;
             unit.Facing = CompassDirection.East;
             ZSprite sprite = new ZSprite(_game.GraphicsDevice, "D:\\workspace\\BaseGame\\sprites\\characters\\" + Enum.GetName(typeof(BodyType), unit.Body) + ".spr");
             sprite._baseSprite.ReadAnimation(sprite.Sequences["StandBreathe"].AnimCollection);
             sprite.CurrentSequence = "StandBreathe";
-            
             unit.Sprite = sprite;
-
+            ClientGame._processManager.ProcessList.Add(new AnimProcess(unit, AnimAction.Breathe, true));
             //  Test some anims!
-            var proc = new AnimProcess(unit, AnimAction.Breathe);
-            proc.Next = new AnimProcess(unit, AnimAction.Single);
-            proc.Next.Next = new AnimProcess(unit, AnimAction.Breathe);
-            proc.Next.Next.Next = new AnimProcess(unit, AnimAction.Single);
-            proc.Next.Next.Next.Next = new AnimProcess(unit, AnimAction.Crouch);
-            proc.Next.Next.Next.Next.Next = new AnimProcess(unit, AnimAction.Walk);
-            proc.Next.Next.Next.Next.Next.Next = new AnimProcess(unit, AnimAction.DeathBighole);
-            ClientGame._processManager.ProcessList.Add(proc);
+
+            //var anim = new AnimatedMoveProcess(unit, _iso, CompassDirection.NorthWest, CompassDirection.NorthWest, CompassDirection.North);
+            //var wait = new WaitProcess(1000);
+            //anim.Next = wait;
+            //var anim2 = new AnimatedMoveProcess(unit, _iso, CompassDirection.East, CompassDirection.East, CompassDirection.East, CompassDirection.East, CompassDirection.SouthEast, CompassDirection.SouthEast, CompassDirection.SouthEast, CompassDirection.SouthEast);
+            //wait.Next = anim2;
+            //ClientGame._processManager.ProcessList.Add(anim);
             return sprite;
+        }
+
+        public string GetListenerName()
+        {
+            return "MapScroller";
+        }
+
+        public bool HandleEvent(GameEvent ev)
+        {
+            if (ev.EventType == EventType.CharacterBusy)
+                characterAvailable = false;
+            if (ev.EventType == EventType.CharacterAvailable)
+                characterAvailable = true;
+            return true;
+        }
+
+        public void RegisterListeners()
+        {
+            ClientGame._eventManager.AddEventListener(this, EventType.CharacterBusy);
+            ClientGame._eventManager.AddEventListener(this, EventType.CharacterAvailable);
         }
     }
 }

@@ -59,6 +59,8 @@ namespace Core
             for (int i = 0; i < numUnits; i++)
             {
                 mod.Roster.Add(Unit.ReadUnit(stream));
+                //  Mark the corresponding map cell as occupied
+                mod.Map.Cells[mod.Roster[mod.Roster.Count - 1].X, mod.Roster[mod.Roster.Count - 1].Y].IsOccupied = true;
             }
             stream.ReadLine();  //  </Roster>
             stream.ReadLine();  //  </Module>

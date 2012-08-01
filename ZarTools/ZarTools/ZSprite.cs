@@ -20,7 +20,12 @@ namespace ZarTools
         public string CurrentSequence { get; set; }
         public int CurrentFrameInSequence { get; set; }
         public int CurrentFrameInCollection { get; set; }
+
         public int Direction { get; set; }
+
+        public int AnimXOffset { get; set; }
+        public int AnimYOffset { get; set; }
+
         Rectangle CurrentPickRect;
 
         bool _overlay;
@@ -100,7 +105,10 @@ namespace ZarTools
 
             nuPosition.X -= _baseSprite.Center.X - 36;
             nuPosition.Y -= _baseSprite.Center.Y - 30;
-            
+
+            nuPosition.X += AnimXOffset;
+            nuPosition.Y += AnimYOffset;
+
             //  Update picking rectangle
             CurrentPickRect = new Rectangle((int)nuPosition.X, (int)nuPosition.Y, _baseSprite.Collections[collection].Textures[CurrentFrameInCollection].Width, _baseSprite.Collections[collection].Textures[CurrentFrameInCollection].Height);
 
@@ -134,6 +142,9 @@ namespace ZarTools
 
                     nuPosition2.X -= _baseSprite.Center.X - 36;
                     nuPosition2.Y -= _baseSprite.Center.Y - 30;
+
+                    nuPosition2.X += AnimXOffset;
+                    nuPosition2.Y += AnimYOffset;
 
                     sb.Draw(_baseSprite.Collections[collection2].Textures[overlayCollectionFrame], nuPosition2, c);
                     

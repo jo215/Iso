@@ -14,3 +14,11 @@ C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Core\Core\bin\Debu
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Core\Core\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Core\Core\obj\Debug\ISOTools.dll
 C:\Users\samcruise\Documents\Visual Studio 2010\Projects\Test\Core\Core\obj\Debug\ISOTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Core\Core\bin\Debug\ISOTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Core\Core\bin\Debug\ISOTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Core\Core\bin\Debug\ZarTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Core\Core\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Core\Core\bin\Debug\ZarTools.pdb
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Core\Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Core\Core\obj\Debug\ISOTools.dll
+C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Core\Core\obj\Debug\ISOTools.pdb

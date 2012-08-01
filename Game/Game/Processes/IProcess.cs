@@ -12,7 +12,7 @@ namespace IsoGame.Processes
         public bool Active { get; set; }
         public bool Paused { get; set; }
         public bool Initialized { get; set; }
-        public IProcess Next { get; set; }
+        public virtual IProcess Next { get; set; }
 	
 	    /**
 	     * Constructor

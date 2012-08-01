@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZarTools", "ZarTools\ZarToo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core\Core.csproj", "{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualStudioLikePanes", "..\..\..\..\Desktop\VisualStudioLikePanes\VisualStudioLikePanes.csproj", "{39B164CC-EF77-4893-8BEE-156492DFBFDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,18 @@ Global
 		{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}.Release|x64.ActiveCfg = Release|Any CPU
 		{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}.Release|x86.ActiveCfg = Release|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Release|x64.ActiveCfg = Release|Any CPU
+		{39B164CC-EF77-4893-8BEE-156492DFBFDB}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

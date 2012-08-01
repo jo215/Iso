@@ -136,6 +136,15 @@
       <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Shaders\webEffect.xnb</Output>
       <Time>2012-07-12T15:20:07.5102668+01:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\circle.png</Source>
+      <Name>Textures\circle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\samcruise\Documents\Visual Studio 2010\Projects\IsoTactics\Game\Game\bin\x86\Debug\Content\Textures\circle.xnb</Output>
+      <Time>2012-07-30T18:14:02.8453974+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{FCC4A227-424D-4679-AC01-95108991DA6E}</ContentProjectGUID>

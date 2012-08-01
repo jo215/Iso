@@ -13,6 +13,7 @@ Content\Textures\Menu\milkyway.xnb
 Content\Fonts\gameFont.xnb
 Content\Fonts\menufont.xnb
 Content\Shaders\webEffect.xnb
+Content\Textures\circle.xnb
 Content\Sounds\Betty\GetReady.wav
 Content\Sounds\Betty\Loading.wav
 Content\Sounds\Betty\Paused.wav
@@ -25,6 +26,7 @@ Content\Sounds\UI\MenuSelect.wav
 Content\Fonts\gameFont.spritefont
 Content\Fonts\menufont.spritefont
 Content\Shaders\webEffect.fx
+Content\Textures\circle.png
 Content\Cursors\Roundling\Alt.ani
 Content\Cursors\Roundling\Busy.ani
 Content\Cursors\Roundling\BusyBkg.ani

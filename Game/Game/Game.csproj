@@ -131,9 +131,12 @@
     <Compile Include="Network\GameServerState.cs" />
     <Compile Include="Network\MessageType.cs" />
     <Compile Include="Network\NetworkAgent.cs" />
+    <Compile Include="Processes\AnimatedMoveProcess.cs" />
     <Compile Include="Processes\AnimProcess.cs" />
     <Compile Include="Processes\IProcess.cs" />
+    <Compile Include="Processes\MovementProcess.cs" />
     <Compile Include="Processes\ProcessManager.cs" />
+    <Compile Include="Processes\WaitProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ClientGame.cs" />
@@ -166,7 +169,7 @@
       <Project>{4FB6AE73-49CC-4AAA-9713-22160D90EFAD}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Test\Editor.csproj">
+    <ProjectReference Include="..\..\Editor\Editor.csproj">
       <Project>{0AC3C7DA-A8BB-4812-8ADD-1CC6033C880A}</Project>
       <Name>Editor</Name>
     </ProjectReference>
